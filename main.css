@@ -11,14 +11,19 @@ body{
   background-color: #1a1c22;
   -webkit-user-select: none;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  
+  transition: all 1s;
 }
 
 div{
   color: rgb(255, 255, 255);
 }
 .titolo{
-  align-self: start;
+  position: absolute;
+  top: 20px;
   font-family: 'GalanoBold';
   display: flex;
   font-size: 30px;
@@ -27,35 +32,143 @@ div{
   align-items: center;
 }
 
+body.sel1 .titolo,
+body.sel2 .titolo,
+{
+  scale: 0;
+}
+
 .titolo img{
   width: 25px;
   height: 25px;
   margin-left: 10px;
 }
-
+.contscroll{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
 .contmemoji{
+  position: absolute;
   align-self: center;
   justify-self: center;
-  width: 70vw;
-  height: 70vw;
-  background-color: #580ef6;
+  width: 300px;
+  height: 300px;
   border-radius: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s;
-  margin-top: 25px;
+  transition: all 1s ease-out;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  scale: 0.85;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.uno.active,
+.due.active
+{
+  transform: translateX(0px);
+  scale: 1;
+  z-index: 1;
+}
+.uno{
+  position: absolute;
+  background-color: #580ef6;
   filter: drop-shadow(0 0 25px #580ef6) ;
+  transform: translateX(-350px);
+}
+.due{
+  background-color: white;
+  filter: drop-shadow(0 0 25px #ffffff7c);
+  transform: translateX(350px);
 }
 .contmemoji img{
-  height: 320px;
+  height: 350px;
   margin-top: 23px;
   margin-right: 20px;
+  animation: ingrandisci 5s ease infinite;
   transition: all 0.3s;
-}
-.contmemoji:hover{
-  scale: 1.03;
+  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.459));
 }
 .contmemoji:hover img{
   height: 350px;
+}
+
+body .uno,
+body .due{
+  transition: all 1s;
+}
+
+body.sel1 .titolo,
+body.sel2 .titolo,
+body.sel1 .due,
+body.sel2 .uno
+{
+  
+  animation: scompari 1s backwards;
+  scale: 0;
+}
+
+body.sel1 .uno,
+body.sel2 .due
+{
+  animation: sali 1s backwards;
+  position: absolute;
+  top: 40px;
+}
+
+
+
+
+
+
+@keyframes ingrandisci {
+
+  0%{
+    scale:1
+  }
+  50%{
+    
+    scale:1.1
+  }
+  100%{
+    
+    scale:1
+  }
+  
+}
+
+@keyframes scompari {
+  0%{
+    opacity: 1;
+    scale: 0.85;
+  }
+  50%{
+    opacity: 0;
+    scale:0.85;
+  }
+  100%{
+    opacity: 0;
+    scale: 0;
+  }
+  
+}
+@keyframes sali {
+  0%{
+    
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  }
+  100%{
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%,0);
+  }
+  
 }
