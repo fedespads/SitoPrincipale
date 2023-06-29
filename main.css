@@ -98,17 +98,42 @@ body.sel2 .titolo,
   height: 350px;
 }
 
-body .uno,
-body .due{
+.contlinee{
+  position: absolute;
+  top: 65%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width: 300px;
+  height: fit-content;
+  border-radius: 18px;
+  overflow: hidden;
+  scale: 0;
+  opacity: 0;
   transition: all 1s;
+  display: flex;
+  flex-direction: column;
 }
+.linea{
+  font-family: 'GalanoRegular';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3d3a50;
+  height: 35px;
+  cursor: pointer;
+}
+.linea img{
+  height: 25px;
+  position: absolute;
+  right: 20px;
+}
+
 
 body.sel1 .titolo,
 body.sel2 .titolo,
 body.sel1 .due,
 body.sel2 .uno
 {
-  
   animation: scompari 1s backwards;
   scale: 0;
 }
@@ -120,6 +145,19 @@ body.sel2 .due
   position: absolute;
   top: 40px;
 }
+
+body.sel1 .contlinee.contlineeuno{
+  scale: 1;
+  opacity: 1;
+}
+
+body.sel2 .contlinee.contlineedue{
+  scale: 1;
+  opacity: 1;
+}
+
+
+
 
 
 
@@ -171,4 +209,20 @@ body.sel2 .due
     transform: translate(-50%,0);
   }
   
+}
+@keyframes scendi{
+  0%{
+    position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+  100%{
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    }
+    
 }

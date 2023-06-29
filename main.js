@@ -5,11 +5,14 @@ const c2= document.querySelector(".due");
 c1.addEventListener("click",function(){
 
   if(c1.classList[2]&&!document.body.classList[0]){
-    document.body.classList.add("sel1");
+    document.getElementById("uno").style.animation=" sali 1s backwards";
+    document.getElementById("due").style.animation=" scompari 1s backwards";
+      document.body.classList.add("sel1");
   }
 
   else if(c1.classList[2]&&document.body.classList[0]){
-    document.body.classList.remove("sel1");
+    document.getElementById("uno").style.animation=" scendi 1s backwards";
+      document.body.classList.remove("sel1");
 
   }
     else{
@@ -21,10 +24,16 @@ c1.addEventListener("click",function(){
 c2.addEventListener("click",function(){
   
   if(c2.classList[2]&&!document.body.classList[0]){
+    
+    document.getElementById("due").style.animation=" sali 1s backwards";
+    document.getElementById("uno").style.animation=" scompari 1s backwards";
   document.body.classList.add("sel2");
 }
 
 else if(c2.classList[2]&&document.body.classList[0]){
+  
+  document.getElementById("due").style.animation=" scendi 1s backwards";
+
   document.body.classList.remove("sel2");
 
 }
@@ -35,6 +44,22 @@ c1.classList.remove("active");
 })
 
   
+ document.querySelector(".notalavoro").addEventListener("click",function(){
+  window.open('Progetti/ProgFede/notalavoro/notalavoro.html','_self');
+ })
+
+ document.querySelector(".calendario").addEventListener("click",function(){
+  window.open('Progetti/ProgSimo/Sitosimo/calendario.html','_self');
+ })
+
  
+ document.querySelector(".assenze").addEventListener("click",function(){
+  window.open('Progetti/ProgSimo/Sitosimo/assenze.html','_self');
+ })
+
+ 
+ document.querySelector(".countdown").addEventListener("click",function(){
+  window.open('Progetti/ProgSimo/Sitosimo/fede.html','_self');
+ })
 
 console.log(c1.classList);
