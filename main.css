@@ -49,12 +49,14 @@ body.sel2 .titolo,
   gap: 50px;
   justify-content: center;
   align-items: center;
+
+  width: 100vw;
+  scroll-snap-type: x mandatory;
 }
 .contmemoji{
   position: absolute;
   align-self: center;
   justify-self: center;
-
   width: 300px;
   height: 300px;
   border-radius: 35px;
@@ -67,6 +69,9 @@ body.sel2 .titolo,
   scale: 0.85;
   cursor: pointer;
   z-index: 0;
+
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
 }
 
 .uno.active,
@@ -234,6 +239,11 @@ body.sel2 .contlinee.contlineedue{
   background-color: red;
   }  
   .contscroll{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
     scroll-snap-type: x mandatory;
     width: 100vw;
   }
