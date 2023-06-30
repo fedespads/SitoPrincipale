@@ -228,7 +228,7 @@ body.sel2 .contlinee.contlineedue{
     
 }
 
-@media (width<450px) 
+@media only screen and (max-width: 450px) 
 {
  body{
   background-color: red;
