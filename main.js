@@ -5,16 +5,32 @@ const c2= document.querySelector(".due");
 c1.addEventListener("click",function(){
 
   if(c1.classList[2]&&!document.body.classList[0]){
-    document.getElementById("uno").style.animation=" sali 0.5s backwards";
-    document.getElementById("due").style.animation=" scompari 1s backwards";
+    document.getElementById("due").style.animation=" vaiadx 0.5s backwards";
+    document.getElementById("uno").style.animation=" sali 0.6s  ease-out backwards";
+    
+    document.getElementById("contprog1").style.animation=" comprog 0.5s  ease-out backwards";
+    document.getElementById("titolo").style.opacity="0";
+    setTimeout(function(){
       document.body.classList.add("sel1");
+      document.getElementById("due").style.animation=""
+      
+    document.getElementById("titolo").style.opacity="1";
+    
+    document.getElementById("contprog1").style.animation="";
+    },500)
+    
   }
 
   else if(c1.classList[2]&&document.body.classList[0]){
-    document.getElementById("uno").style.animation=" scendi 0.5s backwards";
-      document.body.classList.remove("sel1");
+    document.getElementById("uno").style.animation=" scendi 0.3s ease-out backwards";
+    
+    document.getElementById("due").style.animation="vienidadx 0.3s ease-out backwards";
+    document.getElementById("contprog1").style.animation=" scomprog 0.5s  ease-out backwards";
+    document.body.classList.remove("sel1");
+
 
   }
+
     else{
   c1.classList.add("active");
   c2.classList.remove("active");
@@ -24,16 +40,27 @@ c1.addEventListener("click",function(){
 c2.addEventListener("click",function(){
   
   if(c2.classList[2]&&!document.body.classList[0]){
+    document.getElementById("uno").style.animation=" vaiasx 0.5s backwards";
+    document.getElementById("due").style.animation=" sali 0.6s  ease-out backwards";
     
-    document.getElementById("due").style.animation=" sali 0.5s backwards";
-    document.getElementById("uno").style.animation=" scompari 1s backwards";
-  document.body.classList.add("sel2");
+    document.getElementById("contprog2").style.animation=" comprog 0.5s  ease-out backwards";
+    document.getElementById("titolo").style.opacity="0";
+    setTimeout(function(){
+      document.body.classList.add("sel2");
+      document.getElementById("uno").style.animation=""
+      
+    document.getElementById("titolo").style.opacity="1";
+    
+    document.getElementById("contprog2").style.animation="";
+    },500)
+    
 }
 
 else if(c2.classList[2]&&document.body.classList[0]){
+  document.getElementById("due").style.animation=" scendi 0.3s ease-out backwards";
   
-  document.getElementById("due").style.animation=" scendi 0.5s backwards";
-
+  document.getElementById("uno").style.animation=" vienidasx 0.3s ease-out backwards";
+  document.getElementById("contprog2").style.animation=" scomprog 0.5s  ease-out backwards";
   document.body.classList.remove("sel2");
 
 }
@@ -63,10 +90,9 @@ c1.classList.remove("active");
  })
 
 
- const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-setInterval(function(){
+/*setInterval(function(){
   
+  const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
  const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
  document.querySelector(".titolo").innerHTML =`vw = ${vw}, vh= ${vh}`;
-},250);
+},250);*/
