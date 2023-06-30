@@ -54,6 +54,7 @@ body.sel2 .titolo,
   position: absolute;
   align-self: center;
   justify-self: center;
+
   width: 300px;
   height: 300px;
   border-radius: 35px;
@@ -225,4 +226,19 @@ body.sel2 .contlinee.contlineedue{
     transform: translate(-50%,-50%);
     }
     
+}
+
+@media (width<430px) 
+{
+ body{
+  background-color: red;
+  }  
+  .contscroll{
+    scroll-snap-type: x mandatory;
+    width: 100vw;
+  }
+  .contmemoji{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
 }
