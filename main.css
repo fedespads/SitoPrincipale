@@ -131,6 +131,11 @@ body.sel2 .titolo
   position: absolute;
   right: 20px;
 }
+.memoji.memojisimo{
+  height: 300px;
+  padding-left: 30px;
+  padding-bottom: 70px;
+}
 .sfondofreccia{
   position: absolute;
   background-color: rgba(207, 207, 207, 0.699);
@@ -171,7 +176,7 @@ body.sel1 .uno,
 body.sel2 .due
 {
   position: absolute;
-  top: 40px;
+  top: 5%;
 }
 
 body.sel1 .contlinee.contlineeuno{
@@ -297,7 +302,7 @@ body.sel2 .contlinee.contlineedue{
   transform: translate(-50%,-50%);
   }
   100%{
-    top: 40px;
+    top: 5%;
     left: 50%;
     transform: translate(-50%,0);
   }
