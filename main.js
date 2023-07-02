@@ -125,6 +125,10 @@ c1.classList.remove("active");
   window.open('Progetti/ProgFede/notalavoro/notalavoro.html','_self');
  })
 
+ document.querySelector(".OggettiOrdinati").addEventListener("click",function(){
+  window.open('Progetti/ProgFede/Oggetti-in-Ordine/Oio.html','_self');
+ })
+
  document.querySelector(".calendario").addEventListener("click",function(){
   window.open('Progetti/ProgSimo/Sitosimo/calendario.html','_self');
  })

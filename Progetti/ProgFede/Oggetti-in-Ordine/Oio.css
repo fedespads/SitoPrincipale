@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Galano';
+  src: url(GalanoGrotesqueBold.otf);
+}
+body{
+  display: flex;
+  grid-template-rows: 3fr 1fr;
+  justify-content: center;
+  background-color: rgb(228, 228, 238);
+}
+
+#mydiv{
+  position: absolute;
+  bottom: 15%;
+  font-family: 'Galano';
+  font-size: 16px;
+  overflow: auto;
+}
+.continput{
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  bottom: 5%;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.continput div{
+  background-color: rgb(36, 36, 197);
+  font-family: 'Galano';
+  color: white;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 18px;
+  width: 70px;
+
+}
+input{
+  border: none;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  border-radius: 18px;
+  padding: 0 10px;
+  width: 250px;
+  font-family: 'Galano';
+}

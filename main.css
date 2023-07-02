@@ -33,6 +33,7 @@ div{
   transition: all 0.5s;
 }
 
+
 body.sel1 .titolo,
 body.sel2 .titolo
 {
@@ -82,12 +83,12 @@ body.sel2 .titolo
 .uno{
   position: absolute;
   background-color: #580ef6;
-  filter: drop-shadow(0 0 25px #580ef6) ;
+  filter: drop-shadow(0 0 25px #580ef691) ;
   transform: translateX(-350px);
 }
 .due{
-  background-color: white;
-  filter: drop-shadow(0 0 25px #ffffff7c);
+  background-color: #ffffff;
+  filter: drop-shadow(0 0 25px #ffffff59);
   transform: translateX(350px);
 }
 .contmemoji img{
