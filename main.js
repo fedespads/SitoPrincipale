@@ -126,7 +126,7 @@ c1.classList.remove("active");
  })
 
  document.querySelector(".OggettiOrdinati").addEventListener("click",function(){
-  window.open('Progetti/ProgFede/Oggetti-in-Ordine/Oio.html','_self');
+  window.open('Progetti/ProgFede/Oggetti in Ordine/Oio.html','_self');
  })
 
  document.querySelector(".calendario").addEventListener("click",function(){

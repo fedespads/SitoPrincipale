@@ -2,6 +2,7 @@ const input = document.getElementById("myInput");
 const div = document.getElementById("mydiv");
 const fineBut = document.getElementById("fine");
 let myArray =[];
+
 if(localStorage.getItem("myArr")){
   myArray = JSON.parse(localStorage.getItem("myArr"));
 }
@@ -41,12 +42,7 @@ function fine(){
 }
 settadiv("",0);
 
-input.addEventListener("keypress",function(event){
-  if(event.key=='Enter'){fine();
-  }
-});
-
-fineBut.addEventListener("click",function(){fine();
-})
+input.addEventListener("keypress",function(event){if(event.key=='Enter'){fine();}});
+fineBut.addEventListener("click",function(){fine();})
 
 
