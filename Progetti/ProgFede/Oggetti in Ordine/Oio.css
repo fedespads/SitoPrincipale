@@ -27,20 +27,66 @@ body{
   bottom: 5%;
   margin-left: 30px;
   margin-right: 30px;
+  align-items: center;
 }
-.continput div{
-  background-color: rgb(36, 36, 197);
-  font-family: 'Galano';
-  color: white;
-  height: 40px;
+#contpiu{
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 18px;
-  width: 70px;
 
 }
-input{
+#piu{
+  background-color: rgb(36, 36, 197);
+  font-family: 'Galano';
+  color: white;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  width: 50px;
+  font-size: 30px;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  z-index: 2;
+
+}
+.modifica{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  transition: transform 0.3s ease-out;
+  cursor: pointer;
+}
+.modifica.active{
+  transform: translateY(-140px);
+}
+.rimuovi{
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+.rimuovi.active{
+  transform: translateY(-70px);
+}
+.continput input{
   border: none;
   height: 40px;
   display: flex;
@@ -50,4 +96,127 @@ input{
   width: 250px;
   font-family: 'Galano';
   font-size: 17px;
+}
+#casellaCambio{
+  z-index: 3;
+  position: relative;
+  top: 50%;
+  width: 350px;
+  height: 150px;
+  transform: translateY(-50%);
+  background-color: white;
+  border-radius: 18px;
+  scale: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+
+}
+#casellaCambio.active{
+  scale: 1;
+  opacity: 1;
+}
+
+#casellaRim{
+  z-index: 3;
+  position: absolute;
+  top: 50%;
+  width: 350px;
+  height: 150px;
+  transform: translateY(-50%);
+  background-color: white;
+  border-radius: 18px;
+  scale: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#casellaRim.active{
+  scale: 1;
+  opacity: 1;
+}
+.contenitorecambio{
+  width: 330px;
+  height: 90px;
+  background-color: #f9f9fb;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+.contInputRim{
+  
+  width: 330px;
+  height: 90px;
+  background-color: #f2f2f7;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.contInputRim input{
+
+  height: 95px;
+  width: 345px;
+  background-color: #f2f2f7;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-family: 'Galano';
+  font-size: 18px;
+}
+
+body.casella .continput,
+body.casella #mydiv{
+  filter: blur(2px);
+}
+.fine1,
+.fine2{
+  height: 30px;
+  width: 330px;
+  background-color: rgb(36, 36, 197);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Galano';
+  color: white;
+  cursor: pointer;
+}
+
+.elinput1,
+.elinput2{
+  height: 90px;
+  width: 110px;
+  border-radius: 10px;
+  background-color: #f2f2f7;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+.elinput1 input,
+.elinput2 input{
+
+  height: 95px;
+  width: 115px;
+  background-color: #f2f2f7;
+  border: none;
+  padding-left: 10px;
+  font-family: 'Galano';
+  font-size: 18px;
 }
