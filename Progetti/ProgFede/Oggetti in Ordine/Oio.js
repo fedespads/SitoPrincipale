@@ -13,20 +13,17 @@ let piuattivo =0;
 let casCambioattiva =0;
 let casRimattiva =0;
 let myArray =[];
+let elMod =0;
 
-function aia(){document.querySelectorAll(".elemento").forEach(el=>{
-  el.addEventListener("click", function(){
-    if(casRimattiva==1){
+if(localStorage.getItem("piucliccato")==1){
+  
+  modifica.classList.add("active");
+  rimuovi.classList.add("active");
+  piu.innerHTML='-';
+  piuattivo=1;
+  localStorage.removeItem("piucliccato");
+}
 
-      let a =JSON.parse(localStorage.getItem("myArr"));
-      let index = a.indexOf(el.innerHTML);
-      a.splice(index, 1); 
-
-      localStorage.setItem("myArr",JSON.stringify(a));
-      div.removeChild(el)
-    }
-  })
-})}
 if(localStorage.getItem("myArr")){
   myArray = JSON.parse(localStorage.getItem("myArr"));
 }
@@ -47,11 +44,12 @@ function settadiv(){
     div.lastChild.innerHTML = JSON.parse(localStorage.getItem("myArr"))[i];
     div.lastChild.classList.add("elemento");
     i++;
-    aia();
   }
+  myArray = JSON.parse(localStorage.getItem("myArr"));
 }
 function fine(){
   
+  elMod=1;
   if(input.value!== ""){
   myArray[myArray.length]= input.value;}
 
@@ -75,7 +73,10 @@ settadiv();
 input.addEventListener("keypress",function(event){if(event.key=='Enter'){fine();}});
 
 piu.addEventListener("click",function(){
-
+  if(elMod==1){
+    localStorage.setItem("piucliccato",1);
+    location.reload();
+  }
   if(piuattivo==0){
     modifica.classList.add("active");
     rimuovi.classList.add("active");
@@ -87,10 +88,13 @@ piu.addEventListener("click",function(){
     modifica.classList.remove("active");
     rimuovi.classList.remove("active");
     piu.innerHTML='+';
-    piuattivo=0;
-    
     document.body.classList.remove("rim");
     casRimattiva=0;
+
+    
+    settadiv();
+    
+    piuattivo=0;
   }
 
 })
@@ -113,7 +117,6 @@ rimuovi.addEventListener("click",function(){
   else if(casRimattiva==1){
     
     document.body.classList.remove("rim");
-
     casRimattiva=0;
   }
 })
@@ -134,7 +137,18 @@ document.querySelector(".fine1").addEventListener("click", function(){
   location.reload();
 })
 
-aia();
 
 
+document.querySelectorAll(".elemento").forEach(el=>{
+  el.addEventListener("click", function(){
+    if(casRimattiva==1){
 
+      let a =JSON.parse(localStorage.getItem("myArr"));
+      let index = a.indexOf(el.innerHTML);
+      a.splice(index, 1);
+      localStorage.setItem("myArr",JSON.stringify(a));
+      console.log(JSON.parse(localStorage.getItem("myArr")));
+      div.removeChild(el);
+    }
+  })
+})
