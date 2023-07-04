@@ -1,5 +1,5 @@
 const input = document.getElementById("myInput");
-const div = document.getElementById("mydiv");
+var div = document.getElementById("mydiv");
 const piu = document.getElementById("piu");
 const rimuovi = document.getElementById("rimuovi");
 const modifica = document.getElementById("modifica");
@@ -9,12 +9,24 @@ const elinput1 = document.getElementById("elinput1");
 const rimInput = document.getElementById("rimInput");
 
 
-
 let piuattivo =0;
 let casCambioattiva =0;
 let casRimattiva =0;
 let myArray =[];
 
+function aia(){document.querySelectorAll(".elemento").forEach(el=>{
+  el.addEventListener("click", function(){
+    if(casRimattiva==1){
+
+      let a =JSON.parse(localStorage.getItem("myArr"));
+      let index = a.indexOf(el.innerHTML);
+      a.splice(index, 1); 
+
+      localStorage.setItem("myArr",JSON.stringify(a));
+      div.removeChild(el)
+    }
+  })
+})}
 if(localStorage.getItem("myArr")){
   myArray = JSON.parse(localStorage.getItem("myArr"));
 }
@@ -27,17 +39,22 @@ function altriC(n){
   }
   return b;
 }
-function settadiv(a,n){
-  
-  while(n<myArray.length){
-    a = `${a}${myArray[n]}<br>`;
-    n++;
+function settadiv(){
+  div.innerHTML="";
+  let i=0;
+  while(i<JSON.parse(localStorage.getItem("myArr")).length){
+    div.appendChild(document.createElement("div"));
+    div.lastChild.innerHTML = JSON.parse(localStorage.getItem("myArr"))[i];
+    div.lastChild.classList.add("elemento");
+    i++;
+    aia();
   }
-  div.innerHTML =a;
 }
 function fine(){
   
-  myArray[myArray.length]= input.value;
+  if(input.value!== ""){
+  myArray[myArray.length]= input.value;}
+
   myArray.sort();
 
 
@@ -48,11 +65,12 @@ function fine(){
   }
   
   myArray.sort();
-  settadiv("",0);
-  input.value="";
+  
   localStorage.setItem("myArr",JSON.stringify(myArray));
+  settadiv();
+  input.value="";
 }
-settadiv("",0);
+settadiv();
 
 input.addEventListener("keypress",function(event){if(event.key=='Enter'){fine();}});
 
@@ -69,7 +87,10 @@ piu.addEventListener("click",function(){
     modifica.classList.remove("active");
     rimuovi.classList.remove("active");
     piu.innerHTML='+';
-      piuattivo=0;
+    piuattivo=0;
+    
+    document.body.classList.remove("rim");
+    casRimattiva=0;
   }
 
 })
@@ -82,10 +103,18 @@ modifica.addEventListener("click",function(){
 })
 
 rimuovi.addEventListener("click",function(){
+
+
   if(casRimattiva==0){
-    document.body.classList.add("casella");
-    casellaRim.classList.add("active");
+    document.body.classList.add("rim");
+
     casRimattiva=1;
+  }
+  else if(casRimattiva==1){
+    
+    document.body.classList.remove("rim");
+
+    casRimattiva=0;
   }
 })
 document.querySelector(".fine1").addEventListener("click", function(){
@@ -105,19 +134,7 @@ document.querySelector(".fine1").addEventListener("click", function(){
   location.reload();
 })
 
-
-document.querySelector(".fine2").addEventListener("click", function(){
-  let a =JSON.parse(localStorage.getItem("myArr"));
-  let index = a.indexOf(rimInput.value);
-  a.splice(index, 1); 
-
-  localStorage.setItem("myArr",JSON.stringify(a));
+aia();
 
 
-  document.body.classList.remove("casella");
-  casellaRim.classList.remove("active");
-  casRimattiva=0;
-  location.reload();
-})
 
-console.log(JSON.parse(localStorage.getItem("myArr")))
