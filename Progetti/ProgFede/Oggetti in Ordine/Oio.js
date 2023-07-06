@@ -13,10 +13,8 @@ let piuattivo =0;
 let casCambioattiva =0;
 let casRimattiva =0;
 let myArray =[];
-let elMod =0;
 
 if(localStorage.getItem("piucliccato")==1){
-  
   modifica.classList.add("active");
   rimuovi.classList.add("active");
   piu.innerHTML='-';
@@ -49,7 +47,6 @@ function settadiv(){
 }
 function fine(){
   
-  elMod=1;
   if(input.value!== ""){
   myArray[myArray.length]= input.value;}
 
@@ -73,15 +70,14 @@ settadiv();
 input.addEventListener("keypress",function(event){if(event.key=='Enter'){fine();}});
 
 piu.addEventListener("click",function(){
-  if(elMod==1){
-    localStorage.setItem("piucliccato",1);
-    location.reload();
-  }
-  if(piuattivo==0){
+  if(piuattivo==0&&localStorage.getItem("piucliccato")!==1){
     modifica.classList.add("active");
     rimuovi.classList.add("active");
     piu.innerHTML='-';
     piuattivo=1;
+    
+    localStorage.setItem("piucliccato",1);
+    location.reload();
   }
   else if(piuattivo==1){
       
@@ -93,8 +89,8 @@ piu.addEventListener("click",function(){
 
     
     settadiv();
-    
     piuattivo=0;
+    location.reload();
   }
 
 })
