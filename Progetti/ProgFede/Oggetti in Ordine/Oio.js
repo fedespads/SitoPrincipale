@@ -9,6 +9,7 @@ const elinput1 = document.getElementById("elinput1");
 const rimInput = document.getElementById("rimInput");
 
 
+
 let piuattivo =0;
 let casCambioattiva =0;
 let casRimattiva =0;
@@ -24,6 +25,9 @@ if(localStorage.getItem("piucliccato")==1){
 
 if(localStorage.getItem("myArr")){
   myArray = JSON.parse(localStorage.getItem("myArr"));
+}
+else{
+  localStorage.setItem("myArr","");
 }
 function altriC(n){
   let a=1;
