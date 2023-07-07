@@ -122,25 +122,25 @@ c1.classList.remove("active");
 
   
  document.querySelector(".notalavoro").addEventListener("click",function(){
-  window.open('Progetti/ProgFede/notalavoro/notalavoro.html','_self');
+  window.open('Progetti/Fede/notaLavoro','_self');
  })
 
  document.querySelector(".OggettiOrdinati").addEventListener("click",function(){
-  window.open('Progetti/ProgFede/Oggetti in Ordine/Oio.html','_self');
+  window.open('Progetti/Fede/oggettiOrdinati','_self');
  })
 
  document.querySelector(".calendario").addEventListener("click",function(){
-  window.open('Progetti/ProgSimo/Sitosimo/calendario.html','_self');
+  window.open('Progetti/Simo/sitosimo/calendario.html','_self');
  })
 
  
  document.querySelector(".assenze").addEventListener("click",function(){
-  window.open('Progetti/ProgSimo/Sitosimo/assenze.html','_self');
+  window.open('Progetti/Simo/sitosimo/assenze.html','_self');
  })
 
  
  document.querySelector(".countdown").addEventListener("click",function(){
-  window.open('Progetti/ProgSimo/Sitosimo/fede.html','_self');
+  window.open('Progetti/Simo/sitosimo/fede.html','_self');
  })
 
 
