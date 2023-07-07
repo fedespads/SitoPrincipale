@@ -105,22 +105,7 @@ modifica.addEventListener("click",function(){
     casCambioattiva=1;
   }
 })
-
-rimuovi.addEventListener("click",function(){
-
-
-  if(casRimattiva==0){
-    document.body.classList.add("rim");
-
-    casRimattiva=1;
-  }
-  else if(casRimattiva==1){
-    
-    document.body.classList.remove("rim");
-    casRimattiva=0;
-  }
-})
-document.querySelector(".fine1").addEventListener("click", function(){
+function fine1(){
   let a =JSON.parse(localStorage.getItem("myArr"));
   let c=0;
   while(c<a.length){
@@ -135,7 +120,24 @@ document.querySelector(".fine1").addEventListener("click", function(){
   casellaCambio.classList.remove("active");
   casCambioattiva=0;
   location.reload();
+}
+rimuovi.addEventListener("click",function(){
+
+
+  if(casRimattiva==0){
+    document.body.classList.add("rim");
+
+    casRimattiva=1;
+  }
+  else if(casRimattiva==1){
+    
+    document.body.classList.remove("rim");
+    casRimattiva=0;
+  }
 })
+document.querySelector(".fine1").addEventListener("click",function(){
+  fine1();
+} )
 document.addEventListener('click',e=>{
   if(e.target.matches("div.elemento")&&casRimattiva==1){
 
@@ -146,5 +148,11 @@ document.addEventListener('click',e=>{
     div.removeChild(e.target);
     settadiv();
 
+  }
+})
+
+document.addEventListener('keypress',e=>{
+  if(e.key=='Enter'&&casCambioattiva==1&&elinput1.value!==""){
+    fine1();
   }
 })
