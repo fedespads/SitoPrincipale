@@ -8,12 +8,11 @@ const elinput2 = document.getElementById("elinput2");
 const elinput1 = document.getElementById("elinput1");
 const rimInput = document.getElementById("rimInput");
 
-
-
 let piuattivo =0;
 let casCambioattiva =0;
 let casRimattiva =0;
 let myArray =[];
+
 
 if(localStorage.getItem("piucliccato")==1){
   modifica.classList.add("active");
@@ -23,11 +22,11 @@ if(localStorage.getItem("piucliccato")==1){
   localStorage.removeItem("piucliccato");
 }
 
-if(localStorage.getItem("myArr")){
+if(localStorage.getItem("myArr") !== null&&localStorage.getItem("myArr") !== 'null'){
   myArray = JSON.parse(localStorage.getItem("myArr"));
 }
-else{
-  localStorage.setItem("myArr","");
+else {
+  localStorage.setItem("myArr",null);
 }
 function altriC(n){
   let a=1;
@@ -41,13 +40,17 @@ function altriC(n){
 function settadiv(){
   div.innerHTML="";
   let i=0;
-  while(i<JSON.parse(localStorage.getItem("myArr")).length){
-    div.appendChild(document.createElement("div"));
-    div.lastChild.innerHTML = JSON.parse(localStorage.getItem("myArr"))[i];
-    div.lastChild.classList.add("elemento");
-    i++;
+  if(JSON.parse(localStorage.getItem("myArr"))!==null){
+    while(i<JSON.parse(localStorage.getItem("myArr")).length){
+      div.appendChild(document.createElement("div"));
+      div.lastChild.innerHTML = JSON.parse(localStorage.getItem("myArr"))[i];
+      div.lastChild.classList.add("elemento");
+      i++;
+    }
   }
-  myArray = JSON.parse(localStorage.getItem("myArr"));
+  if(localStorage.getItem("myArr") !== null&&localStorage.getItem("myArr") !== 'null'){
+    myArray = JSON.parse(localStorage.getItem("myArr"));
+  }
 }
 function fine(){
   
@@ -80,8 +83,6 @@ piu.addEventListener("click",function(){
     piu.innerHTML='-';
     piuattivo=1;
     
-    localStorage.setItem("piucliccato",1);
-    location.reload();
   }
   else if(piuattivo==1){
       
@@ -94,7 +95,6 @@ piu.addEventListener("click",function(){
     
     settadiv();
     piuattivo=0;
-    location.reload();
   }
 
 })
@@ -136,19 +136,15 @@ document.querySelector(".fine1").addEventListener("click", function(){
   casCambioattiva=0;
   location.reload();
 })
+document.addEventListener('click',e=>{
+  if(e.target.matches("div.elemento")&&casRimattiva==1){
 
+    let a =JSON.parse(localStorage.getItem("myArr"));
+    let index = a.indexOf(e.target.innerHTML);
+    a.splice(index, 1);
+    localStorage.setItem("myArr",JSON.stringify(a));
+    div.removeChild(e.target);
+    settadiv();
 
-
-document.querySelectorAll(".elemento").forEach(el=>{
-  el.addEventListener("click", function(){
-    if(casRimattiva==1){
-
-      let a =JSON.parse(localStorage.getItem("myArr"));
-      let index = a.indexOf(el.innerHTML);
-      a.splice(index, 1);
-      localStorage.setItem("myArr",JSON.stringify(a));
-      console.log(JSON.parse(localStorage.getItem("myArr")));
-      div.removeChild(el);
-    }
-  })
+  }
 })
