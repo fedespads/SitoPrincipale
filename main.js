@@ -126,7 +126,7 @@ c1.classList.remove("active");
  })
 
  document.querySelector(".OggettiOrdinati").addEventListener("click",function(){
-  window.open('Progetti/Fede/oggettiOrdinati','_self');
+  window.open('Progetti/Fede/Oggetti-Ordinati','_self');
  })
 
  document.querySelector(".calendario").addEventListener("click",function(){
