@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Galano';
+    src: url(GalanoGrotesqueBold.otf);
+}
+
+body{
+    background-color: rgb(247,247,250);
+}
+.dev1{
+    width: fit-content;
+    font-family: 'Galano',Helvetica,Arial,sans-serif, Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    border-radius: 30px;
+    font-size: 30px;
+    overflow: hidden;
+    box-shadow:  0 10px 60px rgba(187, 255, 0, 0.15);
+    padding: 40px;
+    color: rgb(38, 43, 0);sad-face.png;
+}
+
+.img1{
+    position: absolute;
+    height: 160px;
+    width: 160px;
+    top:70%;
+    left:50%;
+    transform: translate(-80px,50px);
+    
+}

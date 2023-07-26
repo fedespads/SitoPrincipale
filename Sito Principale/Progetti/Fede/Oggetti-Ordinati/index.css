@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'Galano';
+  src: url(font/GalanoGrotesqueBold.otf);
+}
+@font-face {
+  font-family: 'SF';
+  src: url(font/SF-Pro-Display-Bold.ttf);
+}
+@font-face {
+  font-family: 'SFReg';
+  src: url(font/SF-Pro-Display-Regular.ttf);
+}
+body{
+  margin: 0;
+  background-color: #eff1ff;
+  user-select: none;
+  overflow-y: hidden;
+}
+div{
+  font-family: 'SF';
+}
+#box{
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 90px;
+  justify-items: center;
+}
+#cont2{
+  display: grid;
+  grid-template-columns: 280px 1fr ;
+}
+#cont1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: fit-content;
+  margin: 20px;
+  overflow-y: auto;
+
+}
+#continput{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#contpiu{
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+}
+#sfondocestino{
+  width: 49px;
+  height: 47px;
+  background-color: rgb(62, 62, 199);
+  border-radius: 80px;
+  font-family: 'SFReg';
+  cursor: pointer;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.15s;
+  padding-top: 3px;
+  padding-right: 1px;
+}
+#input{
+  border-radius: 50px;
+  border: none;
+  height: 50px;
+  width: 280px;
+  font-size: 20px;
+  font-family: 'SF';
+  padding-left: 15px;
+}
+#input:focus{
+  outline: none;
+}
+#myUl{
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-x: hidden;
+  max-height: 100%;
+}
+li{
+  cursor: pointer;
+  background-color: white;
+  border-radius: 18px;
+  padding: 8px 15px;
+  transition: all 0.15s;
+}
+
+body.elimina #cont2 #contpiu #sfondocestino{
+  background-color: #ea4e3d;
+}
+
+body.elimina li{
+  background-color: #ea4e3d;
+  color: white;
+}

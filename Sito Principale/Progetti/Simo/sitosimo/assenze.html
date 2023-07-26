@@ -1,0 +1,265 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="assenze.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Assenze</title>
+  </head>
+  <body>
+      <div class="vuoto"></div>
+      <div class="titoli" >
+        <h style="cursor: pointer;">Presenze</h>
+        <div>
+        </div>
+         <h style="cursor: pointer;">Assenze</h>
+      </div>
+      <div class="inputs">
+        <input id="inputPres" >
+        <div></div>
+        <input id="inputAss" >
+      </div>
+      <div class="bottoneinvia" id="bottInvia">
+        <h>Invia</h>
+      </div>
+      <div class="vuoto"></div>
+      <div class="tabella tabella1" style="cursor: pointer;">
+        <div class="riga">
+          <div class="percAss rigasx">
+            %A
+          </div>
+          <div id="PercAssVal" class="rigadx">
+
+          </div>
+        </div>
+        <div class="linea">
+          <div></div>
+          <div class="lineadx"></div>
+        </div>
+        <div class="riga">
+          <div class="rigasx">Assenze Mancanti</div>
+          <div class="rigadx" id="AssMancVal"></div>
+
+        </div>
+      </div>
+      <div class="vuoto"></div>
+      <div class="Obiettivi">
+        <div class="tabella tabella2" style="cursor: pointer;">
+            <div class="riga23">
+                <h>23</h>
+            </div>
+            <div class="linea">
+              <div></div>
+              <div class="lineadx"></div>
+            </div>
+            <div class="riga">
+              <div class="rigasx">
+                Obiettivo ore
+              </div>
+              <div class="rigadx">
+                -
+              </div>
+            </div>
+            <div class="linea">
+              <div></div>
+              <div class="lineadx"></div>
+            </div>
+            <div class="riga">
+                <div class="rigasx">
+                  Ore mancanti
+                </div>
+                <div id="" class="rigadx">
+                  -
+                </div>
+            </div>
+            <div class="linea">
+                <div></div>
+                <div class="lineadx"></div>
+            </div>
+            <div class="riga">
+                  <div class="rigasx">
+                    Giorni di presenza
+                  </div>
+                  <div id="GiorniPresManc23" class="rigadx">
+        
+                  </div>
+            </div>
+          </div>
+        <div></div>
+        <div class="tabella tabella3" style="cursor: pointer;">
+          <div class="riga24">
+              <h>24</h>
+          </div>
+          <div class="linea">
+          <div></div>
+          <div class="lineadx"></div>
+          </div>
+          <div class="riga">
+            <div class="rigasx">
+              Obiettivo ore
+            </div>
+            <div id="" class="rigadx">
+              -
+            </div>
+          </div>
+          <div class="linea">
+            <div></div>
+            <div class="lineadx"></div>
+          </div>
+          <div class="riga">
+              <div class="rigasx">
+                Ore mancanti
+              </div>
+              <div id="" class="rigadx">
+                -
+              </div>
+          </div>
+          <div class="linea">
+              <div></div>
+              <div class="lineadx"></div>
+          </div>
+          <div class="riga">
+                <div class="rigasx">
+                  Giorni di presenza
+                </div>
+                <div id="GiorniPresManc24" class="rigadx">
+      
+                </div>
+          </div>
+        </div>
+      </div>
+      <div class="vuoto"></div>
+
+      <div class="aszmaterie"  id="Scopa" onclick="window.open('https://web.spaggiari.eu/tools/app/default/stampacy.php?pagina=stampacy&amp;mac=7fc6ee17691bce045a0e512480b6364dd792383234acf2263d01a4a5e52be1143103e69a0c04e1267ea4041ab535ad9f&amp;crypt=c010037b90fb9d5a200ccb2ae8da80ce&amp;secure=f1d3c26c1404bcb34057b5085fc11719597885e7b3eee518be2fb0bf99f3916c&amp;host=vip-master-zona04-bal:3306&amp;rptfilename=RegistroOreStudente_master&amp;materia_id=&amp;classe_ident=1198146&amp;studente_id=9884794&amp;account_id=&amp;dal=2022-09-01&amp;al=2023-05-30&amp;tic_ana=2022_ana&amp;tic_eve=2022_eve_b4','myWindow');">
+        <img
+          src="icone/broom.png"
+        />
+      </div>
+
+      <div class="vuoto"></div>
+
+      <div class="navbar">
+        <div></div>
+        <div class="navbarinside">
+          <div class="contimg uno" onclick="window.open('home.html','_self');" style="cursor: pointer;">
+            <img class="imghomevuota navbarinsidedivimg" src="icone/homeempty.png">
+          </div>
+          <div class="contimg due" onclick="window.open('calendario.html','_self');" style="cursor: pointer;">
+            <img class="imgcalendvuoto navbarinsidedivimg" src="icone/calendarempty.png">
+          </div>
+          <div class="contimg tre" style="cursor: pointer;" onclick="
+          location.reload()">
+             <img class="imgscuola" src="icone/school.png">
+          </div>
+          <div class="contimg quattro" onclick="window.open('fede.html','_self');" style="cursor: pointer;">
+            <img class="imgcuorevuoto navbarinsidedivimg" src="icone/heartempty.png">
+          </div>
+
+        </div>
+        <div></div>
+      </div>
+      
+      
+        
+    <script>
+
+      const Assenze= localStorage.key(0);
+      const Presenze= localStorage.key(1);
+      let Ass= localStorage.getItem(Assenze);
+      let Pres= localStorage.getItem(Presenze);
+      let AssVal= +Ass;
+      let PresVal= +Pres;
+      let PercAss= (AssVal/(PresVal+AssVal))*100;
+      let AssManc = Math.round((257-AssVal)/0.6)/10;
+      console.log(Assenze);
+      console.log(Presenze);
+      console.log(Ass);
+      console.log(Pres);
+      console.log(AssVal);
+      console.log(PresVal);
+      console.log(PercAss);
+      console.log(AssManc);
+
+
+      console.log(localStorage);
+
+
+      document.getElementById("inputPres").placeholder=PresVal;
+      document.getElementById("inputAss").placeholder=AssVal;
+      document.getElementById("PercAssVal").innerHTML=Math.round(PercAss*10)/10;
+      document.getElementById("AssMancVal").innerHTML=AssManc;
+      
+
+      if(((18889/6111)*AssVal)>PresVal){
+          GiorniPresManc24 = Math.round((((18889/6111)*AssVal)-PresVal)/6);
+        }
+        else{
+          GiorniPresManc24 = 0;
+        }
+        if(((19139/5861)*AssVal)>PresVal){
+          GiorniPresManc23 = Math.round((((19139/5861)*AssVal)-PresVal)/6);
+        }
+        else{
+          GiorniPresManc23 = 0;
+        }
+
+        document.getElementById("GiorniPresManc23").innerHTML=GiorniPresManc23;
+        document.getElementById("GiorniPresManc24").innerHTML=GiorniPresManc24;
+      
+
+
+
+
+      bottInvia.onclick= function(){
+        let GiorniPresManc24;
+        let GiorniPresManc23;
+        Ass = document.getElementById("inputAss").value;
+        Pres = document.getElementById("inputPres").value;
+        if(Ass){
+          localStorage.setItem('Assenze', Ass);
+          Assval=+Ass;
+        }
+        if(Pres){
+          localStorage.setItem('Presenze', Pres);
+          PresVal = +Pres;
+        }
+        console.log(localStorage);
+        
+        PercAss= (AssVal/(PresVal+AssVal))*100;
+        AssManc = Math.round((257-AssVal)/0.6)/10;
+
+        document.getElementById("PercAssVal").innerHTML=Math.round(PercAss*10)/10;
+        document.getElementById("AssMancVal").innerHTML=AssManc;
+
+
+
+        if(((18889/6111)*AssVal)>PresVal){
+          GiorniPresManc24 = Math.round((((18889/6111)*AssVal)-PresVal)/6);
+        }
+        else{
+          GiorniPresManc24 = 0;
+        }
+        if(((19139/5861)*AssVal)>PresVal){
+          GiorniPresManc23 = Math.round((((19139/5861)*AssVal)-PresVal)/6);
+        }
+        else{
+          GiorniPresManc23 = 0;
+        }
+
+        document.getElementById("GiorniPresManc23").innerHTML=GiorniPresManc23;
+        document.getElementById("GiorniPresManc24").innerHTML=GiorniPresManc24;
+        
+      }
+      Scopa.onclick= function(){
+        localStorage.clear();
+        location.reload();
+      }
+      
+      
+      
+      
+
+
+
+      </script>
+    </body>
+</html>
