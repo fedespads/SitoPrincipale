@@ -128,6 +128,9 @@ c1.classList.remove("active");
  document.querySelector(".OggettiOrdinati").addEventListener("click",function(){
   window.open('Progetti/Fede/Oggetti-Ordinati','_self');
  })
+ document.querySelector(".Impegni").addEventListener("click",function(){
+  window.open('Progetti/Fede/Impegni','_self');
+ })
 
  document.querySelector(".calendario").addEventListener("click",function(){
   window.open('Progetti/Simo/sitosimo/calendario.html','_self');
