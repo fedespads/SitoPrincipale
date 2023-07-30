@@ -1,0 +1,145 @@
+@font-face {
+  font-family: 'Galano';
+  src: url(font/GalanoGrotesqueBold.otf);
+}
+@font-face {
+  font-family: 'SF';
+  src: url(font/SF-Pro-Display-Bold.ttf);
+}
+@font-face {
+  font-family: 'SFReg';
+  src: url(font/SF-Pro-Display-Regular.ttf);
+}
+
+body{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  transition: all 1s;
+  user-select: none;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: none;
+}
+.titolo{
+
+  height: 50px;
+  color: white;
+  font-family: 'SF';
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+.spaziosx{
+  width: 215px;
+  transition: all 0.6s ease;
+}
+.spaziodx{
+  width: 0px;
+  transition: all 0.6s ease;
+}
+.boxch{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lista{
+  position: absolute;
+  font-family: 'SF';
+  color: rgb(255, 255, 255);
+  border-radius: 18px;
+  padding: 10px 15px ;
+  background-color: #333333;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.6s ease;
+}
+.listaf{
+  top: calc(50% + 180px);
+  width: 200px;
+}
+.listas{
+  top: 50%;
+  width: 150px;
+}
+.listaf div{
+  cursor: pointer;
+}
+.quadrato{
+  width: 200px;
+  height: 200px;
+  border-radius: 25px;
+  transition: all 0.6s ease;
+  cursor: pointer;
+  margin:15px;
+}
+.quadrato.boxF{
+  width: 250px;
+  height: 250px;
+  background-color: #f1a43c;
+  grid-row: 2/3;
+  grid-column: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'SF';
+  font-size: 400%;
+  color: white;
+  z-index: 1;
+}
+.quadrato.boxS{
+  background-color: #333333;
+  grid-row: 2/3;
+  grid-column: 3/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'SF';
+  font-size: 400%;
+  color: white;
+  z-index: 1;
+}
+
+
+
+body.a20 .quadrato.boxF{
+  width: 200px;
+  height: 200px;
+  grid-row: 2/3;
+  grid-column: 1/2;
+  background-color: #333333;
+}
+body.a20 .quadrato.boxS{
+  width: 250px;
+  height: 250px;
+  grid-row: 2/3;
+  grid-column: 2/3;
+  background-color: #f1a43c;
+}
+body.a20 .spaziosx{
+  width: 0px;
+}
+body.a20 .spaziodx{
+  width: 215px;
+}
+body.a20 .listaf{
+  top: 50%;
+  width: 150px;
+}
+
+body.a20 .listas{
+  top: calc(50% + 180px);
+  width: 200px;
+}
