@@ -5,7 +5,7 @@ const appSettings = {
   databaseURL: "https://asgarra-60fc9-default-rtdb.europe-west1.firebasedatabase.app/"
 }
 function eliminadalDB(id){
-  let posizione = ref(database,`Impegni/${id}`)
+  let posizione = ref(database,`Impegni/${DBScelto._path.pieces_[1]}/${id}`)
   remove(posizione);
 }
 function submit(e){
@@ -20,12 +20,82 @@ function submit(e){
 }
 const app = initializeApp(appSettings)
 const database = getDatabase(app);
-const DBScelto = ref(database, "Impegni")
+let DBScelto = ref(database, "Impegni")
 
 let impinput= document.getElementById("impinput");
 let datainput= document.getElementById("datainput");
 let box= document.getElementById("box");
 let copiadb =[];
+
+let i=0;
+Object.keys(localStorage).forEach(e=>{
+  if(e.startsWith("Impegni")){
+    DBScelto= ref(database, `Impegni/${e}`)
+    i++;
+  }
+})
+
+
+  if(i==0){
+    
+        
+    document.body.classList.add('first');
+    document.body.innerHTML=`<div class="box">
+      <div>Inserisci Il codice</div>
+      <input id="myInput">
+
+
+      <style>
+        
+
+    body{
+      background-color: #000000;
+      color: white;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      font-family: 'SF';
+      font-size: 30px;
+    }
+    .box{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    #myInput{
+      font-family: 'SF';
+      width: 80vw;
+      border: none;
+      border-radius: 17px;
+      box-shadow: inset 4px 4px 5px #f1a43c;
+      height: 60px;
+      background-color: #f1a43c;
+      -webkit-appearance: none;
+      padding: 10px;
+      color: white;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.178);
+      font-size: 25px;
+      text-align: center;
+    }
+    #myInput:focus{
+      outline: none;
+      caret-color: white;
+    }
+      </style>
+    </div>`
+    let myInput = document.getElementById('myInput');
+    myInput.addEventListener('keypress',e=>{
+      if(e.key=="Enter"&&myInput.value!=""){
+        localStorage.setItem(`Impegni${myInput.value}`,"")
+        location.reload();
+    }
+
+    })
+
+  }
+
+
 
 onValue(DBScelto ,function(snapshot){
       
@@ -107,4 +177,13 @@ e.target.classList[0]!="scrittaimpegno"
   })
 }}
 )
+
+document.querySelector('.esci').addEventListener('click', function(){
+Object.keys(localStorage).forEach(e=>{
+  if(e.startsWith("Impegni")){
+    localStorage.removeItem(e);
+    location.reload();
+  }
+})
+})
 

@@ -11,11 +11,22 @@
   src: url(font/SF-Pro-Display-Regular.ttf);
 }
 
+
+body.first{
+  background-color: #000000;
+  color: white;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-family: 'SF';
+  font-size: 30px;
+  grid-template-rows: 1fr;
+}
 body{
   font-family: 'SF';
   background-color: #000000;
   display: grid;
-  grid-template-rows: min-content 1fr;
+  grid-template-rows: min-content 1fr min-content;
   user-select: none;
 }
 #impinput, #datainput{
@@ -95,4 +106,12 @@ body{
   display: flex;
   justify-content: start;
   align-items: center;
+}
+.esci{
+  display: flex;
+  justify-content: center;
+  color: #ea4e3d;
+  font-family: 'SFReg';
+  margin: 15px;
+  cursor: pointer;
 }
