@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'Galano';
+  src: url(font/GalanoGrotesqueBold.otf);
+}
+@font-face {
+  font-family: 'SF';
+  src: url(font/SF-Pro-Display-Bold.ttf);
+}
+@font-face {
+  font-family: 'SFReg';
+  src: url(font/SF-Pro-Display-Regular.ttf);
+}
+
+body{
+  font-family: 'SF';
+  background-color: black;
+  color: white;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  user-select: none;
+}
+button{
+  font-family: 'SF';
+  cursor: pointer;
+  border-radius: 18px;
+  border: none;
+  padding: 5px 10px;
+  background-color: white;
+  color: rgb(34, 34, 214);
+  font-size: 17px;
+}
+.data{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+.blocco{
+  background-color: rgba(255, 255, 255, 0.096);
+  padding: 20px 20px;
+  border-radius: 18px;
+  margin-bottom: 30px;
+}
+.titolobiglietto{
+  font-family: 'SFReg';
+  margin-bottom: 5px;
+  font-size: 20px;
+  user-select:text;
+}
