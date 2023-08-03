@@ -10,13 +10,13 @@ for(let i=7;i<=13;i++){
 }
 let arr=[
   [7,
-    [//array tratte, ogni tratta in giallo
-      ['Volo Catania Malpensa', {
+    [
+      ['Volo Catania-Malpensa', {
         A:'',
         D:'',
         F:'',
       }],
-      ['Volo Malpensa Parigi', {
+      ['Volo Malpensa-Parigi', {
         A:'',
         D:'',
         F:'',
@@ -32,7 +32,7 @@ let arr=[
   ]
   ,
   [8,
-    [//array tratte, ogni tratta in giallo
+    [
       ['Flixbus Parigi-Amsterdam', {
         A:'',
         D:'',
@@ -43,7 +43,7 @@ let arr=[
   ]
   ,
   [9,
-    [//array tratte, ogni tratta in giallo
+    [
       ['Ostello Amsterdam', {
         A:'',
         D:'',
@@ -54,7 +54,7 @@ let arr=[
   ]
   ,
   [10,
-    [//array tratte, ogni tratta in giallo
+    [
       ['Flixbus Amsterdam-Berlino', {
         A:'',
         D:'',
@@ -65,7 +65,7 @@ let arr=[
   ]
   ,
   [11,
-    [//array tratte, ogni tratta in giallo
+    [
       ['Flixbus Berlino-Praga', {
         A:'',
         D:'',
@@ -82,7 +82,7 @@ let arr=[
   ]
   ,
   [12,
-    [//array tratte, ogni tratta in giallo
+    [
       ['Ostello Praga', {
         A:'',
         D:'',
@@ -93,7 +93,7 @@ let arr=[
   ]
   ,
   [13,
-    [//array tratte, ogni tratta in giallo
+    [
       ['Volo Praga-Malpensa', {
         A:'',
         D:'',
@@ -122,17 +122,21 @@ document.querySelectorAll('.blocco').forEach(e=>{
         a.innerHTML=ele[0];
         let b= document.createElement('div');
         b.classList.add('boxbiglietti');
-        console.log(ele[1].A)
+
+
         b.innerHTML=`
-          <a href="${ele[1].A}"  download=""><button>Alessio</button></a>
-          
-          <a href="${ele[1].D}"  download=""><button>Daniele</button></a>
-          
-          <a href="${ele[1].F}"  download=""><button>Federico</button></a>
-          
-          <a href="${ele[1].S}"  download=""><button>Simona</button></a>
+          <a href="${ele[1].A}"  ><button>Alessio</button></a>
+            
+          <a href="${ele[1].D}"  ><button>Daniele</button></a>
+            
+          <a href="${ele[1].F}"  ><button>Federico</button></a>
         `
+        if(ele[0]!="Volo Catania-Malpensa"&&ele[0]!="Volo Malpensa-Catania"){
+          b.innerHTML+=`
+            <a href="${ele[1].S}"  ><button>Simona</button></a>`
+        }
         
+
         e.appendChild(a);
         e.appendChild(b);
 
