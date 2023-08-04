@@ -20,7 +20,7 @@
 body{
   display: grid;
   background-color: rgb(247,247,250);
-  grid-template-rows: 60px 1fr 100px 80px;
+  grid-template-rows: 60px 1fr 100px;
   justify-items: center;
   align-items: center;
   margin: 0px;

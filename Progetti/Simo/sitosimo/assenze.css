@@ -10,14 +10,24 @@ body{
     margin: 0px;
     
 
-    /* spazio su meno gap,titoli, inputs, bottoneinvia, fr, tabella1, fr, obiettivi, vuoto, navbar*/
-    grid-template-rows: 0px 30px 50px 40px 1fr 60px 1fr 270px 2fr 80px 1fr 60px;
+    grid-template-rows: min-content 1fr;
 
     gap: 10px;
 }
-.titoli{
+.box1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.box2{
     display: grid;
-    grid-template-columns: 1fr 20px 1fr;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.titoli{
+    display: flex;
+    justify-content: space-between;
     font-family: 'Galano';
     font-size: 25px;
     color: rgb(10, 10, 50);
@@ -59,6 +69,7 @@ input:active{
     width: 210px;
     cursor: pointer;
     transition: 0.2s;
+    margin-top: 15px;
     
     animation: salita 1.5s ease-out 0.2s ;
     animation-fill-mode: backwards;
@@ -71,6 +82,9 @@ input:active{
 .bottoneinvia:active{
     background-color: rgb(45, 45, 150);
 
+}
+.tabella{
+    margin: 10px 0;
 }
 
 .tabella1{
@@ -147,7 +161,6 @@ input:active{
 .Obiettivi{
     display: grid;
     justify-items: center;
-    /*tabella2, spazio, tabella 3*/
     grid-template-rows: 1fr 30px 1fr;
     align-items: center;
 }

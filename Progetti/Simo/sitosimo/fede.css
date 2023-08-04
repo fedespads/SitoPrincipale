@@ -10,55 +10,20 @@
 
 body{
     display: flex;
-    background-color: rgb(247,247,250);
+    background-color: rgb(0, 0, 0);
     justify-content: center;
     align-items: center;
     margin: 0px;
     
-    grid-template-rows: 3fr 70px 1fr 30px 1fr 60px;
     background-image: url(sfondofede.PNG);
-    background-size: 100%;
-
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
     user-select: none;
 }
 
 
 
-img{
-    height: 25px;
-}
-.navbar{
-    position: fixed;
-    bottom: 0%;
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: 1fr 400px 1fr;
-    background-color: white;
-    width: 100vw;
-}
-.navbarinside{
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-content: center;
-    padding-bottom: 20px;
-    height: 60px;
-}
-.imgcuore{
-    filter: drop-shadow(0 0 10px rgba(200, 255, 0, 0.342));
-}
-.imgscuolavuota{
-    height: 32px;
-}
-.contimg{
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    padding: 15px;
-}
-.tre{
-    padding-bottom: 5px;
-}
 
 .scritta{
     font-family: 'Galano';
