@@ -56,10 +56,10 @@ let arr=[
   [10,
     [
       ['Flixbus Amsterdam-Berlino', {
-        A:'',
-        D:'',
-        F:'',
-        S:''
+        A:'amsterdamberlinoalessio.pkpass',
+        D:'amsterdamberlinodaniele.pkpass',
+        F:'amsterdamberlinofederico.pkpass',
+        S:'amsterdamberlinosimona.pkpass'
       }]
     ]
   ]
