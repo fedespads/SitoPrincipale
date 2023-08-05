@@ -16,27 +16,21 @@ document.querySelector('.boxF').addEventListener("click",function(){
 })
 
   
-document.querySelector(".notalavoro").addEventListener("click",function(){
-  window.open('Progetti/Fede/notaLavoro','_self');
- })
-
- document.querySelector(".OggettiOrdinati").addEventListener("click",function(){
-  window.open('Progetti/Fede/Oggetti-Ordinati','_self');
- })
  document.querySelector(".Impegni").addEventListener("click",function(){
-  window.open('Progetti/Fede/Impegni','_self');
+  window.open('Fede/Impegni','_self');
  })
 
+ 
  document.querySelector(".calendario").addEventListener("click",function(){
-  window.open('Progetti/Simo/sitosimo/calendario.html','_self');
+  window.open('Simo/Calendario','_self');
  })
 
  
  document.querySelector(".assenze").addEventListener("click",function(){
-  window.open('Progetti/Simo/sitosimo/assenze.html','_self');
+  window.open('Simo/Assenze','_self');
  })
 
  
  document.querySelector(".countdown").addEventListener("click",function(){
-  window.open('Progetti/Simo/sitosimo/fede.html','_self');
+  window.open('Simo/Countdown','_self');
  })
