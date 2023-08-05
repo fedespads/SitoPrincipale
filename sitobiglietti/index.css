@@ -22,13 +22,16 @@ body{
 }
 button{
   font-family: 'SF';
-  cursor: pointer;
   border-radius: 18px;
   border: none;
   padding: 5px 10px;
   background-color: white;
-  color: rgb(34, 34, 214);
+  color: grey;
   font-size: 17px;
+}
+button.a{
+  color:rgb(47, 47, 212);
+  cursor: pointer;
 }
 .data{
   display: flex;

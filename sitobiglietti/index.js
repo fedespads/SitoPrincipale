@@ -17,10 +17,10 @@ let arr=[
         F:'',
       }],
       ['Volo Malpensa-Parigi', {
-        A:'',
-        D:'',
-        F:'',
-        S:''
+        A:'malpensaorlyalessio.pkpass',
+        D:'malpensaorlydaniele.pkpass',
+        F:'malpensaorlyfederico.pkpass',
+        S:'malpensaorlysimona.pkpass'
       }],
       ['Ostello a Parigi', {
         A:'',
@@ -122,17 +122,48 @@ document.querySelectorAll('.blocco').forEach(e=>{
         let b= document.createElement('div');
         b.classList.add('boxbiglietti');
 
-
+        if(ele[1].A!=""){
         b.innerHTML=`
-          <a href="${ele[1].A}"  ><button>Alessio</button></a>
-            
-          <a href="${ele[1].D}"  ><button>Daniele</button></a>
-            
-          <a href="${ele[1].F}"  ><button>Federico</button></a>
-        `
-        if(ele[0]!="Volo Catania-Malpensa"&&ele[0]!="Volo Malpensa-Catania"){
+          <a href="biglietti/${ele[1].A}"  download=""><button class="a">Alessio</button></a>`
+        }
+        else{
+          b.innerHTML=`
+          <a href="biglietti/${ele[1].A}"  download=""><button >Alessio</button></a>`
+        }
+
+        if(ele[1].D!=""){
           b.innerHTML+=`
-            <a href="${ele[1].S}"  ><button>Simona</button></a>`
+            <a href="biglietti/${ele[1].D}"  download=""><button class="a">Daniele</button></a>`
+          }
+          else{
+            b.innerHTML+=`
+            <a href="biglietti/${ele[1].D}"  download=""><button >Daniele</button></a>`
+          }
+          
+        if(ele[1].F!=""){
+          b.innerHTML+=`
+            <a href="biglietti/${ele[1].F}"  download=""><button class="a">Federico</button></a>`
+          }
+          else{
+            b.innerHTML+=`
+            <a href="biglietti/${ele[1].F}"  download=""><button >Federico</button></a>`
+          }
+
+
+
+
+        if(ele[0]!="Volo Catania-Malpensa"&&ele[0]!="Volo Malpensa-Catania"){
+
+          if(ele[1].S!=""){
+            b.innerHTML+=`
+              <a href="biglietti/${ele[1].S}"  download=""><button class="a">Simona</button></a>`
+            }
+            else{
+              b.innerHTML+=`
+              <a href="biglietti/${ele[1].S}"  download=""><button >Simona</button></a>`
+            }
+
+
         }
         
 
