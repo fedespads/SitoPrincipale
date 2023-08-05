@@ -23,10 +23,10 @@ let arr=[
         S:'malpensaorlysimona.pkpass'
       }],
       ['Ostello a Parigi', {
-        A:'',
-        D:'',
-        F:'',
-        S:''
+        A:'notteparigi.pkpass',
+        D:'notteparigi.pkpass',
+        F:'notteparigi.pkpass',
+        S:'notteparigi.pkpass'
       }]
     ]
   ]
@@ -34,10 +34,10 @@ let arr=[
   [8,
     [
       ['Flixbus Parigi-Amsterdam', {
-        A:'',
-        D:'',
-        F:'',
-        S:''
+        A:'parigiamsterdamalessio.pkpass',
+        D:'parigiamsterdamdaniele.pkpass',
+        F:'parigiamsterdamfederico.pkpass',
+        S:'parigiamsterdamsimona.pkpass'
       }]
     ]
   ]
