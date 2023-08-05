@@ -24,6 +24,7 @@ body{
     display: grid;
     align-items: center;
     justify-content: space-evenly;
+    max-height: 500px;
 }
 .titoli{
     display: flex;
