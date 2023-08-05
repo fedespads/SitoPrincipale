@@ -45,10 +45,10 @@ let arr=[
   [9,
     [
       ['Ostello Amsterdam', {
-        A:'',
-        D:'',
-        F:'',
-        S:''
+        A:'notteamsterdam.pkpass',
+        D:'notteamsterdam.pkpass',
+        F:'notteamsterdam.pkpass',
+        S:'notteamsterdam.pkpass'
       }]
     ]
   ]
