@@ -128,7 +128,7 @@ document.querySelectorAll('.blocco').forEach(e=>{
         }
         else{
           b.innerHTML=`
-          <a href="biglietti/${ele[1].A}"  download=""><button >Alessio</button></a>`
+          <a ><button >Alessio</button></a>`
         }
 
         if(ele[1].D!=""){
@@ -137,7 +137,7 @@ document.querySelectorAll('.blocco').forEach(e=>{
           }
           else{
             b.innerHTML+=`
-            <a href="biglietti/${ele[1].D}"  download=""><button >Daniele</button></a>`
+            <a><button >Daniele</button></a>`
           }
           
         if(ele[1].F!=""){
@@ -146,7 +146,7 @@ document.querySelectorAll('.blocco').forEach(e=>{
           }
           else{
             b.innerHTML+=`
-            <a href="biglietti/${ele[1].F}"  download=""><button >Federico</button></a>`
+            <a><button >Federico</button></a>`
           }
 
 
@@ -160,7 +160,7 @@ document.querySelectorAll('.blocco').forEach(e=>{
             }
             else{
               b.innerHTML+=`
-              <a href="biglietti/${ele[1].S}"  download=""><button >Simona</button></a>`
+              <a><button >Simona</button></a>`
             }
 
 
