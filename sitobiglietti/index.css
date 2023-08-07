@@ -52,3 +52,6 @@ button.a{
   font-size: 20px;
   user-select:text;
 }
+.giallo{
+  color:rgb(255, 255, 0)
+}

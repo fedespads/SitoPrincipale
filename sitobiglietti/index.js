@@ -67,16 +67,16 @@ let arr=[
   [11,
     [
       ['Flixbus Berlino-Praga', {
-        A:'',
-        D:'',
-        F:'',
-        S:''
+        A:'berlinopragaalessio.pkpass',
+        D:'berlinopragadaniele.pkpass',
+        F:'berlinopragafederico.pkpass',
+        S:'berlinopragasimona.pkpass'
       }],
       ['Ostello Praga', {
-        A:'',
-        D:'',
-        F:'',
-        S:''
+        A:'ostellopraga.pkpass',
+        D:'ostellopraga.pkpass',
+        F:'ostellopraga.pkpass',
+        S:'ostellopraga.pkpass'
       }]
     ]
   ]
@@ -84,10 +84,10 @@ let arr=[
   [12,
     [
       ['Ostello Praga', {
-        A:'',
-        D:'',
-        F:'',
-        S:''
+        A:'ostellopraga.pkpass',
+        D:'ostellopraga.pkpass',
+        F:'ostellopraga.pkpass',
+        S:'ostellopraga.pkpass'
       }]
     ]
   ]
@@ -108,6 +108,11 @@ let arr=[
     ]
   ]
   ,
+]
+
+let bigliettiCheckinMancanti=[
+  'Volo Catania-Malpensa','Volo Praga-Malpensa','Volo Malpensa-Catania'
+
 ]
 
 let g=7;
@@ -165,9 +170,23 @@ document.querySelectorAll('.blocco').forEach(e=>{
 
 
         }
-        
+
 
         e.appendChild(a);
+
+
+        if(ele[0]==bigliettiCheckinMancanti[0]||
+          ele[0]==bigliettiCheckinMancanti[1]||
+          ele[0]==bigliettiCheckinMancanti[2]
+          )
+          {
+            let c=document.createElement('div')
+            c.innerHTML='Check-in da Fare';
+            c.classList.add('giallo')
+            e.appendChild(c);
+          }
+
+
         e.appendChild(b);
 
 
