@@ -175,7 +175,7 @@ onValue(DBScelto ,function(snapshot){
       e.style.animation = `muovi ${0.5+i*0.07}s ${i*0.06}s`
       i++;
     })
-
+  
   }
   else{
     //DB vuoto
