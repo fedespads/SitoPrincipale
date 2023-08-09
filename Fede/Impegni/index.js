@@ -20,7 +20,18 @@ function submit(e){
 }
 const app = initializeApp(appSettings)
 const database = getDatabase(app);
-let DBScelto = ref(database, "Impegni")
+let DBScelto = ref(database, "Impegni");
+
+let dispositivo=navigator.userAgent.split('(')[1].split(' ')[0].split(';')[0];
+let mobile;
+if(dispositivo=='iPhone'||dispositivo=='Macintosh'){
+  mobile=true;
+  document.body.classList.add('mobile')
+}
+else{mobile=false;}
+
+
+
 
 let impinput= document.getElementById("impinput");
 let datainput= document.getElementById("datainput");
@@ -34,11 +45,7 @@ Object.keys(localStorage).forEach(e=>{
     i++;
   }
 })
-
-
-  if(i==0){
-    
-        
+if(i==0){
     document.body.classList.add('first');
     document.body.innerHTML=`<div class="box">
       <div>Inserisci Il codice</div>
@@ -96,7 +103,6 @@ Object.keys(localStorage).forEach(e=>{
   }
 
 
-
 onValue(DBScelto ,function(snapshot){
       
   if(snapshot.exists()){
@@ -113,6 +119,7 @@ onValue(DBScelto ,function(snapshot){
     })
     copiadb.sort()
     copiadb.forEach(e=>{
+      let boximpegno = document.createElement('div');
       let uno = document.createElement('div');
       let due = document.createElement('div');
       let tre = document.createElement('div');
@@ -120,6 +127,7 @@ onValue(DBScelto ,function(snapshot){
       uno.classList.add("impegnosingolo");
       due.classList.add("scrittaimpegno");
       tre.classList.add("dataimpegno");
+      boximpegno.classList.add('boximpegno')
       quattro.classList.add("distanzaimpegno");
       due.innerHTML=e[1];
       tre.innerHTML=data12(e[0]);
@@ -127,31 +135,40 @@ onValue(DBScelto ,function(snapshot){
       uno.append(due);
       uno.append(tre);
       uno.append(quattro);
-      uno.setAttribute("id",e[2]);
-      box.append(uno);
+
+      boximpegno.appendChild(uno);
+      if(mobile){
+        let cinque = document.createElement('div');
+        cinque.classList.add('del');
+        cinque.innerHTML='Elimina';
+        cinque.setAttribute("id",e[2]);
+        boximpegno.appendChild(cinque);
+      }
+      else{
+        uno.setAttribute("id",e[2]);
+      }
+
+      box.appendChild(boximpegno);
     })
-
-    
-document.querySelectorAll('.impegnosingolo').forEach(e=>{ 
-
-
-  e.addEventListener("click", function(){
-
-    document.querySelectorAll('.impegnosingolo').forEach(el=>{
-    
-    if(el!=e)  el.classList.remove('el')}) 
-
-    e.classList.toggle('el')
-    if(!e.classList[1]){
-      eliminadalDB(e.id)
+    if(mobile){
+      document.querySelectorAll('.del').forEach(e=>{
+        e.addEventListener("click", function(){
+          eliminadalDB(e.id)
+        })
+      })
     }
-
-
-
-  })
-
-
-})
+    else{
+      document.querySelectorAll('.impegnosingolo').forEach(e=>{
+        e.addEventListener("click", function(){
+          document.querySelectorAll('.impegnosingolo').forEach(el=>{
+          if(el!=e)  el.classList.remove('el')}) 
+          e.classList.toggle('el')
+          if(!e.classList[1]){
+            eliminadalDB(e.id)
+          }
+        })
+      })
+    }
 
   }
   else{
