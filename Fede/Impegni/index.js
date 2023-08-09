@@ -24,11 +24,11 @@ let DBScelto = ref(database, "Impegni");
 
 let dispositivo=navigator.userAgent.split('(')[1].split(' ')[0].split(';')[0];
 let mobile;
-if(dispositivo=='iPhone'||dispositivo=='Macintosh'){
-  mobile=true;
-  document.body.classList.add('mobile')
+if(dispositivo=='Windows'){
+  mobile=false;
 }
-else{mobile=false;}
+else{mobile=true;
+  document.body.classList.add('mobile')}
 
 
 
@@ -169,6 +169,12 @@ onValue(DBScelto ,function(snapshot){
         })
       })
     }
+    
+    let i=0;
+    document.querySelectorAll('.boximpegno').forEach(e=>{
+      e.style.animation = `muovi ${0.5+i*0.07}s ${i*0.06}s`
+      i++;
+    })
 
   }
   else{

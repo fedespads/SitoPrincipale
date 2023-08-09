@@ -75,7 +75,7 @@ body{
   background-color: black;
   border-radius: 18px;
   overflow: hidden;
-
+  min-width: 330px;
 }
 body.mobile .boximpegno{
   overflow: auto;
@@ -101,6 +101,7 @@ body.mobile .boximpegno::-webkit-scrollbar{
   transition: all 0.15s;
   border-radius: 18px 0 0 18px;
   padding: 20px 0px 20px 0px;
+  min-width: 330px;
 }
 body.mobile .impegnosingolo{
   scroll-snap-align: start;
@@ -158,4 +159,16 @@ body.mobile .del{
   font-family: 'SFReg';
   margin: 15px;
   cursor: pointer;
+}
+
+@keyframes muovi {
+  0%{
+    margin-left: 0;
+  }  
+  50%{
+    margin-left: 100px;
+  } 
+  100%{
+    margin-left: 0;
+  } 
 }
