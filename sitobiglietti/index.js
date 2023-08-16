@@ -95,10 +95,10 @@ let arr=[
   [13,
     [
       ['Volo Praga-Malpensa', {
-        A:'',
-        D:'',
-        F:'',
-        S:''
+        A:'pragamalpensaalessio.pkpass',
+        D:'pragamalpensadaniele.pkpass',
+        F:'pragamalpensafederico.pkpass',
+        S:'pragamalpensasimona.pkpass'
       }],
       ['Volo Malpensa-Catania', {
         A:'',
@@ -111,7 +111,7 @@ let arr=[
 ]
 
 let bigliettiCheckinMancanti=[
-  'Volo Catania-Malpensa','Volo Praga-Malpensa','Volo Malpensa-Catania'
+  'Volo Catania-Malpensa','Volo Malpensa-Catania'
 
 ]
 
@@ -176,8 +176,7 @@ document.querySelectorAll('.blocco').forEach(e=>{
 
 
         if(ele[0]==bigliettiCheckinMancanti[0]||
-          ele[0]==bigliettiCheckinMancanti[1]||
-          ele[0]==bigliettiCheckinMancanti[2]
+          ele[0]==bigliettiCheckinMancanti[1]
           )
           {
             let c=document.createElement('div')
