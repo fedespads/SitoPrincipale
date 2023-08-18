@@ -19,6 +19,9 @@ document.querySelector('.boxF').addEventListener("click",function(){
  document.querySelector(".Impegni").addEventListener("click",function(){
   window.open('Fede/Impegni','_self');
  })
+ document.querySelector(".Classifica").addEventListener("click",function(){
+  window.open('Fede/Classifica','_self');
+ })
 
  
  document.querySelector(".calendario").addEventListener("click",function(){
