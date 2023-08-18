@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  </head>
+  <body>
+    <style>
+      @font-face {
+        font-family: 'SF';
+        src: url(font/SF-Pro-Display-Bold.ttf);
+      }
+      @font-face {
+        font-family: 'SFReg';
+        src: url(font/SF-Pro-Display-Regular.ttf);
+      }
+      body{
+        background-color: black;
+        display: grid;
+        grid-template-rows: min-content 1fr min min-content min-content;
+        align-items: center;
+        justify-items: center;
+      }
+
+      .titolo{
+        color: white;
+        font-family: 'SF';
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+      }
+      .piu{
+        background-color: #333333;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin: 20px 0 20px 0;
+      }
+      .boxlista{
+        display: grid;
+        grid-auto-flow: row;
+        gap: 20px;
+        color: grey;
+        font-family: 'SF';
+        text-align: center;
+      }
+      .elLista{
+        font-size: 20px;
+        height: 60px;
+        width: 70vw;
+        min-width: 330px;
+        background-color: #333333;
+        border-radius: 18px;
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        align-items: center;
+        justify-items: center;
+        color: white;
+        font-family: 'SF';
+      }
+      .nome{
+        padding-right: 50px;
+      }
+      .esci{
+        font-family: 'SFReg';
+        color: #ea4e3d;
+        margin: 0 0 10px 0;
+        cursor: pointer;
+      }
+    </style>
+
+    <div class="titolo">Classifica</div>
+    <div class="boxlista"></div>
+    <div class="boxpiu">
+      <div class="piu">
+        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="30px" height="30px" fill="white" fill-rule="evenodd"><path fill-rule="evenodd" d="M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z"/></svg>
+      </div>
+    </div>
+    <div class="esci">Esci</div>
+    <script src="index.js" type="module" >  </script>
+    <script src="funzioni.js"   >  </script>         
+  </body>
+</html>
