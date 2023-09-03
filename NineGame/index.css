@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "Galano";
+  src: url(font/GalanoGrotesqueBold.otf);
+}
+@font-face {
+  font-family: "SF";
+  src: url(font/SF-Pro-Display-Bold.ttf);
+}
+@font-face {
+  font-family: "SFReg";
+  src: url(font/SF-Pro-Display-Regular.ttf);
+}
+
+body {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: 1fr min-content 1fr;
+  user-select: none;
+}
+#griglia {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+}
+
+.quadrato {
+  --a: calc(0.3333 * 80vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "SF";
+  height: 100px;
+  width: 100px;
+  max-width: 70vh;
+  max-height: 70vh;
+  background-color: rgba(19, 69, 235, 0.123);
+  border-radius: 0.7em;
+  font-size: 50px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+.quadrato.vuoto {
+  background-color: transparent;
+  cursor: default;
+}
+#avviabut {
+  background-color: rgba(240, 198, 13, 0.616);
+  padding: 20px 100px;
+  font-family: "SF";
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.904);
+}
+#cont{
+  display: grid;
+  grid-template-columns: 1fr;
+  align-self: start;
+  margin-top: 20px;
+}
+#timerdiv{
+  
+  font-size: 25px;
+  font-family: "SF";
+  margin-top: 20px;
+  justify-self: center;
+}
+#titolo{
+  font-size: 50px;
+  font-family: 'SF';
+  color: rgba(240, 198, 13, 0.616);
+  filter: drop-shadow(0 0 5px rgb(229, 255, 0));
+}
