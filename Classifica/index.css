@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Galano';
+  src: url(font/GalanoGrotesqueBold.otf);
+}
+@font-face {
+  font-family: 'SF';
+  src: url(font/SF-Pro-Display-Bold.ttf);
+}
+@font-face {
+  font-family: 'SFReg';
+  src: url(font/SF-Pro-Display-Regular.ttf);
+}

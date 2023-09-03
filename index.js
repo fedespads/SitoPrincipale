@@ -17,23 +17,29 @@ document.querySelector('.boxF').addEventListener("click",function(){
 
   
  document.querySelector(".Impegni").addEventListener("click",function(){
-  window.open('Fede/Impegni','_self');
+  window.open('Impegni','_self');
  })
  document.querySelector(".Classifica").addEventListener("click",function(){
-  window.open('Fede/Classifica','_self');
+  window.open('Classifica','_self');
+ })
+ document.querySelector(".NineGame").addEventListener("click",function(){
+  window.open('NineGame','_self');
  })
 
  
  document.querySelector(".calendario").addEventListener("click",function(){
-  window.open('Simo/Calendario','_self');
+  window.open('Calendario','_self');
  })
 
  
  document.querySelector(".assenze").addEventListener("click",function(){
-  window.open('Simo/Assenze','_self');
+  window.open('Assenze','_self');
  })
 
  
  document.querySelector(".countdown").addEventListener("click",function(){
-  window.open('Simo/Countdown','_self');
+  window.open('Countdown','_self');
  })
+
+
+

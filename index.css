@@ -65,6 +65,7 @@ body{
   justify-content: center;
   flex-direction: column;
   transition: all 0.6s ease;
+
 }
 .listaf{
   top: calc(50% + 180px);
