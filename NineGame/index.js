@@ -90,7 +90,15 @@ if (!NCheck) {
   let nome = "";
   Object.entries(localStorage).forEach((e) => {
     if (e[0] == "NNG") {
+      if(e[1]=="carola la scema"){
+        localStorage.removeItem('NNG');
+        localStorage.setItem('NNG','Alessio')
+        location.reload();
+      }
+      else{
+        
       nome = e[1];
+      }
     }
   });
 
