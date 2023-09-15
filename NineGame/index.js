@@ -40,7 +40,6 @@ onValue(DBScelto, function (snapshot) {
     copiadb.sort(function(a, b) {
       return a[0] - b[0];
     });
-    console.log(copiadb)
   } else {
     //DB vuoto
   }
