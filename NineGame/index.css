@@ -121,10 +121,14 @@ body.class #avviabut, body.class #griglia{
   background-color: rgba(114, 141, 228, 0.726);
   border-radius: 28px;
   transition: all 1s;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
   animation: apri 1s backwards ease;
   gap: 10px;
   flex-direction: column;
+}
+.classifica::-webkit-scrollbar {
+  display: none;
 }
 .riga{
   display: grid;

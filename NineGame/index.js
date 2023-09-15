@@ -37,7 +37,10 @@ onValue(DBScelto, function (snapshot) {
     Object.values(s).forEach((e) => {
       copiadb.push(e);
     });
-    copiadb.sort();
+    copiadb.sort(function(a, b) {
+      return a[0] - b[0];
+    });
+    console.log(copiadb)
   } else {
     //DB vuoto
   }
@@ -90,15 +93,9 @@ if (!NCheck) {
   let nome = "";
   Object.entries(localStorage).forEach((e) => {
     if (e[0] == "NNG") {
-      if(e[1]=="carola la scema"){
-        localStorage.removeItem('NNG');
-        localStorage.setItem('NNG','Alessio')
-        location.reload();
-      }
-      else{
         
       nome = e[1];
-      }
+      
     }
   });
 
