@@ -10,11 +10,12 @@
   font-family: 'SFReg';
   src: url(font/SF-Pro-Display-Regular.ttf);
 }
-
+:root{
+  --quad: 200px;
+  --quadactive: 250px;
+}
 body{
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 150px 1fr 150px;
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: black;
@@ -23,43 +24,25 @@ body{
   overflow-x: hidden;
   -webkit-overflow: hidden;
 }
-.titolo{
-
-  height: 50px;
-  color: white;
-  font-family: 'SF';
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-}
 .box{
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
+  grid-template-columns: 250px 250px;
+  grid-template-rows: 250px 250px;
+  margin-top: 200px;
+  translate: 125px 0;
+  transition: all 0.6s ease;
 } 
-.spaziosx{
-  width: 215px;
-  transition: all 0.6s ease;
-}
-.spaziodx{
-  width: 0px;
-  transition: all 0.6s ease;
-}
-.boxch{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .lista{
-  position: absolute;
   font-family: 'SF';
   color: rgb(255, 255, 255);
   border-radius: 18px;
   padding: 10px 15px ;
   background-color: #333333;
   gap: 5px;
+  align-self: flex-start;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,30 +51,27 @@ body{
 
 }
 .listaf{
-  top: calc(42% + 220px);
   width: 200px;
+  translate: 0 20px;
 }
 .listas{
-  top: 40%;
-  width: 150px;
+  width: 100px;
+  translate: 0 -170px;
 }
 .lista div{
   cursor: pointer;
 }
 .quadrato{
-  width: 200px;
-  height: 200px;
+  width: var(--quad);
+  height: var(--quad);
   border-radius: 25px;
   transition: all 0.6s ease;
   cursor: pointer;
-  margin:15px;
 }
 .quadrato.boxF{
-  width: 250px;
-  height: 250px;
+  width:var(--quadactive);
+  height: var(--quadactive);
   background-color: #f1a43c;
-  grid-row: 2/3;
-  grid-column: 2/3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,8 +82,6 @@ body{
 }
 .quadrato.boxS{
   background-color: #333333;
-  grid-row: 2/3;
-  grid-column: 3/4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,33 +93,34 @@ body{
 
 
 
-body.a20 .quadrato.boxF{
-  width: 200px;
-  height: 200px;
-  grid-row: 2/3;
-  grid-column: 1/2;
+body.a2 .quadrato.boxF{
+  width: var(--quad);
+  height: var(--quad);
   background-color: #333333;
 }
-body.a20 .quadrato.boxS{
-  width: 250px;
-  height: 250px;
-  grid-row: 2/3;
-  grid-column: 2/3;
+body.a2 .quadrato.boxS{
+  width: var(--quadactive);
+  height: var(--quadactive);
   background-color: #f1a43c;
 }
-body.a20 .spaziosx{
-  width: 0px;
+body.a2 .listaf{
+  width: 100px;
+  translate: 0 -170px;
 }
-body.a20 .spaziodx{
-  width: 215px;
-}
-body.a20 .listaf{
-  top: 40%;
-  width: 150px;
-}
-
-body.a20 .listas{
+body.a2 .listas{
   top: calc(42% + 220px);
   width: 200px;
+  translate: 0 20px;
+}
+body.a2 .box{
+  
+  translate: -125px 0;
+}
+
+.trian{
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  translate: -50% 0;
 }
 

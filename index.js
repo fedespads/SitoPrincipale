@@ -1,17 +1,17 @@
-var stato=10;
+var stato=1;
 
 document.querySelector('.boxS').addEventListener("click",function(){
-  if(stato==10){
-    document.body.classList.remove('a10');
-    document.body.classList.add('a20');
-    stato=20;
+  if(stato==1){
+    document.body.classList.remove('a1');
+    document.body.classList.add('a2');
+    stato=2;
   }
 })
 document.querySelector('.boxF').addEventListener("click",function(){
-  if(stato== 20){
-    document.body.classList.add('a10');
-    document.body.classList.remove('a20');
-    stato=10;
+  if(stato== 2){
+    document.body.classList.add('a1');
+    document.body.classList.remove('a2');
+    stato=1;
   }
 })
 
