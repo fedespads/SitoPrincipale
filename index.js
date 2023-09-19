@@ -25,21 +25,17 @@ document.querySelector('.boxF').addEventListener("click",function(){
  document.querySelector(".NineGame").addEventListener("click",function(){
   window.open('NineGame','_self');
  })
-
- 
  document.querySelector(".calendario").addEventListener("click",function(){
   window.open('Calendario','_self');
  })
-
- 
  document.querySelector(".assenze").addEventListener("click",function(){
   window.open('Assenze','_self');
  })
-
- 
  document.querySelector(".countdown").addEventListener("click",function(){
   window.open('Countdown','_self');
  })
-
-
+ document.querySelector(".orario").addEventListener("click",function(){
+  window.open('Orario','_self');
+ })
+ 
 

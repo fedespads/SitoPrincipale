@@ -7,9 +7,107 @@
   <body class="a10">
 
 
-    <div class="titolo">
-      <div>Benvenuto!</div>
-    </div>
+    <svg class="trian"
+        version="1.1"
+        viewBox="0 0 400 400"
+      >
+      <path class="as" id="uno"
+          style="stroke:#fff; fill: transparent; 
+          transition: 0.5s;"
+          d="m85 220l75 -128 106 180h-239l-11.5 -25.5"
+      />
+      <path class="as" id="due"
+          style="stroke:#fff; fill: transparent; transition: 0.5s;"
+          d="m148 113l78 133h-209l118-202h25"
+      />
+      <path class="as" id="tre"
+          style="stroke:#fff; fill: transparent; transition: 0.5s;"
+          d="m210 220h-152l102-174 120 200-12.5 27"
+      />
+    </svg>
+    <style>
+      .trian{
+        --x: 150px;
+        width: var(--x);
+        height: var(--x);
+        justify-self: center;
+        padding-top: 10px;
+        transform: translate(17px,0);
+        filter: drop-shadow(0 0 10px white);
+      }
+      .as{
+        stroke-width: 4px;
+      }
+
+      #uno{
+        animation: unoa 3s infinite ease-in-out;
+      }
+      #due{
+        animation: duea 3s infinite ease-in-out;
+      }
+      #tre{
+        animation: trea 3s infinite ease-in-out;
+      }
+
+      @keyframes unoa {
+
+        0%,100%{
+          d: path("m85 220l0 -0 0 0h0l0 0")
+        }
+        10%,90%{
+          d: path("m85 220l75 -128 0 0h0l0 0")
+        }
+        20%,80%{
+          d: path("m85 220l75 -128 106 180h0l0 0")
+        }
+        30%,70%{
+          d: path("m85 220l75 -128 106 180h-239l0 0")
+        }
+        50%{
+        d: path("m85 220l75 -128 106 180h-239l-11.5 -25.5")
+        }
+        
+      }
+      @keyframes duea {
+
+        0%,100%{
+          d: path("m148 113l0 0h 0l0 02h0")
+        }
+        10%,90%{
+          d: path("m148 113l78 133h 0l0 02h0")
+        }
+        20%,80%{
+          d: path("m148 113l78 133h -209l0 02h0")
+        }
+        30%,70%{
+          d: path("m148 113l78 133h -209l118-202h0")
+        }
+        50%{
+          d: path("m148 113l78 133h-209l118-202h25")
+        }
+        
+      }
+
+      @keyframes trea {
+
+        0%,100%{
+          d: path("m210 220h0l0 0 0 0 0 0")
+        }
+        10%,90%{
+          d: path("m210 220h-152l0 0 0 0 0 0")
+        }
+        20%,80%{
+          d: path("m210 220h-152l102-174 0 0 0 0")
+        }
+        30%,70%{
+          d: path("m210 220h-152l102-174 120 200 0 0")
+        }
+        50%{
+          d: path("m210 220h-152l102-174 120 200-12.5 27")
+        }
+        
+      }
+    </style>
 
 
 
@@ -32,6 +130,7 @@
           <div class="assenze">Assenze</div>
           <div class="calendario">Calendario</div>
           <div class="countdown">Countdown</div>
+          <div class="orario">Orario</div>
         </div>
       </div>
       <div class="spaziodx"></div>
