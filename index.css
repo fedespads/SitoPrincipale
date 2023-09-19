@@ -13,8 +13,6 @@
 :root{
   --quad: 200px;
   --quadactive: 250px;
-  --lsh:0;
-  --lfh:0;
 }
 body{
   display: flex;
@@ -39,9 +37,6 @@ body{
 .lista{
   font-family: 'SF';
   color: rgb(255, 255, 255);
-  border-radius: 18px;
-  padding: 10px 15px;
-  background-color: #333333;
   gap: 5px;
   align-self: flex-start;
 
@@ -55,17 +50,25 @@ body{
 }
 .listaf{
   width: 200px;
-  height: var(--lfh);
+  height: fit-content;
   translate: 0 20px;
 }
 .listas{
   width: 0;
   translate: 0 -170px;
-  height: 0;
   padding: 0;
 }
 .lista div{
   cursor: pointer;
+  background-color: #333333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  transition: all 0.6s ease;
 }
 .quadrato{
   width: var(--quad);
@@ -73,28 +76,21 @@ body{
   border-radius: 25px;
   transition: all 0.6s ease;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'SF';
+  font-size: 400%;
+  color: white;
+  z-index: 100;
 }
 .quadrato.boxF{
   width:var(--quadactive);
   height: var(--quadactive);
   background-color: #f1a43c;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'SF';
-  font-size: 400%;
-  color: white;
-  z-index: 1;
 }
 .quadrato.boxS{
   background-color: #333333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'SF';
-  font-size: 400%;
-  color: white;
-  z-index: 1;
 }
 
 
@@ -114,16 +110,18 @@ body.a2 .listaf{
   translate: 0 -170px;
 
   padding: 0 0;
-  height: 0;
 }
 body.a2 .listas{
   top: calc(42% + 220px);
   width: 200px;
   translate: 0 20px;
-
-  height: var(--lsh);
   padding: 10px 15px;
 }
+body.a2 .listas div{
+  translate: 0 0;
+}
+
+
 body.a2 .box{
   
   translate: -125px 0;
@@ -135,4 +133,5 @@ body.a2 .box{
   top: 0%;
   translate: -50% 0;
 }
+
 

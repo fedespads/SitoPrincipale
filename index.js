@@ -7,6 +7,7 @@ document.querySelector('.boxS').addEventListener("click",function(){
     stato=2;
   }
 })
+
 document.querySelector('.boxF').addEventListener("click",function(){
   if(stato== 2){
     document.body.classList.add('a1');
@@ -37,9 +38,3 @@ document.querySelector('.boxF').addEventListener("click",function(){
  document.querySelector(".orario").addEventListener("click",function(){
   window.open('Orario','_self');
  })
-
-document.querySelector(':root').style.setProperty('--lsh',document.querySelector('.listas').children.length*19.10+15)
-
-document.querySelector(':root').style.setProperty('--lfh',document.querySelector('.listaf').children.length*19.10+15)
- 
-
