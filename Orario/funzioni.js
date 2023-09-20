@@ -4,6 +4,7 @@ function numday() {
   const dataOggi = new Date();
   let giorno = dataOggi.getDay(); 
   giorno = (giorno + 6) % 7;
+  if(giorno==6){giorno=0}
   return giorno;
 }
 
@@ -21,3 +22,19 @@ function mo(x){
   let b= x.split(':')[1];
   return +(a+b);
 }
+
+function numdayt() {
+  const dataOggi = new Date();
+  let giorno = dataOggi.getDay(); 
+  giorno = (giorno + 6) % 7;
+  giorno++;
+  if(giorno==6){
+    giorno=0
+  }
+  else if(giorno==7){
+    giorno=1;
+  }
+
+  return giorno;
+}
+

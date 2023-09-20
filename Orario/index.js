@@ -23,57 +23,121 @@ let orario=[
 
 
 document.body.innerHTML+=`
-<div class="orariobox"></div>
+  <div class="mainbox">
+    <div class="orariobox orariobox1"></div>
+    <div class="orariobox orariobox2"></div>
+  </div>
 `
 
-let orariobox = document.querySelector('.orariobox');
+let orariobox1 = document.querySelector('.orariobox1');
+let orariobox2 = document.querySelector('.orariobox2');
 
+//agiugni righe all'orario di oggi
 for(let i=0; i< orario[numday()].length;i++){
-  document.querySelector('.orariobox').innerHTML+=`
-  <div class="rigaorario"></div>
+  document.querySelector('.orariobox1').innerHTML+=`
+  <div class="rigaorario rigaorario1"></div>
   `
 }
-document.querySelectorAll('.rigaorario').forEach(e=>{
+
+//agiugni righe all'orario di domani
+for(let i=0; i< orario[numdayt()].length;i++){
+  document.querySelector('.orariobox2').innerHTML+=`
+  <div class="rigaorario rigaorario2"></div>
+  `
+}
+
+
+//agiugni elementi alle righe della prima box
+document.querySelectorAll('.rigaorario1').forEach(e=>{
   e.innerHTML=`
-    <div class="orariga ora"></div>
-    <div class="materia"></div>
+    <div class="orariga orariga1"></div>
+    <div class="materia materia1"></div>
+  `
+})
+
+//agiugni elementi alle righe della seconda box
+document.querySelectorAll('.rigaorario2').forEach(e=>{
+  e.innerHTML=`
+    <div class="orariga orariga2"></div>
+    <div class="materia materia2"></div>
   `
 })
 
 
+//aggiunge le materie alle righe della prima box
 let i=0;
-document.querySelectorAll('.materia').forEach(e=>{
+document.querySelectorAll('.materia1').forEach(e=>{
   e.innerHTML=orario[numday()][i]
   i++;
 })
 
 
+//aggiunge le materie alle righe della seconda box
+i=0;
+document.querySelectorAll('.materia2').forEach(e=>{
+  e.innerHTML=orario[numdayt()][i]
+  i++;
+})
+
+
+//ric 1 box 1
 let ric = document.createElement('div');
 ric.innerHTML=`
 <div class="oraric">10:05</div>
 <div>Ricreazione</div>
 `
 ric.classList.add('ricreazione');
-orariobox.insertBefore(ric, orariobox.children[2]);
+orariobox1.insertBefore(ric, orariobox1.children[2]);
 
-
+//ric 2 box 1
 ric = document.createElement('div');
 ric.innerHTML=`
 <div class="oraric ora">12:05</div>
 <div>Ricreazione</div>
 `
 ric.classList.add('ricreazione');
-orariobox.insertBefore(ric, orariobox.children[5]);
+orariobox1.insertBefore(ric, orariobox1.children[5]);
 
-let y=0;
-document.querySelectorAll('.orariga').forEach(e=>{
-  let oreriga = ['8:10','9:10','10:15','11:10','12:15']
-  e.innerHTML=oreriga[y]
-  y++
+//ric 1 box 2
+ric = document.createElement('div');
+ric.innerHTML=`
+<div class="oraric">10:05</div>
+<div>Ricreazione</div>
+`
+ric.classList.add('ricreazione');
+orariobox2.insertBefore(ric, orariobox2.children[2]);
+
+//ric 2 box 2
+ric = document.createElement('div');
+ric.innerHTML=`
+<div class="oraric ora">12:05</div>
+<div>Ricreazione</div>
+`
+ric.classList.add('ricreazione');
+orariobox2.insertBefore(ric, orariobox2.children[5]);
+
+
+
+//ore box1
+i=0;
+document.querySelectorAll('.orariga1').forEach(e=>{
+  let oreriga = ['8:10','9:10','10:15','11:10','12:15','13:15']
+  e.innerHTML=oreriga[i]
+  i++
 })
 
+//ore box2
+i=0;
+document.querySelectorAll('.orariga2').forEach(e=>{
+  let oreriga = ['8:10','9:10','10:15','11:10','12:15','13:15']
+  e.innerHTML=oreriga[i]
+  i++
+})
+
+
+
 let sel;
-let righe = orariobox.children;
+let righe = orariobox1.children;
 for(let i=0; i<righe.length;i++){
 
   let primo= mo(righe[i].children[0].innerHTML)
@@ -92,10 +156,106 @@ for(let i=0; i<righe.length;i++){
     sel=righe[i].children[0];
   }
 }
+let d=true;
 sel.parentNode.classList.add('active')
 
 
+let r=250;
+setTimeout(function(){
+  orariobox2.style.translate='-100px 0'
+},r)
 
+
+let mobile;
+if(navigator.userAgent.split('(')[1].split(' ')[0].split(';')[0]=='Windows'){
+  mobile=false;
+}
+else
+{
+  mobile=true;
+  document.body.classList.add('mobile')
+}
+
+
+
+if(mobile){
+  document.addEventListener('touchstart', handleTouchStart, false);        
+  document.addEventListener('touchmove', handleTouchMove, false);
+  var xDown = null;                                                        
+  var yDown = null;
+  function getTouches(evt) {
+    return evt.touches ||             // browser API
+          evt.originalEvent.touches; // jQuery
+  }
+  function handleTouchStart(evt) {
+      const firstTouch = getTouches(evt)[0];                                      
+      xDown = firstTouch.clientX;                                      
+      yDown = firstTouch.clientY;                                      
+  };
+  function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;                                    
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+                                                                          
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+      if ( xDiff > 0 ) {
+        if(!document.body.classList.contains('dx')){
+          document.body.classList.add('dx')
+          orariobox2.style.translate='0 0'
+          setTimeout(function(){
+            orariobox1.style.translate='100px 0'
+          },r) }
+      }
+      else {
+        if(document.body.classList[0]){
+          document.body.classList.remove('dx')
+          orariobox1.style.translate='0 0'
+          setTimeout(function(){
+            orariobox2.style.translate='-100px 0'
+          },r)
+        }
+      }                       
+    }
+    else {
+        if ( yDiff > 0 ) {
+            /* down swipe */ 
+        } else { 
+            /* up swipe */
+        }                                                                 
+    }
+    xDown = null;
+    yDown = null;                                             
+  };
+}
+else{
+  
+document.addEventListener('click',e=>{
+
+  document.body.classList.toggle('dx');
+  if(document.body.classList[0]){
+    console.log('si')
+    orariobox2.style.translate='0 0'
+    setTimeout(function(){
+      orariobox1.style.translate='100px 0'
+    },r)
+  }
+  else{
+    console.log('no')
+    orariobox1.style.translate='0 0'
+    setTimeout(function(){
+      orariobox2.style.translate='-100px 0'
+    },r)
+  }
+})
+
+
+}
 
 
 

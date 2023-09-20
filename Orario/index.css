@@ -11,51 +11,97 @@
   src: url(font/SF-Pro-Display-Regular.ttf);
 }
 
-body{background-color rgb(245, 245, 247)
+
+:root{
+  --rowwidth: 300px;
+  --time: 0.8s;
 }
 
-.materia, .orariga, body,.ricreazione, .ricreazione div, .rigaorario.active::before{
+body{
+  background-color: rgb(245, 245, 247);
+  translate: 50px 0;
+  
+  position:relative; 
+  overflow:hidden;
+}
+.materia, .orariga, .ricreazione div, .rigaorario.active::before, body{
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .orariobox{
   height: fit-content;
-  width: fit-content;
-  border-radius: 38px;
-  overflow: hidden;
+  width: var(--rowwidth);
   gap: 2px;
   background-color: rgb(212, 212, 212);
   display: grid;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.158);
+  transition: all var(--time) ease;
+  border-radius: 38px;
+  overflow: hidden;
 }
-
 .rigaorario, .ricreazione{
   height: 70px;
-  width: 350px;
-  max-width: 70vw;
   font-family: 'SF';
   font-size: 20px;
   display: grid;
-  grid-template-columns: 80px 1fr;
+  grid-template-columns: 80px calc(var(--rowwidth) - 80px);
   padding: 0 10px;
-  color: rgb(29, 29, 31)
-}
+  color: rgb(29, 29, 31);
 
+}
 .rigaorario{
   background-color: rgb(255, 255, 255);
+  width: 280px;
 }
 .ricreazione{
-  background-color: rgb(224, 224, 22);
+  background-color:  #434633;
+  color: white;
+  width: 280px;
 }
-.rigaorario.active::before{
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='rgb(29, 29, 31)}' viewBox='0 0 24 24'%3E%3Cpath d='M23.677 18.52c.914 1.523-.183 3.472-1.967 3.472h-19.414c-1.784 0-2.881-1.949-1.967-3.472l9.709-16.18c.891-1.483 3.041-1.48 3.93 0l9.709 16.18z'/%3E%3C/svg%3E ");
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  align-self: center;
-  transform: rotate(90deg);
-  translate: -60px;
-  fill: white;
+.mainbox{
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: var(--rowwidth) var(--rowwidth);
+  gap: 20px;
+  translate: 120px 0;
+  transition: all var(--time) ease;
+}
+.orariobox1{
+  z-index: 1;
+  scale: 1;
+}
+.orariobox2{
+  filter: blur(2px);
+  z-index: 0;
+  -webkit-appearance: none;
+  scale: 0.8;
+}
+.rigaorario.giallo{
+  background-color: rgb(253, 253, 151);
+}
+body.dx .orariobox2{
+  translate: 0px 0;
+  filter: blur(0px);
+  z-index: 1;
+  scale: 1;
+}
+body.dx .orariobox1{
+  filter: blur(2px);
+  z-index: 0;
+  scale: 0.8;
+}
+body.dx .mainbox{
+  translate: -190px 0;
+
+}
+
+
+
+
+
+
+.rigaorario.active{
+  filter: drop-shadow(0 0 7px white);
 }
