@@ -10,13 +10,10 @@
   font-family: 'SFReg';
   src: url(font/SF-Pro-Display-Regular.ttf);
 }
-
-
 :root{
   --rowwidth: 300px;
   --time: 0.8s;
 }
-
 body{
   background-color: rgb(245, 245, 247);
   translate: 50px 0;
@@ -64,6 +61,7 @@ body{
   justify-items: center;
   align-items: center;
   grid-template-columns: var(--rowwidth) var(--rowwidth);
+  grid-template-rows: 30px 1fr;
   gap: 20px;
   translate: 120px 0;
   transition: all var(--time) ease;
@@ -81,6 +79,10 @@ body{
 .rigaorario.giallo{
   background-color: rgb(253, 253, 151);
 }
+.giorno2{
+  filter: blur(2px);
+  scale: 0.8;
+}
 body.dx .orariobox2{
   translate: 0px 0;
   filter: blur(0px);
@@ -92,16 +94,29 @@ body.dx .orariobox1{
   z-index: 0;
   scale: 0.8;
 }
+body.dx .giorno1{
+  
+  filter: blur(2px);
+  scale: 0.8;
+}
+body.dx .giorno2{
+  filter: blur(0px);
+  scale: 1;
+}
 body.dx .mainbox{
   translate: -190px 0;
 
 }
-
-
-
-
-
-
 .rigaorario.active{
   filter: drop-shadow(0 0 7px white);
+}
+
+.giorno{
+  z-index: -1;
+  transition: all var(--time) ease;
+  font-family: 'SF';
+  background-color: white;
+  padding: 5px 15px;
+  border-radius: 10px;
+
 }

@@ -24,6 +24,8 @@ let orario=[
 
 document.body.innerHTML+=`
   <div class="mainbox">
+    <div class="giorno giorno1"></div>
+    <div class="giorno giorno2"></div>
     <div class="orariobox orariobox1"></div>
     <div class="orariobox orariobox2"></div>
   </div>
@@ -31,6 +33,13 @@ document.body.innerHTML+=`
 
 let orariobox1 = document.querySelector('.orariobox1');
 let orariobox2 = document.querySelector('.orariobox2');
+let giorno1 = document.querySelector('.giorno1');
+let giorno2 = document.querySelector('.giorno2');
+let c=0;
+
+let giorni=['Lun','Mar','Mer','Gio','Ven','Sab'];
+giorno1.innerHTML= giorni[numday()]
+giorno2.innerHTML= giorni[numdayt()]
 
 //agiugni righe all'orario di oggi
 for(let i=0; i< orario[numday()].length;i++){
@@ -160,10 +169,44 @@ let d=true;
 sel.parentNode.classList.add('active')
 
 
-let r=250;
+let r=500;
 setTimeout(function(){
   orariobox2.style.translate='-100px 0'
+  giorno2.style.translate='-100px 100px'
 },r)
+
+
+
+function uno(){
+
+  if(!document.body.classList.contains('dx')&&c==0){
+    document.body.classList.add('dx')
+    orariobox2.style.translate='0 0'
+    giorno2.style.translate='0 0'
+    giorno1.style.translate='0 100px';
+    setTimeout(function(){
+      orariobox1.style.translate='100px 0';
+      giorno1.style.translate='100px 100px';
+    },r) 
+  
+    c=1;
+  }
+}
+function due(){
+  if(document.body.classList[0]&&c==0){
+    document.body.classList.remove('dx')
+    orariobox1.style.translate='0 0'
+    giorno1.style.translate='0 0'
+    giorno2.style.translate='0 100px';
+    setTimeout(function(){
+      orariobox2.style.translate='-100px 0'
+      giorno2.style.translate='-100px 100px'
+    },r)
+    
+  c=1;
+  }  
+}
+
 
 
 let mobile;
@@ -205,21 +248,12 @@ if(mobile){
                                                                           
     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
       if ( xDiff > 0 ) {
-        if(!document.body.classList.contains('dx')){
-          document.body.classList.add('dx')
-          orariobox2.style.translate='0 0'
-          setTimeout(function(){
-            orariobox1.style.translate='100px 0'
-          },r) }
+        c=0;
+        uno()
       }
       else {
-        if(document.body.classList[0]){
-          document.body.classList.remove('dx')
-          orariobox1.style.translate='0 0'
-          setTimeout(function(){
-            orariobox2.style.translate='-100px 0'
-          },r)
-        }
+        c=0;
+        due()
       }                       
     }
     else {
@@ -234,27 +268,18 @@ if(mobile){
   };
 }
 else{
-  
-document.addEventListener('click',e=>{
-
-  document.body.classList.toggle('dx');
-  if(document.body.classList[0]){
-    console.log('si')
-    orariobox2.style.translate='0 0'
-    setTimeout(function(){
-      orariobox1.style.translate='100px 0'
-    },r)
-  }
-  else{
-    console.log('no')
-    orariobox1.style.translate='0 0'
-    setTimeout(function(){
-      orariobox2.style.translate='-100px 0'
-    },r)
-  }
-})
-
-
+  document.addEventListener('click',e=>{
+    c=0;
+    uno()
+    due()
+  })
+  document.addEventListener('keypress',e=>{
+    if(e.code=='Space'){
+      c=0;
+      uno()
+      due()
+    }
+  })
 }
 
 
