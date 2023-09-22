@@ -1,19 +1,19 @@
 let orario=[
   
     //LUN
-    ['Storia','Lab Architettura','Lab Architettura', `Storia Dell'Arte`, 'Prog Arch Amb'],
+    ['Lab Architettura','Lab Architettura', `Storia Dell'Arte`, 'Storia','Prog Arch Amb','Prog Arch Amb'],
 
     //MAR
-    ['Fisica','Fisica','Motoria','Motoria','Chimica'],
+    ['Fisica','Fisica','Motoria','Motoria','Chimica','Chimica'],
 
     //MER
-    ['Italiano','Italiano','Prog Arch Amb','Prog Arch Amb','Matematica'],
+    ['Matematica','Matematica','Prog Arch Amb','Prog Arch Amb','Italiano','Italiano'],
 
     //GIO
-    ['Rel-Alternativa','Filosofia','Prog Arch Amb','Prog Arch Amb','Lab Architettura'],
+    ['Rel-Alternativa','Filosofia','Prog Arch Amb','Prog Arch Amb','Lab Architettura','Lab Architettura'],
 
     //VEN
-    ['Inglese','Filosofia',`Storia Dell'Arte`,`Storia Dell'Arte`,'Italiano'],
+    ['Inglese','Filosofia',`Storia Dell'Arte`,`Storia Dell'Arte`,'Italiano','Italiano'],
 
     //SAB
     ['Lab Architettura','Lab Architettura','Inglese','Inglese','Storia'],
