@@ -20,6 +20,7 @@ function aggiorna(){
   })
 }
 myNumber.addEventListener('change', function(){
+  if(myNumber.value<=1){myNumber.value=1}
   aggiorna()
 })
 myInput.addEventListener('change', function(){
