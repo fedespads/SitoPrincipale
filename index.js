@@ -21,7 +21,7 @@ document.querySelector('.boxF').addEventListener("click",function(){
 document.querySelectorAll('.lista').forEach(lista=>{
   Array.from(lista.children).forEach(figlio=>{
     figlio.addEventListener("click",function(){
-      window.open(figlio.classList[0],'_self'); })
+      window.open(figlio.innerHTML,'_self'); })
   })
 })
 
