@@ -26,6 +26,11 @@ document.querySelector('.boxF').addEventListener("click",function(){
  document.querySelector(".NineGame").addEventListener("click",function(){
   window.open('NineGame','_self');
  })
+ 
+ document.querySelector(".Links").addEventListener("click",function(){
+  window.open('Links','_self');
+ })
+ 
  document.querySelector(".calendario").addEventListener("click",function(){
   window.open('Calendario','_self');
  })
