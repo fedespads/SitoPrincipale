@@ -16,30 +16,12 @@ document.querySelector('.boxF').addEventListener("click",function(){
   }
 })
 
-  
- document.querySelector(".Impegni").addEventListener("click",function(){
-  window.open('Impegni','_self');
- })
- document.querySelector(".Classifica").addEventListener("click",function(){
-  window.open('Classifica','_self');
- })
- document.querySelector(".NineGame").addEventListener("click",function(){
-  window.open('NineGame','_self');
- })
- 
- document.querySelector(".Links").addEventListener("click",function(){
-  window.open('Links','_self');
- })
- 
- document.querySelector(".calendario").addEventListener("click",function(){
-  window.open('Calendario','_self');
- })
- document.querySelector(".assenze").addEventListener("click",function(){
-  window.open('Assenze','_self');
- })
- document.querySelector(".countdown").addEventListener("click",function(){
-  window.open('Countdown','_self');
- })
- document.querySelector(".orario").addEventListener("click",function(){
-  window.open('Orario','_self');
- })
+
+
+document.querySelectorAll('.lista').forEach(lista=>{
+  Array.from(lista.children).forEach(figlio=>{
+    figlio.addEventListener("click",function(){
+      window.open(figlio.classList[0],'_self'); })
+  })
+})
+
