@@ -15,7 +15,7 @@ let s;
 
 const app = initializeApp(appSettings);
 const database = getDatabase(app);
-
+console.log(document.querySelector("#boxp")?true:false)
 let utenti = [];
 onValue(ref(database, `Classifica/utenti`), function (snapshot) {
   if (snapshot.exists()) {
@@ -34,14 +34,16 @@ console.log(email);
 let password = document.getElementById("password");
 email.addEventListener("change", function () {
   if (email.value != "") {
-    let elboxp = document.createElement("div");
-    elboxp.innerHTML = `
-    <div id="boxp">
-      <div>Password</div>
-      <input id="password" type="password">
-    </div>
-  `;
-    document.querySelector(".form").appendChild(elboxp);
+    if(!document.querySelector("#boxp")){
+      let elboxp = document.createElement("div");
+      elboxp.innerHTML = `
+      <div id="boxp">
+        <div>Password</div>
+        <input id="password" type="password">
+      </div>
+    `;
+      document.querySelector(".form").appendChild(elboxp);
+    }
     password = document.getElementById("password");
   } else {
     document.querySelector("#boxp").remove();
