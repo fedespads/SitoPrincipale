@@ -1,0 +1,175 @@
+@font-face {
+  font-family: 'Galano';
+  src: url(../font/GalanoGrotesqueBold.otf);
+}
+@font-face {
+  font-family: 'SF';
+  src: url(../font/SF-Pro-Display-Bold.ttf);
+}
+@font-face {
+  font-family: 'SFReg';
+  src: url(../font/SF-Pro-Display-Regular.ttf);
+}
+
+:root{
+  --butsize:50px;
+  --oc:0;
+}
+body{
+  background-color: black;
+  display: grid;
+  grid-template-rows: min-content 1fr  min-content;
+  align-items: center;
+  justify-items: center;
+}
+
+.boxlista{
+  display: grid;
+  grid-auto-flow: row;
+  gap: 20px;
+  color: grey;
+  font-family: 'SF';
+  text-align: center;
+}
+.boxtitolo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 15px 0;
+}
+.el{
+  background-color: red;
+}
+.elLista{
+  font-size: 20px;
+  height: 60px;
+  width: 70vw;
+  min-width: 330px;
+  background-color: #333333;
+  border-radius: 18px;
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: center;
+  justify-items: center;
+  color: white;
+  font-family: 'SF';
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.esci{
+  font-family: 'SFReg';
+  color: #ea4e3d;
+  margin: 0 0 10px 0;
+  cursor: pointer;
+}
+.freccia{
+  margin: 0 0 0 20px;
+}
+.freccia svg{
+  rotate: 180deg;
+  padding: 0 0 0 4px;
+}
+.nome{
+  padding-right: 50px;
+}
+.spaziodx{
+  width: var(--butsize);
+}
+.pulsante{
+  background-color: #333333;
+  width: var(--butsize);
+  height: var(--butsize);
+  border-radius: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.titolo{
+  color: white;
+  font-family: 'SF';
+  font-size: 30px;
+  padding: 10px 20px;
+  border-radius: 18px;
+  transition: all 0.3s;
+}
+.ta{
+  position: absolute;
+  opacity: 0;
+}
+.boxpiu{
+  gap: 20px;
+  display: flex;
+  margin: 20px 0 20px 0;
+  align-items: center;
+  justify-content: center;
+}
+.boxpiu::after{
+  content: 'Classifica copiata';
+  color: rgba(255, 255, 255, 0.822);
+  font-family: 'SF';
+  position: absolute;
+  background-color: #33333354;
+  margin-bottom: 120px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: all 0.5s;
+  opacity: var(--oc);
+  z-index: 1;
+}
+.cestino svg{
+  padding-top: 2px;
+}
+
+body.elimina .ellista, body.elimina .titolo{
+  background-color: rgb(173, 38, 38);
+  cursor: pointer;
+  user-select: none;
+}
+.caselladel{
+  position: absolute;
+  gap: 30px;
+  font-size: 25px;
+  display: grid;
+  color: white;
+  font-family: 'SF';
+  background-color: #333333b9;
+  padding: 20px;
+  border-radius: 18px;
+}
+.risposte{
+  display: flex;
+  justify-content: right;
+  gap:10px;
+}
+.risposte div{
+  background-color: rgb(173, 38, 38);
+  width: 50px;
+  display: flex;
+  padding: 0 3px 0 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+.risposte .no{
+  background-color: #333333;
+}
+body.blur div:not(.caselladel):not(.caselladel *){
+  filter: blur(2px);
+  z-index: -1;
+}
+.inputtitolo{
+  font-family: 'SF';
+  color: white;
+  background-color: black;
+  font-size: 30px;
+  border: none;
+  text-align: center;
+  width: min-content;
+}
+.inputtitolo:focus{
+  outline: none;
+}
