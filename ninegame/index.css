@@ -1,0 +1,189 @@
+@font-face {
+  font-family: "Galano";
+  src: url(font/GalanoGrotesqueBold.otf);
+}
+@font-face {
+  font-family: "SF";
+  src: url(font/SF-Pro-Display-Bold.ttf);
+}
+@font-face {
+  font-family: "SFReg";
+  src: url(font/SF-Pro-Display-Regular.ttf);
+}
+.body1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+}
+.body2{
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: 1fr min-content 1fr;
+  user-select: none;
+}
+#griglia {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+  transition: all 1s;
+}
+.quadrato {
+  --a: calc(0.3333 * 80vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "SF";
+  height: 100px;
+  width: 100px;
+  max-width: 70vh;
+  max-height: 70vh;
+  background-color: rgba(19, 69, 235, 0.123);
+  border-radius: 0.7em;
+  font-size: 50px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+.quadrato.vuoto {
+  background-color: transparent;
+  cursor: default;
+}
+#avviabut {
+  background-color: rgba(240, 198, 13, 0.616);
+  padding: 20px 100px;
+  font-family: "SF";
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.904);
+  transition: all 1s;
+}
+#cont{
+  display: grid;
+  grid-template-columns: 1fr;
+  align-self: start;
+  margin-top: 20px;
+}
+#timerdiv{
+  
+  font-size: 25px;
+  font-family: "SF";
+  margin-top: 20px;
+  justify-self: center;
+}
+#titolo{
+  font-size: 50px;
+  font-family: 'SF';
+  color: rgba(240, 198, 13, 0.616);
+  filter: drop-shadow(0 0 5px rgb(229, 255, 0));
+}
+#v{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(87, 98, 134, 0.267);
+  margin: 20px;
+  border-radius: 50px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#ar{
+  width: 25px;
+  padding-top:3px;
+  rotate: -90deg;
+  transition: all 0.15s;
+}
+#ar.active{
+  rotate: 0deg;
+}
+body.class #avviabut, body.class #griglia{
+  animation: blurra 1s backwards ease;
+  filter: blur(4px);
+
+}
+.classifica{
+  display: flex;
+
+  padding: 20px 30px;
+  width: 320px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: rgba(114, 141, 228, 0.726);
+  border-radius: 28px;
+  transition: all 1s;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  animation: apri 1s backwards ease;
+  gap: 10px;
+  flex-direction: column;
+}
+.classifica::-webkit-scrollbar {
+  display: none;
+}
+.riga{
+  display: grid;
+  font-family: 'SF';
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size: 20px;
+}
+.posizione, .punteggio{
+  color: white;
+}
+.nome{
+  color: rgba(0, 0, 0, 0.404);
+}
+
+@keyframes apri {
+  0%{
+    height: 0;
+    padding: 0;
+  }
+  20%{
+    
+  padding: 20px 30px;
+  }
+  100%{
+    height: 400px;
+    padding: 20px 30px;
+  }
+  
+}
+
+@keyframes chiudi {
+  0%{
+    height: 400px;
+    padding: 20px 30px;
+  }
+  80%{
+    
+    padding: 20px 30px;
+  }
+  100%{
+    height: 0px;
+    padding: 0;
+  }
+  
+}
+
+@keyframes blurra {
+  0%{
+    filter: blur(0px);
+  }
+
+  
+  100%{
+    filter: blur(4px);
+  }
+  
+}
+

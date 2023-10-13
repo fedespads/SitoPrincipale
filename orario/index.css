@@ -1,0 +1,118 @@
+@font-face {
+  font-family: 'Galano';
+  src: url(font/GalanoGrotesqueBold.otf);
+}
+@font-face {
+  font-family: 'SF';
+  src: url(font/SF-Pro-Display-Bold.ttf);
+}
+@font-face {
+  font-family: 'SFReg';
+  src: url(font/SF-Pro-Display-Regular.ttf);
+}
+:root{
+  --rowwidth: 300px;
+  --time: 0.8s;
+}
+body{
+  background-color: rgb(245, 245, 247);
+  translate: 50px 0;
+  
+  position:relative; 
+  overflow:hidden;
+}
+.materia, .orariga, .ricreazione div, .rigaorario.active::before, body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.orariobox{
+  height: fit-content;
+  width: var(--rowwidth);
+  gap: 2px;
+  background-color: rgb(212, 212, 212);
+  display: grid;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.158);
+  transition: all var(--time) ease;
+  border-radius: 38px;
+  overflow: hidden;
+}
+.rigaorario, .ricreazione{
+  height: 70px;
+  font-family: 'SF';
+  font-size: 20px;
+  display: grid;
+  grid-template-columns: 80px calc(var(--rowwidth) - 80px);
+  padding: 0 10px;
+  color: rgb(29, 29, 31);
+
+}
+.rigaorario{
+  background-color: rgb(255, 255, 255);
+  width: 280px;
+}
+.ricreazione{
+  background-color:  #434633;
+  color: white;
+  width: 280px;
+}
+.mainbox{
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: var(--rowwidth) var(--rowwidth);
+  grid-template-rows: 30px 1fr;
+  gap: 20px;
+  translate: 120px 0;
+  transition: all var(--time) ease;
+}
+.orariobox1{
+  z-index: 1;
+  scale: 1;
+}
+.orariobox2{
+  filter: blur(2px);
+  z-index: 0;
+  -webkit-appearance: none;
+  scale: 0.8;
+}
+.rigaorario.giallo{
+  background-color: rgb(253, 253, 151);
+}
+.giorno2{
+  filter: blur(2px);
+  scale: 0.8;
+}
+body.dx .orariobox2{
+  translate: 0px 0;
+  filter: blur(0px);
+  z-index: 1;
+  scale: 1;
+}
+body.dx .orariobox1{
+  filter: blur(2px);
+  z-index: 0;
+  scale: 0.8;
+}
+body.dx .giorno1{
+  
+  filter: blur(2px);
+  scale: 0.8;
+}
+body.dx .giorno2{
+  filter: blur(0px);
+  scale: 1;
+}
+body.dx .mainbox{
+  translate: -190px 0;
+
+}
+.giorno{
+  z-index: -1;
+  transition: all var(--time) ease;
+  font-family: 'SF';
+  background-color: white;
+  padding: 5px 15px;
+  border-radius: 10px;
+
+}
