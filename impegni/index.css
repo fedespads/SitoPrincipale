@@ -11,12 +11,24 @@
   src: url(font/SF-Pro-Display-Regular.ttf);
 }
 
+
+body.first{
+  background-color: #000000;
+  color: white;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-family: 'SF';
+  font-size: 30px;
+  grid-template-rows: 1fr;
+}
 body{
   font-family: 'SF';
   background-color: #000000;
   display: grid;
-  grid-template-rows: min-content 1fr;
+  grid-template-rows: min-content 1fr min-content;
   user-select: none;
+  overflow-x: hidden;
 }
 #impinput, #datainput{
   font-family: 'SF';
@@ -51,20 +63,65 @@ body{
   gap: calc(10px + 1vw);
   font-size: 17px;
 }
-.impegnosingolo{
+.boximpegno{
+  
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 70%;
+  width: 69vw;
   background-color: #333333;
   border-radius: 18px;
-  padding:20px 30px;
   max-width: 525px;
   cursor: pointer;
-  height: 30px;
+  height: min-content;
   color: white;
+  background-color: black;
+  border-radius: 18px;
+  overflow: hidden;
+  min-width: 330px;
+}
+body.mobile .boximpegno{
+  overflow: auto;
+  grid-auto-flow: column;
+  overflow: scroll;
+  scroll-snap-type: x proximity;
+  scroll-snap-stop: always;
+  scrollbar-width: none;
+}
+
+body.mobile .boximpegno::-webkit-scrollbar{
+  display: none;
+}
+.impegnosingolo{
+  display: grid;
+  width: 70vw;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #333333;
+  max-width: 525px;
+  cursor: pointer;
+  height: min-content;
+  color: white;
+  transition: all 0.15s;
+  border-radius: 18px 0 0 18px;
+  padding: 20px 0px 20px 0px;
+  min-width: 330px;
+}
+body.mobile .impegnosingolo{
+  scroll-snap-align: start;
+}
+
+body.mobile .del{
+  background-color: #ea4e3d;
+  scroll-snap-align: end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  border-radius: 0 18px 18px 0;
 }
 .impegnosingolo.el{
   background-color: #ea4e3d;
+}
+.distanzaimpegno{
+  padding-right: 20px;
 }
 .distanzaimpegno, .dataimpegno{
   display: flex;
@@ -91,7 +148,28 @@ body{
   align-items: center;
 }
 .scrittaimpegno{
+  padding-left: 30px;
   display: flex;
   justify-content: start;
   align-items: center;
+}
+.esci{
+  display: flex;
+  justify-content: center;
+  color: #ea4e3d;
+  font-family: 'SFReg';
+  margin: 15px;
+  cursor: pointer;
+}
+
+@keyframes muovi {
+  0%{
+    margin-left: 0;
+  }  
+  50%{
+    margin-left: 100px;
+  } 
+  100%{
+    margin-left: 0;
+  } 
 }

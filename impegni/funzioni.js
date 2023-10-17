@@ -12,13 +12,15 @@ function animazione(sog,min,max,unita,tempoms){
 }
 
 function data12(data){
-  if(data.split('-')[0]==new Date().getFullYear()){
-    
-  return `${data.split('-')[2]}/${data.split('-')[1]}`
-  }
-  else{
-    
-  return `${data.split('-')[2]}/${data.split('-')[1]}/${data.split('-')[0]}`
+  if(data){
+    if(data.split('-')[0]==new Date().getFullYear()){
+      
+    return `${data.split('-')[2]}/${data.split('-')[1]}`
+    }
+    else{
+      
+    return `${data.split('-')[2]}/${data.split('-')[1]}/${data.split('-')[0]}`
+    }
   }
 }
 function distanza(data){
