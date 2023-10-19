@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'SF';
+  src: url(https://fedespada.com/font/SF-Pro-Display-Bold.ttf);
+}
+
+body{
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  font-family: 'SF';
+  font-size: 25px;
+}
+div{
+  color: white;
+  margin-bottom: 10px;
+}
+input{
+  border-radius: 18px;
+  width: 350px;
+  height: 40px;
+  border: none;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 25px;
+  font-family: 'SF';
+}
+input:focus{
+  outline: none;
+
+}

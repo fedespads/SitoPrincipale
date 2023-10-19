@@ -1,14 +1,6 @@
 @font-face {
-  font-family: 'Galano';
-  src: url(font/GalanoGrotesqueBold.otf);
-}
-@font-face {
   font-family: 'SF';
-  src: url(font/SF-Pro-Display-Bold.ttf);
-}
-@font-face {
-  font-family: 'SFReg';
-  src: url(font/SF-Pro-Display-Regular.ttf);
+  src: url(https://fedespada.com/font/SF-Pro-Display-Bold.ttf);
 }
 
 :root{
@@ -87,7 +79,7 @@
   background-color: var(--bg);
   cursor:auto;
   user-select: text;
-}.active ~ div{
+}.cerchioscelto.active ~ div{
   filter: blur(2px);
   z-index: -1;
 }.piu{
@@ -120,7 +112,7 @@
   width: 8em;
   margin-top: 1em;
   height: min-content;
-}.arsx.hi{
+}.hi{
   z-index: -1;
   opacity: 0;
 }.myinp{
@@ -148,4 +140,24 @@
   border-radius: 100%;
   cursor: pointer;
   user-select: none;
+}.agg svg{
+  rotate: -170deg;
+}.info{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}.sc{
+  z-index: -1;
+  opacity: 0;
+  position: absolute;
+  top: 20px;
+  right: 10%;
+  transition: all 0.3s ease-out;
+  transform: translate(50%,0);
+}.sc.active{
+  z-index: 0;
+  user-select: text;
+  opacity: 1;
+  right: 50%;
 }
