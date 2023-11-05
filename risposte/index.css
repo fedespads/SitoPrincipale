@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'SF';
+  src: url(https://fedespada.com/font/SF-Pro-Display-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'SFREg';
+  src: url(https://fedespada.com/font/SF-Pro-Display-Regular.ttf);
+}
+
+
+body{
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  justify-items: center;
+  background: black;
+  margin: 0;
+}
+input{
+  height: 50px;
+  width: 80vw;
+  border-radius: 18px;
+  border: none;
+  text-align: center;
+  font-family: 'SFReg';
+  font-size: 20px;
+  margin: 20px;
+
+}
+
+.elemento {
+  border-radius: 18px;
+  overflow: hidden;
+  font-family: 'SF';
+  color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+  width: 94vw;
+  font-size: 18px;
+}
+.highlighted{
+  font-family: 'SF';
+  color: white;
+}
+.domanda {
+  background-color: rgb(75, 48, 223);
+  padding: 10px 15px;
+  font-family: 'SFReg';
+}
+
+.risposta {
+  background-color: rgb(198, 201, 235);
+  padding: 10px 15px;
+  color: black;
+}

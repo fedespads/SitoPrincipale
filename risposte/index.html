@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  </head>
+  <body>
+
+    <input onkeydown="removeFocus(event)">
+    <div class="box"></div>
+
+    <script>
+      function removeFocus(event) {
+          if (event.key === "Enter") {
+              event.preventDefault(); // Evita l'invio del modulo
+              event.target.blur(); // Rimuove il focus dall'elemento di input
+          }
+      }
+  </script>
+    <script src="index.js" type="module" >  </script>     
+  </body>
+</html>
