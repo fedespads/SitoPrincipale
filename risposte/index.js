@@ -243,7 +243,7 @@ let all = [
   ],
   [
     "La deflazione consiste nel:",
-    "Depurare gli aggregati monetari correnti, riferiti a tempi diversi, dagli effetti derivanti dalle variazioni dei prezzi",
+    "depurare gli aggregati monetari correnti, riferiti a tempi diversi, dagli effetti derivanti dalle variazioni dei prezzi",
   ],
   ["La deflazione può essere:", "Diretta,indiretta e doppia"],
   [
@@ -284,7 +284,7 @@ let all = [
   ],
   [
     "Nella formazione delle serie è fondamentale:",
-    "Individuare periodi caratterizzati da una situazione ambientale quanto più possibile uniforme e omogenea",
+    "individuare periodi caratterizzati da una situazione ambientale quanto più possibile uniforme e omogenea",
   ],
   [
     "L’approccio classico muove dal presupposto che:",
@@ -927,7 +927,7 @@ let all = [
   ],
   [
     "In un questionario teso a profilare le intenzioni d'acquisto, le domande:",
-    "Seguiranno una successioneordinata secondo criteri psicologici",
+    "Seguiranno una successione ordinata secondo criteri psicologici",
   ],
   [
     "All'interno di un questionario indirizzato alla statisticazione delle intenzioni d'acquisto, è possibile individuare un quesito mal posto dal seguente elemento:",
@@ -1195,4 +1195,48 @@ let all = [
     "Quale di queste affermazioni sul poligono di frequenza e' vera",
     "Permette di congiungere fra loro i punti centrali delle basi",
   ],
+  [
+    "I sondaggi telefonici si avvalgono generalmente:",
+    "Di operatori che svolgono lintervista attraverso apposite stazioni e postazioni telematiche e avvalendosi di questionari informatizzati",
+  ],
+  [
+    "Le analisi condotte da GfK nel corso degli ultimi 15 anni:",
+    "Hanno consentito di cogliere nelle società mature gli Edonisti e i Familisti a rappresentare i segmenti in espansione",
+  ],
+  [
+    "In un questionario teso a profilare le intenzioni dacquisto, le domande:",
+    "Seguiranno una progressione ordinata secondo livelli discendenti di difficoltà",
+  ],
+  [
+    "Nellambito dellindagine sinottica, le informazioni vengono rilevate:",
+    "Mediante un tablet dalle funzioni molto semplificate, il Dialogatore, che viene fornito in dotazione ai componenti del campione",
+  ],
+  [
+    "Riguardo alle inteviste telefoniche:",
+    "Uno dei pregi più evidenti risulta il costo particolarmente ridotto",
+  ],
+  [
+    "Lindagine sinottica:",
+    "E una complessa ricerca campionaria che lIstituto Eurisko (dal 2005 GfK Eurisko) iniziò ad effettuare nel 1976. Dal 2013 è il cuore del sistema del Total Single Source panel",
+  ],
+  ["Lapproccio qualitativo:", "Misura il processo"],
+  ["Di ciascuna unità campionaria è rilevante:", "La sua intensità"],
+  [
+    "I panels riferiti alla sanità sono gestiti:",
+    "A regime di monopolio da IMS HEALTH",
+  ],
+  [
+    "Quantunque i campioni siano indipendenti, essi:",
+    "Vengono abbinati in successioni contigue, al fine di ottenere data base di 12.000 persone",
+  ],
+  ["Lapproccio quantitativo:", "Misura il risultato"],
+  ["Quanto alla vexata quaestio relativa alla privacy:", "Un numero crescente di utenti si avvale del diritto di tutelare la propria privacy"],
+  ["Ipotizzando che tutti risultati siano equi possibili, si postulano tre differenti concezioni di probabilità:", "Classica, frequentista, soggettivista, assiomatica"],
+  ["Le ricerche qualitative:", "Hanno la loro prima affermazione negli Stati Uniti intorno agli anni '60"],
+  ["L'Anziano da Osteria costituisce:", "	Un gruppo maschile costituito da persone mature ed anziane, di basso profilo. Le attività sociali o culturali sono quasi inesistenti."],
+  ["L'homo oeconomicus è:", "Un modello astratto, una amputazione ontologica."],
+  ["Un profilo di netto disagio sociale contraddistingue:", "I non abbonati alla telefonia"],
+  ["Quale delle seguenti affermazioni è vera:", "secondo l' approccio economico il soggetto reagisce alle variazioni dei prezzi dei beni modificando le quantità di beni acquistati"],
+  ["", ""],
+  ["", ""],
 ];
