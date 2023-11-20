@@ -12,6 +12,7 @@
       font-family: 'SF';
       src: url('https://fedespada.com/font/SF-Pro-Display-Bold.ttf');
     }
+
     body {
       margin: 0;
       display: grid;
@@ -19,12 +20,16 @@
       justify-items: center;
       background-color: white;
       height: 100vh;
-    }#b {
+    }
+
+    #b {
       align-self: end;
       margin-bottom: 20px;
       width: 400px;
       height: min-content;
-    }#invia {
+    }
+
+    #invia {
       font-family: 'SF';
       font-size: 17px;
       color: white;
@@ -35,9 +40,13 @@
       background-color: rgb(219, 176, 18);
       cursor: pointer;
       transition: all 0.15s;
-    }#invia:active {
+    }
+
+    #invia:active {
       background-color: rgb(236, 200, 67);
-    }#piu {
+    }
+
+    #piu {
       font-family: 'SF';
       font-size: 17px;
       color: white;
@@ -49,10 +58,14 @@
       cursor: pointer;
       margin-bottom: 5px;
       transition: all 0.15s;
-    }#piu:active {
+    }
+
+    #piu:active {
 
       background-color: rgb(176, 184, 230);
-    }#mygrid {
+    }
+
+    #mygrid {
       display: grid;
       height: min-content;
       grid-template-columns: 1fr;
@@ -61,11 +74,16 @@
       justify-items: center;
       font-family: 'SF';
       font-size: 17px;
-    }.xy {
+    }
+
+    .xy {
       display: flex;
       margin-bottom: 10px;
-    }.inpx,.inpy {
-      
+    }
+
+    .inpx,
+    .inpy {
+
       background-color: #eff1ff;
       width: 80%;
       border: none;
@@ -73,10 +91,15 @@
       font-family: greek;
       text-align: center;
       padding: 0 10px;
-      font-size: 15px;
-    }.inpx:focus,.inpy:focus {
+      font-size: 20px;
+    }
+
+    .inpx:focus,
+    .inpy:focus {
       outline: none;
-    }#c,#t{
+    }
+
+    #c {
       align-self: center;
       display: grid;
       align-items: center;
@@ -84,14 +107,20 @@
       height: min-content;
       grid-template-columns: 1fr;
 
-    }#img1{
+    }
+
+    #img1 {
       margin-top: 15px;
     }
-    #t{
-      
+
+    #t {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
     }
-    textarea{
+
+    textarea {
       align-self: center;
       border: none;
       text-align: center;
@@ -106,20 +135,58 @@
       font-size: 20px;
       background-color: #eff1ff;
     }
-    textarea:focus{
+
+    textarea:focus {
       outline: none;
     }
-    .y{
+
+    .y {
       justify-content: right;
     }
-    .x,.y{display: flex;}
+
+    .x,
+    .y {
+      display: flex;
+    }
+
+    #jssvg {
+      position: absolute;
+      background-color: #F0DB4F;
+      scale: 0.03;
+      translate: -10% -6%;
+      fill: #323330;
+    }
   </style>
 
   <div id="t">
+    <?xml version="1.0" standalone="no"?>
+    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+    <svg id="jssvg" version="1.0" xmlns="http://www.w3.org/2000/svg" width="1052.000000pt" height="1052.000000pt"
+      viewBox="0 0 1052.000000 1052.000000" preserveAspectRatio="xMidYMid meet">
+
+      <g transform="translate(0.000000,1052.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+        <path d="M7845 5740 c-375 -28 -699 -165 -930 -395 -249 -247 -365 -538 -365
+-914 0 -558 230 -948 740 -1256 128 -77 304 -161 615 -295 297 -128 428 -192
+536 -261 146 -94 228 -211 248 -355 37 -261 -140 -470 -455 -535 -137 -29
+-355 -23 -494 14 -254 66 -452 216 -627 474 -31 46 -60 83 -64 83 -9 0 -770
+-439 -786 -454 -10 -9 -2 -30 37 -94 302 -509 785 -814 1415 -897 173 -23 477
+-23 645 -1 402 54 710 190 947 419 205 198 325 447 363 751 16 121 8 375 -15
+499 -47 257 -160 474 -343 661 -211 215 -487 379 -1033 614 -412 177 -550 253
+-641 350 -87 93 -124 202 -116 338 7 108 37 181 103 252 95 103 205 146 375
+145 194 0 316 -49 445 -178 45 -44 103 -115 130 -158 27 -43 54 -76 61 -73 11
+4 745 473 753 482 7 7 -104 174 -170 257 -262 327 -600 493 -1069 526 -156 12
+-156 12 -305 1z" />
+        <path d="M4727 3923 l-3 -1768 -22 -83 c-68 -254 -207 -353 -496 -354 -255 -1
+-411 108 -589 414 -29 48 -55 87 -58 86 -4 -2 -185 -111 -402 -243 l-395 -239
+33 -66 c178 -353 487 -621 859 -745 354 -118 832 -120 1180 -3 504 168 799
+558 866 1143 6 58 10 712 10 1858 l0 1767 -490 0 -489 0 -4 -1767z" />
+      </g>
+    </svg>
+
     <textarea id="tear"></textarea>
   </div>
   <div id="c">
-    
+
 
     <img id="img2">
     <img id="img1">
@@ -128,14 +195,14 @@
     <div id="mygrid">
       <div class="xy">
         <div class="x">
-          
-        <div class="text">x: </div>
-        <input class="inpx">
+
+          <div class="text">x: </div>
+          <input class="inpx">
         </div>
         <div class="y">
-          
-        <div class="text">y: </div>
-        <input class="inpy">
+
+          <div class="text">y: </div>
+          <input class="inpy">
         </div>
       </div>
     </div>
