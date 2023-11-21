@@ -1,5 +1,8 @@
 var stato=1;
-
+if(localStorage.getItem('s')){
+  localStorage.removeItem('s');
+  document.querySelector('.boxS').click()
+}
 document.querySelector('.boxS').addEventListener("click",function(){
   if(stato==1){
     document.body.classList.remove('a1');
