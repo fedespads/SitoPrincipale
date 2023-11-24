@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'SF';
+  src: url(https://fedespada.com/font/SF-Pro-Display-Bold.ttf);
+}#inp1 {
+  text-align: end;
+  padding: 10px 0 10px 10px;
+}#inp2 {
+  padding: 10px 10px 10px 0;
+}#period {
+  border-radius: 10px;
+  width: 30px;
+  height: 5px;
+  background-color: rgb(5, 5, 40);
+  transform: translate(0, 12px);
+}input {
+  border: none;
+  font-family: 'SF';
+  font-size: 30px;
+  max-width: 40vw;
+  color: rgb(5, 5, 40);
+}input:focus {
+  outline: none;
+  color: rgb(5, 5, 40);
+}body {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}#g {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content min-content;
+}#mp1,#mp2{
+  visibility: hidden;
+  white-space: nowrap;
+  font-family: 'SF';
+  font-size: 30px;
+  position: absolute;
+}#a {
+  text-align: center;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+}#linea {
+  width: 30px;
+  height: 5px;
+  background-color: rgb(5, 5, 40);
+  border-radius: 10px;
+}#num,
+#den {
+  font-family: 'SF';
+  font-size: 30px;
+}#titolo{
+  font-size: 35px;
+  font-family: 'SF';
+  color: rgb(5, 5, 40);
+  margin-top: 30px;
+}
+#t{
+  align-self: self-start;
+}
