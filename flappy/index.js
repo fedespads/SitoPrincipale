@@ -7,7 +7,7 @@ let abase = 0,
   ali = 1,
   ty = 0,
   altnow = 0,
-  vel = 3,
+  vel = 4,
   gameover = false,
   ready = false,
   punti = 0;
@@ -45,7 +45,7 @@ function spostatubi() {
       +e.getAttribute("data-sy") +
       "px);";
 
-    if (+e.getAttribute("data-sx") == 20) {
+    if (+e.getAttribute("data-sx") == 18) {
       creatubi();
       aggpunti();
     }
@@ -66,8 +66,8 @@ function creatubi() {
   }
 }
 function gravita(t, alt) {
-  let y = 7;
-  return (0.35 * t - y) ** 2 - y ** 2 + alt;
+  let y = 7.5;
+  return (0.45 * t - y) ** 2 - y ** 2 + alt;
 }
 function controllatocco() {
   const rect = bird.getBoundingClientRect();
@@ -91,7 +91,7 @@ function controllatocco() {
     }
   });
   if (!gameover) {
-    setTimeout(controllatocco, 100);
+    setTimeout(controllatocco, 17);
   }
 }
 function aggpunti() {
@@ -145,7 +145,7 @@ document.addEventListener("keydown", (e) => {
     click();
   }
 });
-document.addEventListener("click", function () {
+document.addEventListener("mousedown", function () {
   click();
 });
 main.style = "scale: " + window.innerHeight / 945 + ";";

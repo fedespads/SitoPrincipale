@@ -82,4 +82,6 @@
   top: 70px;
   left: 50%;
   transform: translate(-50%,0);
+}#numeri img{
+  height: 60px;
 }
