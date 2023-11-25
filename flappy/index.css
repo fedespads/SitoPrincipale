@@ -1,0 +1,85 @@
+@font-face {
+  font-family: 'SF';
+  src: url(https://fedespada.com/font/SF-Pro-Display-Bold.ttf);
+}#bird {
+  scale: 1.8;
+  position: relative;
+  top: 50%;
+  left: 5%;
+}body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  background-color: #282828;
+  user-select: none;
+}#main {
+  width: 531.56px;
+  height: 945px;
+  background-image: url(assets/background-day.png);
+  background-size: cover;
+  overflow: hidden;
+  position: absolute;
+}#base {
+  position: relative;
+  height: calc(945px / 4);
+  top: calc(100% - calc(945px / 4));
+  left: 0;
+  transform: translate(-10px, 0);
+  z-index: 2;
+}.tubi {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content 1fr;
+  scale: 1.8;
+  transform: translate(420px, -280px);
+}.tubosu {
+  rotate: 180deg;
+  scale: -1 1;
+}.spazio {
+  height: 80px;
+}#box1 {
+  position: absolute;
+  width:  531.56px;
+  height: 945px;
+  background-color: #282828;
+  z-index: 10;
+  transform: translate(-531.56px, 0);
+}#box2 {
+  position: absolute;
+  width: 531.56px;
+  height: 945px;
+  background-color: #282828;
+  z-index: 10;
+  transform: translate(531.56px, 0);
+}#rosso{
+  background-color: red;
+  width: 1px;
+  left: 1px;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 10;
+}#message{
+  position: absolute;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 3;
+}#gameoverimg{
+  position: absolute;
+  position: absolute;
+  width: 340px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 3;
+}#numeri{
+  position: absolute; 
+  top: 70px;
+  left: 50%;
+  transform: translate(-50%,0);
+}
