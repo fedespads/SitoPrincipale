@@ -103,7 +103,7 @@ function aggpunti() {
 }
 function click() {
   if (gameover) {
-    punti = 0;
+    punti = -1;
     aggpunti();
     document.querySelectorAll("#gameoverimg").forEach((e) => {
       e.remove();
