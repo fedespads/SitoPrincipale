@@ -7,7 +7,7 @@ let abase = 0,
   ali = 1,
   ty = 0,
   altnow = 0,
-  vel = 4,
+  vel = 4.5 ,
   gameover = false,
   ready = false,
   punti = 0;
@@ -45,7 +45,7 @@ function spostatubi() {
       +e.getAttribute("data-sy") +
       "px);";
 
-    if (+e.getAttribute("data-sx") == 18) {
+    if (+e.getAttribute("data-sx")==17 ) {
       creatubi();
       aggpunti();
     }
@@ -67,7 +67,7 @@ function creatubi() {
 }
 function gravita(t, alt) {
   let y = 7.5;
-  return (0.45 * t - y) ** 2 - y ** 2 + alt;
+  return (0.4   * t - y) ** 2 - y ** 2 + alt;
 }
 function controllatocco() {
   const rect = bird.getBoundingClientRect();
