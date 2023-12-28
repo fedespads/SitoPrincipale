@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'SF';
+  src: url(https://fedespada.com/font/SF-Pro-Display-Bold.ttf);
+}
+
+:root {
+  --sc: 1
+}
+
+svg {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--sc));
+  transform-origin: center;
+  transition: all 1s;
+}
+
+body {
+  background-color: black;
+  background: radial-gradient(222.2% 257.16% at 197.17% 166.91%, #336ECE 0%, #0A172C 100%);
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: auto;
+  overflow: hidden;
+}
+
+
+path {
+  fill: rgba(255, 255, 255, 0.6);
+  stroke: rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+}
+
+.itpath:hover {
+  fill: white;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  z-index: 1;
+}
+
+#regione{
+  font-family: 'SF';
+  color: white;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%,0);
+  font-size: 27px;
+  user-select: none;
+  width: max-content;
+}
+#streak{
+  font-family: 'SF';
+  color: rgba(255, 255, 255, 0.235);
+  position: absolute;
+  top: 85px;
+  left: 50%;
+  transform: translate(-50%,0);
+  font-size: 18px;
+  user-select: none;
+}
+path.r{
+  fill:#3B9C39
+}
+path.r:hover{
+  fill:#3B9C39
+}
+path.w{
+  fill: #882020
+}
+path.w:hover{
+  fill: #882020
+}

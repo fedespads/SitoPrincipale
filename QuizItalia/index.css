@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'SF';
+  src: url(https://fedespada.com/font/SF-Pro-Display-Bold.ttf);
+}
+
+:root {
+  --sc: 1
+}
+
+body {
+  background-color: black;
+  background: radial-gradient(222.2% 257.16% at 197.17% 166.91%, #336ECE 0%, #0A172C 100%);
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: auto;
+  overflow: hidden;
+
+}
+
+path {
+  fill: rgba(255, 255, 255, 0.7);
+}
+
+#gioca {
+  transition: all 1s;
+  width: 267px;
+  height: 82px;
+  flex-shrink: 0;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #F90 0%, #72552B 124.64%);
+  box-shadow: 0px 4px 74.1px -10px rgba(0, 0, 0, 0.25);
+  border: none;
+  font-family: 'SF';
+  color: white;
+  font-size: 36px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 42px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#gioca.g {
+  transform: translate(-50%, 150px);
+  opacity: 0;
+}
+
+#gioca:active {
+  background: linear-gradient(0deg, #F90 0%, #72552B 129.27%);
+
+
+}
+
+#mainbox {
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--sc));
+  transform-origin: center;
+  z-index: -1;
+  transition: all 1s;
+}
+
+svg.p2 {
+  transform: translate(-50px, 0px) scale(2);
+}
+
+.elmenu {
+  width: 298px;
+  min-height: 53px;
+  text-align: center;
+  padding: 10px 20px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: rgba(210, 74, 74, 0.80);
+  box-shadow: 0px 4px 22.7px 16px rgba(219, 72, 72, 0.27);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'SF';
+  font-size: 27px;
+  cursor: pointer;
+}
+
+#menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  gap: 37px;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+#menu.on {
+  opacity: 1;
+}
+
+#arrow {
+  filter: invert(1);
+  position: absolute;
+  rotate: 180deg;
+  top: 20px;
+  left: 15px;
+  height: 30px;
+  width: 30px;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  cursor: pointer;
+}
+
+#arrow.on {
+  opacity: 1;
+}
