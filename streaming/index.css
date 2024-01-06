@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'SF';
+  src: url(https://fedespada.com/font/SF-Pro-Display-Bold.ttf);
+}
+body{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  background-color: black;
+}
+.cont1{
+  display: grid;
+  gap: 15px;
+}
+.titl{
+  font-family: 'SF';
+  color: white;
+  font-size: 35px;
+}
+button{
+  font-family: 'SF';
+  background-color: rgba(224, 154, 22, 0.95);
+  color: white;
+  font-size: 35px;
+  width: 180px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 28px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+button:hover{
+  background-color: rgb(255, 176, 29);
+  filter: drop-shadow(0 0 20px rgba(255, 166, 0, 0.308));
+}
+input{
+  height: 40px;
+  width: 250px;
+  border-radius: 15px;
+  border: none;
+  font-family: 'SF';
+  text-align: center;
+  font-size: 20px;
+}
+input:focus{
+  outline: none;
+}
