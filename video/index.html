@@ -6,6 +6,16 @@
   <title>Video</title>
 </head>
 <body>
-  
+  <input>
+  <script>
+    document.querySelector('input').addEventListener('keypress',e=>{
+      if(e.key=='Enter'){
+        document.body.innerHTML =
+        '<body><video width="640" height="360" controls=""><source src="' +
+          document.querySelector('input').value +
+        '" type="video/mp4">Il tuo browser non supporta il tag video</video></body>';
+      }
+    })
+  </script>
 </body>
 </html>
