@@ -3,7 +3,7 @@
   "short_name": "Days Off",
   "start_url": "/DaysOff/index.html",
   "display": "standalone",
-  "background_color": "#fffff",
+  "background_color": "#ffffff",
   "theme_color": "#3184ce",
   "icons": [
     {
