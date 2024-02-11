@@ -1,0 +1,8 @@
+{
+  "name": "Days Off",
+  "short_name": "Days Off",
+  "start_url": "/DaysOff/index.html",
+  "display": "standalone",
+  "background_color": "#fffff",
+  "theme_color": "#3184ce"
+}
