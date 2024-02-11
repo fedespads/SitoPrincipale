@@ -3,10 +3,10 @@
   src: url(https://fedespada.com/font/SF-Pro-Display-Bold.ttf);
 }
 :root{
-  --ms:0.2;
+  --ms:0.24;
 }
 #gm{
-  font-size: 35px;
+  font-size: 40px;
   font-family: 'SF';
   width: fit-content;
   justify-self: center;
@@ -19,7 +19,7 @@ body{
   overflow: hidden;
   display: grid;
   grid-auto-flow: column;
-  grid-template-rows: 1fr min-content 1fr;
+  grid-template-rows: 1fr 1fr;
   align-items: center;
   justify-content: center;
 }
@@ -56,10 +56,6 @@ body{
   display: grid;
   align-items: center;
   justify-items: center;
-}
-.f3f{
-  display: grid;
-  grid-template-rows: min-content min-content;
 }
 #sabati{
   font-family: 'SF';

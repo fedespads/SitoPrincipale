@@ -18,7 +18,7 @@ function stampaGiorni() {
     }
     oggi.setDate(oggi.getDate() + 1);
   }
-  document.querySelector("#gm").innerHTML = "-" + i + " giorni";
+  document.querySelector("#gm").innerHTML = i ;
 }
 let domeniche = [
     "18/02",
