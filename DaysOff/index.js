@@ -12,9 +12,7 @@ function stampaGiorni() {
     if (!tutti.includes(data)) {
       i++;
 
-      console.log(data, i);
     } else {
-      console.log(data, "FESTA");
     }
     oggi.setDate(oggi.getDate() + 1);
   }
@@ -75,7 +73,6 @@ tutti.sort(function (a, b) {
   }
   return c(a) - c(b);
 });
-console.log(tutti);
 stampaGiorni();
 let ss = 1;
 document.querySelector(".s1").addEventListener("click", function () {
