@@ -2,24 +2,23 @@ let box = document.querySelector(".box");
 let input = document.querySelector("input");
 let a;
 input.addEventListener("input", function () {
+  const inputValue = input.value.toLowerCase().trim();
   box.innerHTML = "";
-  clearInterval(a);
-  let i = 0;
-  if (input.value != "") {
-    a = setInterval(() => {
-      if (!all[i]) {
-        clearInterval(a);
-      }
-      if (all[i][0].toLowerCase().includes(input.value.toLowerCase())) {
-        box.innerHTML += `
-      <div class="elemento">
-        <div class="domanda">${all[i][0]}</div>
-        <div class="risposta">${all[i][1]}</div>
+
+  if (inputValue !== "") {
+    const filteredItems = all.filter((e) =>
+      e[0].toLowerCase().includes(inputValue)
+    );
+
+    const htmlElements = filteredItems.map(
+      (
+        e
+      ) => `<div class="elemento"><div class="domanda">${e[0]}</div><div class="risposta">${e[1]}</div>
       </div>
-      `;
-      }
-      i++;
-    }, 0);
+    `
+    );
+    console.log(htmlElements);
+    box.innerHTML = htmlElements.join("");
   }
 });
 input.addEventListener("focus", function () {
@@ -29,8 +28,24 @@ input.addEventListener("focus", function () {
 let all = [
   [`I diritti patrimoniali sono:`, `disponbili e prescrittibili`],
   [
+    "Il data breach:",
+    "si realizza con una divulgazione di dati all'interno di un ambiente (fisico o informatico) privo di misure di sicurezze",
+  ],
+  [
     `I diritti personali:`,
     `ineriscono strettamente alla persona e soltanto da questa sono esercitabili`,
+  ],
+  [
+    `In caso di professionista non associato:`,
+    `il titolare sarà il professionista`,
+  ],
+  [
+    `L'Editto di Nantes del 1563:`,
+    `Contribuisce a consolidare il sistema dei privilegi in Francia`,
+  ],
+  [
+    `I "dati personali" sono:`,
+    `	tutte le informazioni che assumono rilevanza per la individuazione dell'identità dell'individuo, anche in rete`,
   ],
   [
     `I diritti della personalità:`,
