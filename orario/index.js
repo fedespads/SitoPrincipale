@@ -10,10 +10,10 @@ let orario=[
     ['Matematica','Matematica','Prog Arch Amb','Prog Arch Amb','Italiano','Italiano'],
 
     //GIO
-    ['Rel-Alternativa','Filosofia','Prog Arch Amb','Prog Arch Amb','Lab Architettura','Lab Architettura'],
+    ['Filosofia','Filosofia','Prog Arch Amb','Prog Arch Amb','Lab Architettura','Lab Architettura'],
 
     //VEN
-    ['Inglese','Filosofia',`Storia Dell'Arte`,`Storia Dell'Arte`,'Italiano','Italiano'],
+    ['Rel-Alternativa',`Storia Dell'Arte`,`Storia Dell'Arte`,'Inglese','Italiano','Italiano'],
 
     //SAB
     ['Lab Architettura','Lab Architettura','Inglese','Inglese','Storia'],

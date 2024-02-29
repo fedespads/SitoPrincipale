@@ -1,0 +1,9 @@
+{
+  "name": "Orario",
+  "short_name": "Orario",
+  "start_url": "/orario/index.html",
+  "display": "standalone",
+  "background_color": "rgb(245, 245, 247)",
+  "theme_color": "rgb(245, 245, 247)"
+}
+
