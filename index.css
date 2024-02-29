@@ -1,138 +1,75 @@
 @font-face {
-  font-family: 'Galano';
-  src: url(font/GalanoGrotesqueBold.otf);
-}
-@font-face {
-  font-family: 'SFReg';
-  src: url(font/SF-Pro-Display-Regular.ttf);
-}
-@font-face {
   font-family: 'SF';
   src: url(https://fedespada.com/font/SF-Pro-Display-Bold.ttf);
 }
 
-:root{
-  --quad: 200px;
-  --quadactive: 250px;
+@font-face {
+  font-family: 'Bebas';
+  src: url(https://fedespada.com/font/Bebas.ttf);
 }
-body{
+
+.v {
+  height: 100vh;
+  flex: 0 0 100%;
+  scroll-snap-align: center;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  background-color: black;
-  transition: all 1s;
-  user-select: none;
-  overflow-x: hidden;
-  -webkit-overflow: hidden;
 }
-.box{
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  grid-template-columns: 250px 250px;
-  grid-template-rows: 250px 250px;
-  margin-top: 200px;
-  translate: 125px 0;
-  transition: all 0.6s ease;
-} 
-.lista{
-  font-family: 'SF';
-  color: rgb(255, 255, 255);
-  gap: 5px;
-  align-self: flex-start;
+
+#c {
 
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  transition: all 0.6s ease;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+  margin: 0
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+#bg {
   overflow: hidden;
-
-}
-.listaf{
-  width: 200px;
-  height: fit-content;
-  translate: 0 20px;
-}
-.listas{
-  width: 0;
-  translate: 0 -170px;
-  padding: 0;
-}
-.lista div{
-  cursor: pointer;
-  background-color: #333333;
-  padding: 5px 10px;
-  border-radius: 5px;
-  width: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  transition: all 0.6s ease;
-}
-.quadrato{
-  width: var(--quad);
-  height: var(--quad);
-  border-radius: 25px;
-  transition: all 0.6s ease;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'SF';
-  font-size: 400%;
-  color: white;
-  z-index: 100;
-}
-.quadrato.boxF{
-  width:var(--quadactive);
-  height: var(--quadactive);
-  background-color: #f1a43c;
-}
-.quadrato.boxS{
-  background-color: #333333;
-}
-
-
-
-body.a2 .quadrato.boxF{
-  width: var(--quad);
-  height: var(--quad);
-  background-color: #333333;
-}
-body.a2 .quadrato.boxS{
-  width: var(--quadactive);
-  height: var(--quadactive);
-  background-color: #f1a43c;
-}
-body.a2 .listaf{
-  width: 0;
-  translate: 0 -170px;
-
-  padding: 0 0;
-}
-body.a2 .listas{
-  top: calc(42% + 220px);
-  width: 200px;
-  translate: 0 20px;
-  padding: 10px 15px;
-}
-body.a2 .listas div{
-  translate: 0 0;
-}
-
-
-body.a2 .box{
-  
-  translate: -125px 0;
-}
-
-.trian{
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
   position: absolute;
+  top: 50%;
   left: 50%;
-  top: 0%;
-  translate: -50% 0;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
+* {
+  font-family: 'SF';
+  color: white;
+}
 
+#lf,
+#ls {
+  display: grid;
+  gap: 5px;
+}
+
+.li {
+  background-color: rgba(246, 246, 246, 0.12);
+  background-color: #1E1E1E;
+  padding: 10px 15px;
+  border-radius: 10px;
+  user-select: none;
+  cursor: pointer;
+  text-align: center;
+  height: 20px;
+  transition: translate 0.2s ease-out, background-color 2s ease-out;
+}
