@@ -29,9 +29,15 @@
 }
 
 body {
-  margin: 0
+  margin: 0;
+  background-color: black;
 }
-
+@media only screen and (min-width: 768px) {
+  svg{
+    width: 100vw;
+    height: auto;
+  }
+}
 ::-webkit-scrollbar {
   display: none;
 }
