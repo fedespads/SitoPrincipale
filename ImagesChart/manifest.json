@@ -1,0 +1,9 @@
+{
+  "name": "ImagesChart",
+  "short_name": "ImagesChart",
+  "start_url": "ImagesChart/index.html",
+  "display": "standalone",
+  "background_color": "#e0e0e0",
+  "theme_color": "#e0e0e0"
+}
+
