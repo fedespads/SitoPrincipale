@@ -2,117 +2,85 @@
   font-family: 'Galano';
   src: url(font/GalanoGrotesqueBold.otf);
 }
+
 @font-face {
   font-family: 'SF';
   src: url(font/SF-Pro-Display-Bold.ttf);
 }
+
 @font-face {
   font-family: 'SFReg';
   src: url(font/SF-Pro-Display-Regular.ttf);
-}
-:root{
-  --rowwidth: 300px;
-  --time: 0.8s;
-}
-body{
-  background-color: rgb(245, 245, 247);
-  translate: 50px 0;
-  
-  position:relative; 
-  overflow:hidden;
-}
-.materia, .orariga, .ricreazione div, .rigaorario.active::before, body{
+}:root {
+  --a: 320px;
+  --b: 28px
+}.scheda {
+  display: grid;
+  background-color: rgb(193, 193, 193);
+  background-color: #eff1ff;
+  height: auto;
+  width: calc(var(--a) - 20px);
+  gap: 3px;
+  border-radius: var(--b);
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.201));
+  transform-origin: center;
+  scale: 0.8;
+  transition: scale 0.5s ease-out;
+  overflow: hidden;
+}#mainbox {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}#mainbox> :first-child {
+  margin-left: calc((100vw - var(--a)) / 2);
+}.scheda.a {
+  scale: 1;
+}.last {
+  height: 100vh;
+  width: calc((100vw - var(--a)) / 2);
+
+
+  flex: 0 0 calc((100vw - var(--a)) / 2);
+  scroll-snap-align: center;
+}.c {
+  height: 100vh;
+  width: var(--a);
+
+  flex: 0 0 var(--a);
+  scroll-snap-align: center;
+}.center,.c,.r,.ri,.m,.o {
+
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.orariobox{
-  height: fit-content;
-  width: var(--rowwidth);
-  gap: 2px;
-  background-color: rgb(212, 212, 212);
-  display: grid;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.158);
-  transition: all var(--time) ease;
-  border-radius: 38px;
+
+}body {
+  background-color: #eff1ff;
+  margin: 0;
   overflow: hidden;
-}
-.rigaorario, .ricreazione{
-  height: 70px;
+}.r,.ri,.f{
+  display: flex;
+  height: 65px;
+}.r {
+  background-color: white;
+}.ri {
+  background-color: rgb(40, 84, 39);
+  color: white;
+}.o {
+  width: 100px;
+}.m {
+  flex: 1;
+}* {
   font-family: 'SF';
   font-size: 20px;
-  display: grid;
-  grid-template-columns: 80px calc(var(--rowwidth) - 80px);
-  padding: 0 10px;
-  color: rgb(29, 29, 31);
-
-}
-.rigaorario{
-  background-color: rgb(255, 255, 255);
-  width: 280px;
-}
-.ricreazione{
-  background-color:  #434633;
-  color: white;
-  width: 280px;
-}
-.mainbox{
-  display: grid;
-  justify-items: center;
-  align-items: center;
-  grid-template-columns: var(--rowwidth) var(--rowwidth);
-  grid-template-rows: 30px 1fr;
-  gap: 20px;
-  translate: 120px 0;
-  transition: all var(--time) ease;
-}
-.orariobox1{
-  z-index: 1;
-  scale: 1;
-}
-.orariobox2{
-  filter: blur(2px);
-  z-index: 0;
-  -webkit-appearance: none;
-  scale: 0.8;
-}
-.rigaorario.giallo{
-  background-color: rgb(253, 253, 151);
-}
-.giorno2{
-  filter: blur(2px);
-  scale: 0.8;
-}
-body.dx .orariobox2{
-  translate: 0px 0;
-  filter: blur(0px);
-  z-index: 1;
-  scale: 1;
-}
-body.dx .orariobox1{
-  filter: blur(2px);
-  z-index: 0;
-  scale: 0.8;
-}
-body.dx .giorno1{
-  
-  filter: blur(2px);
-  scale: 0.8;
-}
-body.dx .giorno2{
-  filter: blur(0px);
-  scale: 1;
-}
-body.dx .mainbox{
-  translate: -190px 0;
-
-}
-.giorno{
-  z-index: -1;
-  transition: all var(--time) ease;
-  font-family: 'SF';
+}::-webkit-scrollbar {
+  display: none;
+}.f{
+  width: 200px;
   background-color: white;
-  padding: 5px 15px;
-  border-radius: 10px;
-
+  position: absolute;
+  z-index: -1;
+  top: 68px;
 }

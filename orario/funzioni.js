@@ -1,42 +1,27 @@
-
-
-function numday() {
-  const dataOggi = new Date();
-  let giorno = dataOggi.getDay(); 
-  giorno = (giorno + 6) % 7;
-  if(giorno==6){giorno=0}
-  return giorno;
-}
-
-function ora() {
-  const dataOggi = new Date();
-  const ore = dataOggi.getHours();
-  const minuti = dataOggi.getMinutes();
-
-  const orario = `${ore.toString().padStart(2, '0')}${minuti.toString().padStart(2, '0')}`;
-  return (+orario);
-}
-
-function mo(x){
-  let a= x.split(':')[0];
-  let b= x.split(':')[1];
-  return +(a+b);
-}
-
-function numdayt() {
-  const dataOggi = new Date();
-  let giorno = dataOggi.getDay(); 
-  giorno = (giorno + 6) % 7;
-  giorno++;
-  if(giorno==6){
-    giorno=0
+function gs() {
+  // ritorna 0 se è lunedi fino a 6 se è sabato
+  const oggi = new Date().getDay();
+  if (oggi === 0) {
+    return 0;
+  } else {
+    return oggi - 1;
   }
-  else if(giorno==7){
-    giorno=1;
-  }
+}
+function oa() {
+  //dice quanti minuti sono passati da mezzanotte
 
-  return giorno;
+  const n = new Date();
+  const h = n.getHours();
+  const m = n.getMinutes();
+
+  return h * 60 + m;
+
 }
 
-
-
+function geth(n){
+  // fornisce l'orario nella riga n del giorno corrente in numero
+  if(!document.querySelectorAll('.scheda')[gs()].children[n]) return geth(n-1)+60
+  let a = document.querySelectorAll('.scheda')[gs()].children[n].children[0]?.innerHTML
+  if(!a) return geth(n-1)+60
+  return ((+a.split(':')[0])*60) + (+a.split(':')[1])
+}
