@@ -46,9 +46,10 @@ let orario = [
   ["Lab Architettura", "Lab Architettura", "Inglese", "Inglese", "Storia"],
 ];
 (function creaschede() {
-  let a = ["08:10", "09:10", "10:15", "11:10", "12:15", "13:15"];
+  let a = ["08:10", "09:10", "10:15", "11:10", "12:15", "13:15"], g =['Lun', 'Mar','Mer','Gio','Ven','Sab'],ind=0
   orario.forEach((e) => {
-    let b = '<div class="c"><div class="scheda">';
+    let b = '<div class="c"><div class="g">'+g[ind]+'</div><div class="scheda">';
+    ind++;
     for (let i = 0; i < e.length; i++) {
       b += `<div class="r">
            <div class="o">${a[i]}</div>
@@ -68,7 +69,7 @@ let orario = [
     </div>`;
       }
     }
-    b += "</div> </div>";
+    b += '</div> <div class="sp"></div></div>';
     document.querySelector("#mainbox").innerHTML += b;
   });
   document.querySelector("#mainbox").innerHTML += '<div class="last"></div>';
