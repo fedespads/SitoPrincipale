@@ -1,0 +1,9 @@
+{
+  "name": "Orario",
+  "short_name": "Orario",
+  "start_url": "/orariofede/index.html",
+  "display": "standalone",
+  "background_color": "#eff1ff",
+  "theme_color": "#eff1ff"
+}
+
