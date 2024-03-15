@@ -49,7 +49,7 @@ onValue(DBScelto, function (snapshot) {
         el["id"] +
         '" class="contenitore-impegno-singolo"><div class="start ' +
         el["tipo"] +
-        '">' +
+        '1">' +
         el["tipo"] +
         '</div><div class="center">' +
         el["materia"] +
@@ -94,7 +94,7 @@ let materieArr = [
   "Inglese",
   "Italiano",
   "Lab. Arch.",
-  "Matematica",
+  "Mate",
   "Motoria",
   "Potenz.",
   "Prog. Arch.",
@@ -103,6 +103,7 @@ let materieArr = [
 ];
 
 document.addEventListener("click", (e) => {
+  console.log(e.target);
   if (
     e.target.classList[0] == "contenitore-impegno-singolo" ||
     e.target.parentElement.classList[0] == "contenitore-impegno-singolo"
@@ -123,6 +124,12 @@ document.addEventListener("click", (e) => {
     document.querySelectorAll(".nota").forEach((e) => {
       e.classList.remove("open");
     });
+  }
+
+  if (e.target.classList[0] == "muroblur") {
+    muroblur.classList.remove("active");
+    contaggiunta.classList.remove("active");
+    console.log(1);
   }
 });
 
@@ -146,16 +153,12 @@ piu.addEventListener("click", function () {
   contaggiunta.classList.add("active");
 });
 finepiu.addEventListener("click", function () {
-  let arr = [];
-
-  if (i.classList[2]) {
-    arr[0] = "I";
-  } else if (v.classList[2]) {
-    arr[0] = "V";
-  }
-  arr[1] = testomateria.innerHTML;
-  arr[2] = dataimp.value;
-  arr[3] = notei.value;
+  let arr = [
+    document.querySelector(".ContCosa.active")?.innerHTML,
+    testomateria.innerHTML,
+    dataimp.value,
+    notei.value,
+  ];
 
   if (arr[0] && arr[1] != "-" && arr[2]) {
     push(DBScelto, arr);
@@ -169,13 +172,14 @@ finepiu.addEventListener("click", function () {
   dataimp.value = "";
   notei.value = "";
 });
-v.addEventListener("click", function () {
-  v.classList.add("active");
-  i.classList.remove("active");
-});
-i.addEventListener("click", function () {
-  i.classList.add("active");
-  v.classList.remove("active");
+let cc = ["v", "i", "K"];
+cc.forEach((e) => {
+  document.querySelector("#" + e).addEventListener("click", function () {
+    cc.forEach((el) => {
+      document.querySelector("#" + el).classList.remove("active");
+    });
+    document.querySelector("#" + e).classList.add("active");
+  });
 });
 casellamateria.addEventListener("click", function () {
   materie.classList.toggle("active");
