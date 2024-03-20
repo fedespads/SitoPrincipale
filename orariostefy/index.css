@@ -96,6 +96,7 @@ body{
   font-size: 35px;
   font-family: 'lm';
   color:  var(--blu2);
+  text-align: center;
 }
 .edit{
   background-color: var(--blu);

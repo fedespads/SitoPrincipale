@@ -64,6 +64,8 @@ body{
   font-size: 50px;
   position: absolute;
 padding: 20px 20px;
+cursor: pointer;
+user-select: none;
 }
 .as{
   left: 20px;
@@ -106,6 +108,8 @@ padding: 20px 20px;
   border-radius: 25px;
   margin-bottom: 110px;
   padding: 15px 50px;
+  user-select: none;
+  cursor: pointer;
 }
 .line{
   width: 300px;
@@ -121,6 +125,7 @@ padding: 20px 20px;
   font-size: 35px;
   font-family: 'lm';
   color:  var(--blu2);
+  text-align: center;
 }
 .edit{
   background-color: var(--blu);

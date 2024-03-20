@@ -29,6 +29,7 @@ let s,
   v,
   ev = [],
   tday = new Date().getDate();
+
 onValue(DBScelto, function (snapshot) {
   if (snapshot.exists()) {
     //DB presente
@@ -43,25 +44,29 @@ onValue(DBScelto, function (snapshot) {
       eliminadalDB(e);
     });
     v = JSON.parse(v);
-    if(localStorage.getItem('change')){
-      let a = JSON.parse(localStorage.getItem('change'))
-      localStorage.removeItem('change')
-      v[a[0]]=a[1]
-      push(DBScelto,JSON.stringify(v))
+    if (localStorage.getItem("change")) {
+      let a = JSON.parse(localStorage.getItem("change"));
+      localStorage.removeItem("change");
+      v[a[0]] = a[1];
+      push(DBScelto, JSON.stringify(v));
+    } else {
+      c1();
     }
-    else{
-    c1();
-  }
   } else {
     //DB vuoto
   }
 });
+
 function c1() {
   (function setEv() {
     let type = [
         "RIPOSO",
         "VETRINE MATTINA",
         "VETRINE POMERIGGIO",
+        "VETRINE MATTINA domenica",
+        "VETRINE POMERIGGIO domenica",
+        "VETRINE intero",
+        "VETRINE intero domenica",
         "BARRIERE tutto il giorno",
         "BARRIERE",
       ],
@@ -69,19 +74,63 @@ function c1() {
         "",
         "8:30-13:00",
         "14:30-19:30",
+        "8:30-14:00",
+        "14:00-19:30",
+        "8:30-13:00 14:30-19:30",
+        "8:30-19:30",
         "8:30-19:00",
         "8:30-13:00 14:30-20:00",
       ],
-      no = [0, 4.5, 5, 10.5, 10];
+      no = [0, 4.5, 5, 5.5, 5.5, 9.5, 11, 10.5, 10];
     [...gmc()].forEach((e, i) => {
       let a = [e, type[v[i]], o[v[i]], no[v[i]]];
       ev.push(a);
     });
   })();
-  ev.forEach((e, i) => {
-    i != 0 &&
-      (() => {
-        b.innerHTML += `
+  // ev.forEach((e, i) => {
+  //   if (i != 0) {
+  //     b.innerHTML += `
+  //       <div class="c">
+  //         <div class="s1">
+  //           <div class="d">
+  //             ${getd(i)}
+  //           </div>
+  //           <div class="g">
+  //             ${e[0]}
+  //           </div>
+  //           <span class="line">
+  //           </span>
+  //         </div>
+  //         <div class="s2">
+  //           <div class="t1">
+  //             sei a
+  //           </div>
+  //           <div class="t2">
+  //             ${e[1].split(" ")[0]}
+  //           </div>
+  //           <div class="t3">
+  //             ${e[1].includes(" ") ? e[1].substring(e[1].indexOf(" ") + 1) : ""}
+  //           </div>
+  //         </div>
+  //         <div class="s3">
+  //           <div class="o1">
+  //             ${e[2].split(" ")[0]}
+  //           </div>
+  //           <div class="o2">
+  //             ${e[2].includes(" ") ? e[2].substring(e[2].indexOf(" ") + 1) : ""}
+  //           </div>
+  //           <div class="edit" data-daY="${i},${v[i]}">
+  //             Modifica
+  //           </div>
+  //         </div>
+  //       </div>
+  //       `;
+  //   }
+  // });
+  console.log(ev)
+  for (let i = 1; i <= 30; i++) {
+    let e = ev[i];
+    b.innerHTML += `
         <div class="c">
           <div class="s1">
             <div class="d">
@@ -111,16 +160,13 @@ function c1() {
             <div class="o2">
               ${e[2].includes(" ") ? e[2].substring(e[2].indexOf(" ") + 1) : ""}
             </div>
-            <div class="edit" data-daY="${i},${v[i]}" ${
-          i < tday ? 'style="visibility: hidden; pointer-events: none;' : ""
-        }>
+            <div class="edit" data-daY="${i},${v[i]}">
               Modifica
             </div>
           </div>
         </div>
         `;
-      })();
-  });
+  }
 
   b.scrollLeft = (new Date().getDate() - 1) * 400;
 }
