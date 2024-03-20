@@ -15,7 +15,7 @@
 
 :root{
   --bianco: #f1efff;
-  --giallo: #bed431;
+  --g: rgb(175, 93, 247);
   --blu: rgb(41,23,92);
   --blu2: rgba(41,23,92,0.65);
 
@@ -58,14 +58,14 @@ body{
   display: none;
 }
 .g{
-  background-color: var(--giallo);
+  background-color: var(--g);
   width: fit-content;
   color: white;
   font-size: 25px;
   border-radius: 18px;
   padding: 10px 18px;
   margin-bottom: 20px;
-  filter: drop-shadow(0 0 10px #bed4318b);
+   
 }
 .d{
   color: var(--blu);
@@ -110,11 +110,21 @@ body{
 }
 .o2{
   margin-bottom: 15px;
-  font-size: 20px;
+  font-size: 30px;
   color: var(--blu2);
 }
 .o1{
   
-  font-size: 20px;
+  font-size: 30px;
   color: var(--blu2);
+}
+#ore{
+  font-size: 30px;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%,0);
+  display: flex;
+  color: var(--blu2);
+  white-space: nowrap;
 }

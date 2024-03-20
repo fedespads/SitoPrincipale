@@ -58,6 +58,7 @@ onValue(DBScelto, function (snapshot) {
 });
 
 function c1() {
+  console.log(gmc());
   (function setEv() {
     let type = [
         "RIPOSO",
@@ -87,48 +88,8 @@ function c1() {
       ev.push(a);
     });
   })();
-  // ev.forEach((e, i) => {
-  //   if (i != 0) {
-  //     b.innerHTML += `
-  //       <div class="c">
-  //         <div class="s1">
-  //           <div class="d">
-  //             ${getd(i)}
-  //           </div>
-  //           <div class="g">
-  //             ${e[0]}
-  //           </div>
-  //           <span class="line">
-  //           </span>
-  //         </div>
-  //         <div class="s2">
-  //           <div class="t1">
-  //             sei a
-  //           </div>
-  //           <div class="t2">
-  //             ${e[1].split(" ")[0]}
-  //           </div>
-  //           <div class="t3">
-  //             ${e[1].includes(" ") ? e[1].substring(e[1].indexOf(" ") + 1) : ""}
-  //           </div>
-  //         </div>
-  //         <div class="s3">
-  //           <div class="o1">
-  //             ${e[2].split(" ")[0]}
-  //           </div>
-  //           <div class="o2">
-  //             ${e[2].includes(" ") ? e[2].substring(e[2].indexOf(" ") + 1) : ""}
-  //           </div>
-  //           <div class="edit" data-daY="${i},${v[i]}">
-  //             Modifica
-  //           </div>
-  //         </div>
-  //       </div>
-  //       `;
-  //   }
-  // });
   console.log(ev)
-  for (let i = 1; i <= 30; i++) {
+  for (let i = 1; i <= ev.length-1; i++) {
     let e = ev[i];
     b.innerHTML += `
         <div class="c">
@@ -166,9 +127,15 @@ function c1() {
           </div>
         </div>
         `;
-  }
+  };
 
   b.scrollLeft = (new Date().getDate() - 1) * 400;
+  let sum = 0,tot=0;
+  for(let i = 0; i<=new Date().getDate();i++){sum+=ev[i][3]
+  };for(let i = 0; i<=ev.length-1;i++){tot+=ev[i][3]
+  };
+  document.querySelector('#ore').innerHTML='ORE: '+sum+' su '+tot
+  console.log(sum,tot)
 }
 
 document.addEventListener("click", (e) => {
