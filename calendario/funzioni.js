@@ -20,3 +20,11 @@ function data12(data){
   return `${data.split('-')[2]}/${data.split('-')[1]}/${data.split('-')[0]}`
   }
 }
+function data21(data){
+  let a  = data.split('/')
+  a.reverse();
+  let anno=new Date().getFullYear();
+  let r= a.join('-');
+  (!a[2])&&(r=anno+'-'+r);
+  return r
+}

@@ -44,27 +44,21 @@ onValue(DBScelto, function (snapshot) {
       return new Date(a["data"]) - new Date(b["data"]);
     });
     arraycopia.forEach((el) => {
-      contimpegni.innerHTML +=
-        '<div class="bb"><div class="c"><div id="' +
-        el["id"] +
-        '" class="contenitore-impegno-singolo"><div class="start ' +
-        el["tipo"] +
-        '1">' +
-        el["tipo"] +
-        '</div><div class="center">' +
-        el["materia"] +
-        '</div><div class="end">' +
-        data12(el["data"]) +
-        "</div></div> <div class='delete'>Elimina</div>   </div><div class='nota'>" +
-        el["nota"] +
-        "</div></div>";
+      contimpegni.innerHTML += `<div class="bb">
+        <div class="c">
+          <div class="edit">Modifica</div>
+          <div class="contenitore-impegno-singolo">
+            <div class="start ${el["tipo"]}1">${el["tipo"]}</div>
+            <div class="center">${el["materia"]}</div>
+            <div class="end">${data12(el["data"])}</div>
+          </div>
+          <div class='delete' id="${el["id"]}">Elimina</div>
+        </div>
+        ${!el["nota"] == "" ? '<div class="nota">' + el["nota"] + "</div>" : ""}
+      </div>`;
     });
 
-    document.querySelectorAll(".delete").forEach((e) => {
-      e.addEventListener("click", function () {
-        eliminadalDB(e.parentElement.children[0].id);
-      });
-    });
+    after();
   } else {
     contimpegni.innerHTML = "Calendario vuoto";
   }
@@ -103,7 +97,9 @@ let materieArr = [
 ];
 
 document.addEventListener("click", (e) => {
-  console.log(e.target);
+  document.querySelectorAll(".c").forEach((el) => {
+    el.scrollLeft = 100;
+  });
   if (
     e.target.classList[0] == "contenitore-impegno-singolo" ||
     e.target.parentElement.classList[0] == "contenitore-impegno-singolo"
@@ -116,10 +112,21 @@ document.addEventListener("click", (e) => {
       .forEach((e) => {
         e.classList.remove("open");
       });
-
-    e.target.parentElement.parentElement
-      .querySelector(".nota")
-      .classList.toggle("open");
+    if (e.target.parentElement.parentElement.querySelector(".nota")) {
+      console.log(e.target.parentElement.classList);
+      if (
+        !e.target.parentElement.parentElement
+          .querySelector(".nota")
+          .classList.contains("open") &&
+        (e.target.parentElement.scrollLeft == 0 ||
+          e.target.parentElement.scrollLeft == 200)
+      ) {
+        e.target.parentElement.classList.add("nc");
+      }
+      e.target.parentElement.parentElement
+        .querySelector(".nota")
+        .classList.toggle("open");
+    }
   } else {
     document.querySelectorAll(".nota").forEach((e) => {
       e.classList.remove("open");
@@ -127,9 +134,8 @@ document.addEventListener("click", (e) => {
   }
 
   if (e.target.classList[0] == "muroblur") {
-    muroblur.classList.remove("active");
-    contaggiunta.classList.remove("active");
-    console.log(1);
+    localStorage.removeItem('delete')
+    removebox();
   }
 });
 
@@ -147,7 +153,16 @@ document.querySelectorAll(".materia").forEach((e) => {
     imgfreccia.classList.remove("active");
   });
 });
-
+function removebox() {
+  muroblur.classList.remove("active");
+  contaggiunta.classList.remove("active");
+  [...document.querySelector(".ContCose").children].forEach((e) => {
+    e.classList.remove("active");
+  });
+  testomateria.innerHTML = "-";
+  dataimp.value = "";
+  notei.value = "";
+}
 piu.addEventListener("click", function () {
   muroblur.classList.add("active");
   contaggiunta.classList.add("active");
@@ -163,14 +178,8 @@ finepiu.addEventListener("click", function () {
   if (arr[0] && arr[1] != "-" && arr[2]) {
     push(DBScelto, arr);
   }
-
-  muroblur.classList.remove("active");
-  contaggiunta.classList.remove("active");
-  i.classList.remove("active");
-  v.classList.remove("active");
-  testomateria.innerHTML = "-";
-  dataimp.value = "";
-  notei.value = "";
+  localStorage.getItem('delete') && eliminadalDB(localStorage.getItem('delete'))
+  removebox();
 });
 let cc = ["v", "i", "K"];
 cc.forEach((e) => {
@@ -185,3 +194,66 @@ casellamateria.addEventListener("click", function () {
   materie.classList.toggle("active");
   imgfreccia.classList.toggle("active");
 });
+function after() {
+  document.querySelectorAll(".delete").forEach((e) => {
+    e.addEventListener("click", function () {
+      eliminadalDB(e.id);
+    });
+  });
+  document.querySelectorAll(".edit").forEach((e) => {
+    e.addEventListener("click", function () {
+      let c = e.parentElement,
+        cis = c.querySelector(".contenitore-impegno-singolo");
+      let a1 = {
+        C: "K",
+        V: "v",
+        I: "i",
+      };
+      localStorage.setItem('delete',c.querySelector('.delete').id)
+      document
+        .querySelector("#" + a1[cis.children[0].innerHTML])
+        .classList.add("active");
+      document.querySelector("#testomateria").innerHTML =
+        cis.children[1].innerHTML;
+      document.querySelector("#dataimp").value = data21(
+        cis.children[2].innerHTML
+      );
+      if (c.parentElement.querySelector(".nota")) {
+        document.querySelector("#notei").value =
+          c.parentElement.querySelector(".nota").innerHTML;
+      }
+
+      muroblur.classList.add("active");
+      contaggiunta.classList.add("active");
+    });
+  });
+  document.querySelectorAll(".c").forEach((el) => {
+    el.scrollLeft = 100;
+    el.addEventListener("scroll", function () {
+      if (el.classList.contains("nc")) {
+        (function c() {
+          if (el.scrollLeft == 100) {
+            el.classList.remove("nc");
+          } else {
+            requestAnimationFrame(c);
+          }
+        })();
+      } else {
+        if (el.parentElement.querySelector(".nota.open")) {
+          el.parentElement.querySelector(".nota.open").classList.remove("open");
+        }
+      }
+    });
+  });
+  document.querySelector("#contimpegni").appendChild(
+    (function () {
+      let a = document.createElement("div");
+      a.style = "height:1px;";
+      return a;
+    })()
+  );
+  document.querySelector("#cb").clientHeight <
+  document.querySelector("#contimpegni").clientHeight
+    ? (document.querySelector("#cb").style = "align-items: start")
+    : (document.querySelector("#cb").style = "align-items: center");
+}
