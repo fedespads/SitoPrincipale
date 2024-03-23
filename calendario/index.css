@@ -276,7 +276,7 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  margin-bottom: 130px;
+  margin-bottom: 40px;
 
 }
 
@@ -348,6 +348,7 @@ img {
 }
 
 .contaggiunta {
+  pointer-events: none;
   display: grid;
   justify-items: left;
   padding-left: 40px;
@@ -375,6 +376,7 @@ img {
 }
 
 .contaggiunta.active {
+  pointer-events:all;
   transform: translate(-50%, -50%);
   scale: 1;
   opacity: 1;
