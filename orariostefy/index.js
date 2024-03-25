@@ -58,6 +58,10 @@ onValue(DBScelto, function (snapshot) {
 });
 
 function c1() {
+  if (isAndroidMobile()) {
+    document.querySelector("#b").classList.add("bnoscroll");
+    detectSwipeDirection();
+  }
   console.log(gmc());
   (function setEv() {
     let type = [
@@ -88,8 +92,8 @@ function c1() {
       ev.push(a);
     });
   })();
-  console.log(ev)
-  for (let i = 1; i <= ev.length-1; i++) {
+  console.log(ev);
+  for (let i = 1; i <= ev.length - 1; i++) {
     let e = ev[i];
     b.innerHTML += `
         <div class="c">
@@ -127,15 +131,19 @@ function c1() {
           </div>
         </div>
         `;
-  };
+  }
 
-  b.scrollLeft = (new Date().getDate() - 1) * 400;
-  let sum = 0,tot=0;
-  for(let i = 0; i<=new Date().getDate();i++){sum+=ev[i][3]
-  };for(let i = 0; i<=ev.length-1;i++){tot+=ev[i][3]
-  };
-  document.querySelector('#ore').innerHTML='ORE: '+sum+' su '+tot
-  console.log(sum,tot)
+  b.scrollLeft = (new Date().getDate() - 1) * document.body.clientWidth;
+  let sum = 0,
+    tot = 0;
+  for (let i = 0; i <= new Date().getDate(); i++) {
+    sum += ev[i][3];
+  }
+  for (let i = 0; i <= ev.length - 1; i++) {
+    tot += ev[i][3];
+  }
+  document.querySelector("#ore").innerHTML = "ORE: " + sum + " su " + tot;
+  console.log(sum, tot);
 }
 
 document.addEventListener("click", (e) => {
@@ -144,3 +152,5 @@ document.addEventListener("click", (e) => {
     window.location.href = "edit";
   }
 });
+if (isAndroidMobile()) {
+}

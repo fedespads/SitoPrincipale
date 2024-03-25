@@ -28,6 +28,10 @@
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
 }
+#b.bnoscroll{
+  
+  overflow-x: hidden;
+}
 *{
   font-family: 'SF';
 }
@@ -41,8 +45,9 @@ body{
 }
 .c{
   height: 100vh;
-  flex: 0 0 400px; /* Larghezza fissa per ogni elemento */
+  flex: 0 0 100vw; /* Larghezza fissa per ogni elemento */
   scroll-snap-align: center;
+
   display: flex;
   flex-direction: column;
 }
