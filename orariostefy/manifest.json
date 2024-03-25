@@ -1,6 +1,6 @@
 {
-  "name": "Orario",
-  "short_name": "Orario",
+  "name": "Lavoro",
+  "short_name": "Lavoro",
   "start_url": "/orariostefy/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
