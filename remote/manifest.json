@@ -4,6 +4,28 @@
   "start_url": "/remote/index.html",
   "display": "standalone",
   "background_color": "#000",
-  "theme_color": "#000"
+  "theme_color": "#000",
+  "icons": [
+    {
+      "src": "/remote/icon.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/remote/icon.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/remote/icon.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/remote/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
 }
 
