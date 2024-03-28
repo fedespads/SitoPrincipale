@@ -15,6 +15,7 @@ body{
   background-color: black;
   padding: 0;
   margin: 0;
+  overflow: hidden;
   
 }
 #mb{
@@ -33,10 +34,40 @@ body{
   min-width: 200px;
   max-width: 350px;
 }
+svg{
+  cursor: pointer;
+}
+#csvg{
+  display: flex;
+  align-items: center;
+}
+#volume{
+  width: 150px;
+  height: 20px;
+  border-radius: 100px;
+  overflow: hidden;
+  display: flex;
+  padding : 3px black;
+}
+
+#a, #b{
+  height: 20px;
+  width: 150px;
+}
+#c{
+  display: flex;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+#a{background-color: white;
+}
+#b{
+  background-color: black;
+}
 .app{
   width: 70%;
   height: min-content;
-  background-color: blue;
   border-radius: 18px;
   display: flex;
   align-items: center;
