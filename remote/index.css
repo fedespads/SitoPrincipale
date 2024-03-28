@@ -14,7 +14,8 @@
 body{
   background-color: black;
   padding: 0;
-  margin: 50px 20px 0 20px;
+  margin: 0;
+  
 }
 #mb{
   height: 100%;
@@ -22,12 +23,14 @@ body{
   display: flex;
   justify-items: center;
   flex-direction: column;
+  align-items: center;
 }
 .ab{
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 350px;
 }
 .app{
   width: 70%;
