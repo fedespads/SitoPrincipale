@@ -1,0 +1,9 @@
+{
+  "name": "Remote",
+  "short_name": "Remote",
+  "start_url": "/remote/index.html",
+  "display": "standalone",
+  "background_color": "#000",
+  "theme_color": "#000"
+}
+
