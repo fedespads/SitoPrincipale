@@ -1,0 +1,98 @@
+@font-face {
+  font-family: 'SF';
+  src: url(https://fedespada.com/font/SF-Pro-Display-Bold.ttf);
+}
+@font-face {
+  font-family: 'Bebas';
+  src: url(https://fedespada.com/font/Bebas.ttf);
+}
+:root{
+  --sg:4;
+  --gesize: 70px;
+  --color1:#feffff;
+  --color2:#def2f1;
+  --color3:#3aafa9;
+  --color4:#2b7a78;
+  --color5:#17252a;
+
+}
+body{
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--color3);
+}
+*{
+  font-family: 'SF';
+  user-select: none;
+}
+.ge{
+  width: var(--gesize);
+  max-width: calc((100vw - 50px) / 4);
+  max-height: calc((100vw - 50px) / 4);
+  font-size: 2.5em;
+  border-radius: 16px;
+  color: var(--color5);
+  height: var(--gesize);
+  margin: 3px;
+  background-color: var(--color2);
+  cursor: pointer;
+}
+#bl{
+  opacity: 0;
+}
+.center{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#a,#c,#c2{
+  flex: 1;
+}
+#c{
+  flex-direction: column;
+}
+#b{max-height: 100vw;}
+#g{
+  display: grid;
+  grid-template-rows: repeat(var(--sg), 1fr);
+  grid-template-columns: repeat(var(--sg), 1fr);
+}
+
+#timer{
+  margin-top: 20px;
+  font-size: 30px;
+  color: var(--color4);
+}
+#reset{
+  cursor: pointer;
+  font-family: 'Bebas';
+  background-color: var(--color5);
+  color: var(--color1);
+  font-size: 30px;
+  padding: 12px 55px 8px 55px;
+  border-radius: 18px;
+}
+#min,#plus{
+  background-color: var(--color4);
+  color: var(--color3);
+  font-size: 40px;
+  border-radius: 30px;
+  width: 50px;
+  height: 50px;
+}
+#a1{
+  width: 100vw;
+  justify-content: space-evenly;
+}
+#num{
+  color: var(--color1);
+  font-size: 60px;
+}
+#plus{
+  padding-bottom: 3px;
+  height: 47px;
+}

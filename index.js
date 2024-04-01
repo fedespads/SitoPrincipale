@@ -1,126 +1,108 @@
 if (localStorage.getItem("jGuIopLfFrTe4Tt6H")) {
-  function $$(a) {
-    return document.querySelectorAll(a);
+  function t(t) {
+    return document.querySelectorAll(t);
   }
-  function $(a) {
-    return document.querySelector(a);
+  function e(t) {
+    return document.querySelector(t);
   }
-  function so() {
-    lf.sort(function (a, b) {
-      return a.length - b.length;
-    });
-    ls.sort(function (a, b) {
-      return a.length - b.length;
-    });
+  function l() {
+    i.sort(function (t, e) {
+      return t.length - e.length;
+    }),
+      o.sort(function (t, e) {
+        return t.length - e.length;
+      });
   }
-  function cl() {
-    let i = lf.length;
-    lf.forEach((e) => {
-      let a = document.createElement("div");
-      a.classList.add("li");
-      a.innerHTML = e;
-      a.style.zIndex = i;
-      i--;
-      $("#lf").appendChild(a);
-    });
-
-    i = ls.length;
-    ls.forEach((e) => {
-      let a = document.createElement("div");
-      a.classList.add("li");
-      a.innerHTML = e;
-      a.style.zIndex = i;
-      i--;
-      $("#ls").appendChild(a);
-    });
+  function n() {
+    let t = i.length;
+    i.forEach((l) => {
+      let n = document.createElement("div");
+      n.classList.add("li"),
+        (n.innerHTML = l),
+        (n.style.zIndex = t),
+        t--,
+        e("#lf").appendChild(n);
+    }),
+      (t = o.length),
+      o.forEach((l) => {
+        let n = document.createElement("div");
+        n.classList.add("li"),
+          (n.innerHTML = l),
+          (n.style.zIndex = t),
+          t--,
+          e("#ls").appendChild(n);
+      });
   }
-  function setbc() {
-    var rect = document.body.getBoundingClientRect();
-    var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-    bc = (rect.left + rect.width / 2 + scrollLeft).toFixed(0);
+  function r() {
+    var t = document.body.getBoundingClientRect(),
+      e = window.pageXOffset || document.documentElement.scrollLeft;
+    s = (t.left + t.width / 2 + e).toFixed(0);
   }
-  let lf = [
+  let i = [
       "impegni",
       "classifica",
-      "ninegame",
+      "15Game",
       "chords",
       "flappy",
       "QuizItalia",
       "streaming",
     ],
-    ls = ["assenze", "calendario", "orario"];
-  so();
-  cl();
-
-  let bc;
-  setbc();
-
-  $$(".li").forEach((e) => {
-    e.addEventListener("click", function () {
-      window.open(e.innerHTML, "_self");
-    });
-  });
-
-  function an(l) {
-    let i = 0;
-    [...$("#lf").children].forEach((e) => {
-      e.setAttribute("t", 45 * i);
-      e.style.translate = "0 -" + 45 * i + "px";
-      i++;
-    });
-    i = 0;
-    [...$("#ls").children].forEach((e) => {
-      e.setAttribute("t", 45 * i);
-      e.style.translate = "0 -" + 45 * i + "px";
-      i++;
-    });
-
-    if (l == $("#lf")) $("#ls").setAttribute("o", false);
-    if (l == $("#ls")) $("#lf").setAttribute("o", false);
-    $$(".li").forEach((e) => {
-      e.style.backgroundColor = "#1E1E1E";
-    });
-
-    i = 0;
-    let a = setInterval(function () {
-      if (i < l.children.length - 1) {
-        [...l.children].forEach((e) => {
-          e.setAttribute("t", e.getAttribute("t") - 45);
-
-          e.style.translate = "0 -" + e.getAttribute("t") + "px";
-        });
-        i++;
-      } else {
-        clearInterval(a);
-        [...l.children].forEach((e) => {
-          e.style.backgroundColor = "rgba(246, 246, 246, 0.12)";
-        });
-      }
+    o = ["assenze", "calendario", "orario"];
+  l(), n();
+  let s;
+  function c(l) {
+    let n = 0;
+    [...e("#lf").children].forEach((t) => {
+      t.setAttribute("t", 45 * n),
+        (t.style.translate = "0 -" + 45 * n + "px"),
+        n++;
+    }),
+      (n = 0),
+      [...e("#ls").children].forEach((t) => {
+        t.setAttribute("t", 45 * n),
+          (t.style.translate = "0 -" + 45 * n + "px"),
+          n++;
+      }),
+      l == e("#lf") && e("#ls").setAttribute("o", !1),
+      l == e("#ls") && e("#lf").setAttribute("o", !1),
+      t(".li").forEach((t) => {
+        t.style.backgroundColor = "#1E1E1E";
+      }),
+      (n = 0);
+    let r = setInterval(function () {
+      n < l.children.length - 1
+        ? ([...l.children].forEach((t) => {
+            t.setAttribute("t", t.getAttribute("t") - 45),
+              (t.style.translate = "0 -" + t.getAttribute("t") + "px");
+          }),
+          n++)
+        : (clearInterval(r),
+          [...l.children].forEach((t) => {
+            t.style.backgroundColor = "rgba(246, 246, 246, 0.12)";
+          }));
     }, 100);
   }
-  an(document.querySelector("#lf"));
-
-  function c(element) {
-    var rect = element.getBoundingClientRect();
-    var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-    var centerX = rect.left + rect.width / 2 + scrollLeft;
-    // return Math.floor(centerX-bc)==(-1)?true:false;
-    return Math.floor(centerX - bc) >= -1 && Math.floor(centerX - bc) <= 1
-      ? true
-      : false;
+  function a(t) {
+    var e = t.getBoundingClientRect(),
+      l = window.pageXOffset || document.documentElement.scrollLeft,
+      n = e.left + e.width / 2 + l;
+    return !!(Math.floor(n - s) >= -1 && 1 >= Math.floor(n - s));
   }
-  function animate() {
-    if (c($("#lf")) && !JSON.parse($("#lf").getAttribute("o"))) {
-      $("#lf").setAttribute("o", "true");
-      an($("#lf"));
-    }
-    if (c($("#ls")) && !JSON.parse($("#ls").getAttribute("o"))) {
-      $("#ls").setAttribute("o", "true");
-      an($("#ls"));
-    }
-    requestAnimationFrame(animate);
+  function f() {
+    a(e("#lf")) &&
+      !JSON.parse(e("#lf").getAttribute("o")) &&
+      (e("#lf").setAttribute("o", "true"), c(e("#lf"))),
+      a(e("#ls")) &&
+        !JSON.parse(e("#ls").getAttribute("o")) &&
+        (e("#ls").setAttribute("o", "true"), c(e("#ls"))),
+      requestAnimationFrame(f);
   }
-  animate();
-} else {
-  document.body.innerHTML = "Non autorizzato";
-}
+  r(),
+    t(".li").forEach((t) => {
+      t.addEventListener("click", function () {
+        window.open(t.innerHTML, "_self");
+      });
+    }),
+    c(document.querySelector("#lf")),
+    f();
+} else document.body.innerHTML = "Non autorizzato";
