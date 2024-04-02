@@ -10,6 +10,7 @@ let i = +localStorage.getItem("md").split(",")[0],
     "VETRINE intero domenica",
     "BARRIERE tutto il giorno",
     "BARRIERE",
+    "BARRIERE intero domenica"
   ],
   o = [
     "",
@@ -21,8 +22,9 @@ let i = +localStorage.getItem("md").split(",")[0],
     "8:30-19:30",
     "8:30-19:00",
     "8:30-13:00 14:30-20:00",
+    "09:00 19:00"
   ],
-  no = [0, 4.5, 5, 5.5, 5.5, 9.5, 11, 10.5, 10];
+  no = [0, 4.5, 5, 5.5, 5.5, 9.5, 11, 10.5, 10,10];
 b.innerHTML += `
         <div class="c">
           <div class="s1">
