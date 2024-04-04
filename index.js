@@ -1,48 +1,8 @@
-
 (function () {
   if (!document.cookie.includes("jGuIopLfFrTe4Tt6H")) {
     document.body.innerHTML = "Non autorizzato";
+    checkbeat();
     return;
-  }
-
-  function t(t) {
-    return document.querySelectorAll(t);
-  }
-  function e(t) {
-    return document.querySelector(t);
-  }
-  function l() {
-    i.sort(function (t, e) {
-      return t.length - e.length;
-    }),
-      o.sort(function (t, e) {
-        return t.length - e.length;
-      });
-  }
-  function n() {
-    let t = i.length;
-    i.forEach((l) => {
-      let n = document.createElement("div");
-      n.classList.add("li"),
-        (n.innerHTML = l),
-        (n.style.zIndex = t),
-        t--,
-        e("#lf").appendChild(n);
-    }),
-      (t = o.length),
-      o.forEach((l) => {
-        let n = document.createElement("div");
-        n.classList.add("li"),
-          (n.innerHTML = l),
-          (n.style.zIndex = t),
-          t--,
-          e("#ls").appendChild(n);
-      });
-  }
-  function r() {
-    var t = document.body.getBoundingClientRect(),
-      e = window.pageXOffset || document.documentElement.scrollLeft;
-    s = (t.left + t.width / 2 + e).toFixed(0);
   }
   let i = [
       "impegni",
@@ -53,62 +13,121 @@
       "QuizItalia",
       "streaming",
     ],
-    o = ["assenze", "calendario", "orario"];
-  l(), n();
-  let s;
-  function c(l) {
-    let n = 0;
-    [...e("#lf").children].forEach((t) => {
-      t.setAttribute("t", 45 * n),
-        (t.style.translate = "0 -" + 45 * n + "px"),
-        n++;
-    }),
-      (n = 0),
-      [...e("#ls").children].forEach((t) => {
-        t.setAttribute("t", 45 * n),
-          (t.style.translate = "0 -" + 45 * n + "px"),
-          n++;
-      }),
-      l == e("#lf") && e("#ls").setAttribute("o", !1),
-      l == e("#ls") && e("#lf").setAttribute("o", !1),
-      t(".li").forEach((t) => {
-        t.style.backgroundColor = "#1E1E1E";
-      }),
-      (n = 0);
-    let r = setInterval(function () {
-      n < l.children.length - 1
-        ? ([...l.children].forEach((t) => {
-            t.setAttribute("t", t.getAttribute("t") - 45),
-              (t.style.translate = "0 -" + t.getAttribute("t") + "px");
-          }),
-          n++)
-        : (clearInterval(r),
-          [...l.children].forEach((t) => {
-            t.style.backgroundColor = "rgba(246, 246, 246, 0.12)";
-          }));
-    }, 100);
-  }
-  function a(t) {
-    var e = t.getBoundingClientRect(),
-      l = window.pageXOffset || document.documentElement.scrollLeft,
-      n = e.left + e.width / 2 + l;
-    return !!(Math.floor(n - s) >= -1 && 1 >= Math.floor(n - s));
-  }
-  function f() {
-    a(e("#lf")) &&
-      !JSON.parse(e("#lf").getAttribute("o")) &&
-      (e("#lf").setAttribute("o", "true"), c(e("#lf"))),
-      a(e("#ls")) &&
-        !JSON.parse(e("#ls").getAttribute("o")) &&
-        (e("#ls").setAttribute("o", "true"), c(e("#ls"))),
-      requestAnimationFrame(f);
-  }
-  r(),
-    t(".li").forEach((t) => {
-      t.addEventListener("click", function () {
-        window.open(t.innerHTML, "_self");
+    o = ["assenze", "calendario", "orario"],
+    scr,
+    r,
+    l;
+  (function setlis() {
+    function ap(b, c) {
+      let zi = b.length;
+      b.forEach((e) => {
+        let a = document.createElement("div");
+        a.classList.add("li");
+        a.textContent = e;
+        a.style.zIndex = zi;
+        $("#l" + c).appendChild(a);
+        zi--;
       });
-    }),
-    c(document.querySelector("#lf")),
-    f();
+    }
+    ap(i, "f");
+    ap(o, "s");
+    r = Math.floor($("#lf").getBoundingClientRect().right);
+    l = Math.floor($("#ls").getBoundingClientRect().left) - window.innerWidth;
+  })();
+  (function seths() {
+    ["s", "f"].forEach((l) => {
+      let top = $("#l" + l).children[0].getBoundingClientRect().top;
+      $$("#l" + l + " .li").forEach((e) => {
+        e.setAttribute("data-h", e.getBoundingClientRect().top - top);
+      });
+    });
+  })();
+  (function scroll() {
+    $("#c").addEventListener("scroll", function () {
+      (function f() {
+        let scr1 =
+          Math.floor(
+            y3(r, 0, 0, 1, Math.floor($("#lf").getBoundingClientRect().right)) *
+              100
+          ) / 100;
+        scr1 > 1 && (scr1 = 1);
+        $$("#lf .li").forEach((e) => {
+          if (scr1 <= 0) {
+            $("#lf").classList.add("t");
+          } else {
+            $("#lf").classList.remove("t");
+          }
+          e.style.translate = "0px " + -e.getAttribute("data-h") * scr1 + "px";
+        });
+      })();
+      (function s() {
+        let scr2 =
+          Math.floor(
+            y3(
+              l,
+              0,
+              +window.innerWidth,
+              1,
+              Math.floor($("#ls").getBoundingClientRect().left)
+            ) * 100
+          ) / 100;
+
+        scr2 > 1 && (scr2 = 1);
+        $$("#ls .li").forEach((e) => {
+          if (scr2 <= 0) {
+            $("#ls").classList.add("t");
+          } else {
+            $("#ls").classList.remove("t");
+          }
+          e.style.translate = "0px " + -e.getAttribute("data-h") * scr2 + "px";
+        });
+      })();
+    });
+  })();
 })();
+function $(t) {
+  return document.querySelector(t);
+}
+function $$(t) {
+  return document.querySelectorAll(t);
+}
+function y3(x1, y1, x2, y2, x3) {
+  var m = (y2 - y1) / (x2 - x1);
+  var q = y1 - m * x1;
+  var y3 = m * x3 + q;
+  return y3;
+}
+function checkbeat() {
+  let ft = false;
+  let ar = [];
+  const sp = [0, 279, 161, 462, 505, 1134, 882];
+  const t = 150;
+
+  document.addEventListener("click", function () {
+    if (!ft) ft = Date.now();
+    else if (Date.now() - ft > 3000) {
+      ft = Date.now();
+      ar = [];
+    }
+    let n = Date.now() - ft;
+    ar.push(n - (ar[ar.length - 1] || 0));
+    console.clear();
+    console.log(JSON.stringify(ar));
+    if (ar.length === 7) {
+      let ic = true;
+      for (let i = 0; i < sp.length; i++) {
+        if (Math.abs(ar[i] - sp[i]) > t) {
+          ic = false;
+          break;
+        }
+      }
+      if (ic) {
+        var s = new Date();
+        s.setDate(s.getDate() + 7);
+        var sf = s.toUTCString();
+        document.cookie = "jGuIopLfFrTe4Tt6H=; expires=" + sf + "; path=/";
+        location.reload();
+      }
+    }
+  });
+}

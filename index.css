@@ -55,10 +55,13 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+}
+.center,.v,.body{
+  
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 * {
@@ -75,11 +78,16 @@ body {
 .li {
   background-color: rgba(246, 246, 246, 0.12);
   background-color: #1E1E1E;
+  filter: drop-shadow(0 0 5px black);
   padding: 10px 15px;
   border-radius: 10px;
   user-select: none;
   cursor: pointer;
   text-align: center;
   height: 20px;
-  transition: translate 0.2s ease-out, background-color 2s ease-out;
+  transition: translate 0.2s ease-out;
+}
+.t .li{
+  transition: background-color 1s ease-out;
+  background-color: rgba(246, 246, 246, 0.12);
 }
