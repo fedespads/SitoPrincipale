@@ -84,6 +84,11 @@
       })();
     });
   })();
+  $$('.li').forEach(e=>{
+    e.addEventListener('click',function(){
+      window.location.href=e.innerHTML
+    })
+  })
 })();
 function $(t) {
   return document.querySelector(t);
@@ -92,10 +97,7 @@ function $$(t) {
   return document.querySelectorAll(t);
 }
 function y3(x1, y1, x2, y2, x3) {
-  var m = (y2 - y1) / (x2 - x1);
-  var q = y1 - m * x1;
-  var y3 = m * x3 + q;
-  return y3;
+  return ((y2 - y1) / (x2 - x1)) * x3 + (y1 - ((y2 - y1) / (x2 - x1)) * x1);
 }
 function checkbeat() {
   let ft = false;
