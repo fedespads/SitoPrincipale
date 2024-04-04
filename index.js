@@ -1,4 +1,10 @@
-if (localStorage.getItem("jGuIopLfFrTe4Tt6H")) {
+
+(function () {
+  if (!document.cookie.includes("jGuIopLfFrTe4Tt6H")) {
+    document.body.innerHTML = "Non autorizzato";
+    return;
+  }
+
   function t(t) {
     return document.querySelectorAll(t);
   }
@@ -105,4 +111,4 @@ if (localStorage.getItem("jGuIopLfFrTe4Tt6H")) {
     }),
     c(document.querySelector("#lf")),
     f();
-} else document.body.innerHTML = "Non autorizzato";
+})();

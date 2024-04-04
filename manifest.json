@@ -1,7 +1,7 @@
 {
   "name": "FS",
   "short_name": "FS",
-  "start_url": ".",
+  "start_url": "./a",
   "display": "fullscreen",
   "background_color": "#000",
   "theme_color": "#000",

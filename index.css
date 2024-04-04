@@ -16,7 +16,11 @@
   align-items: center;
   justify-content: center;
 }
-
+#msvg{
+  background-color:#000000;
+  width:auto;
+  height:100vh;
+}
 #c {
 
   display: flex;
