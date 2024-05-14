@@ -11,12 +11,11 @@ function stampaGiorni() {
       mese.toString().padStart(2, "0");
     if (!tutti.includes(data)) {
       i++;
-
     } else {
     }
     oggi.setDate(oggi.getDate() + 1);
   }
-  document.querySelector("#gm").innerHTML = i ;
+  document.querySelector("#gm").innerHTML = i;
 }
 let domeniche = [
     "18/02",
@@ -69,7 +68,8 @@ let domeniche = [
     "01/05",
     "02/06",
   ],
-  tutti = [...sabati, ...domeniche, ...feste];
+  tutti = [...sabati, ...domeniche, ...feste],
+  festesimo = ["05/06", "06/06"];
 tutti.sort(function (a, b) {
   function c(d) {
     return +(d.split("/")[1] + d.split("/")[0]);
@@ -82,7 +82,7 @@ document.querySelector(".s1").addEventListener("click", function () {
   if (ss == 1) {
     ss = 0;
     document.querySelector(".s1").classList.remove("active");
-    tutti = [...domeniche, ...feste];
+    tutti = [...domeniche, ...feste, ...festesimo];
 
     stampaGiorni();
   } else {
