@@ -61,7 +61,7 @@ function c1() {
   if (isAndroidMobile()) {
     document.querySelector("#b").classList.add("bnoscroll");
     detectSwipeDirection();
-  };
+  }
   (function setEv() {
     let type = [
         "RIPOSO",
@@ -73,7 +73,7 @@ function c1() {
         "VETRINE intero domenica",
         "BARRIERE tutto il giorno",
         "BARRIERE",
-        "BARRIERE intero domenica"
+        "BARRIERE intero domenica",
       ],
       o = [
         "",
@@ -85,9 +85,9 @@ function c1() {
         "8:30-19:30",
         "8:30-19:00",
         "8:30-13:00 14:30-20:00",
-        "09:00 19:00"
+        "09:00 19:00",
       ],
-      no = [0, 4.5, 5, 5.5, 5.5, 9.5, 11, 10.5, 10,10];
+      no = [0, 4.5, 5, 5.5, 5.5, 9.5, 11, 10.5, 10, 10];
     [...gmc()].forEach((e, i) => {
       let a = [e, type[v[i]], o[v[i]], no[v[i]]];
       ev.push(a);
