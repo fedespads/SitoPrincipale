@@ -11,7 +11,7 @@ let i = +localStorage.getItem("md").split(",")[0],
     "BARRIERE tutto il giorno",
     "BARRIERE",
     "BARRIERE intero domenica",
-    "MATTINA + notturno"
+    "MATTINA + notturno",
   ],
   o = [
     "",
@@ -19,14 +19,14 @@ let i = +localStorage.getItem("md").split(",")[0],
     "14:30-19:30",
     "8:30-14:00",
     "14:00-19:30",
-    "8:30-13:00 14:30-19:30",
+    "9:00-13:00 14:30-19:30",
     "8:30-19:30",
     "8:30-19:00",
     "8:30-13:00 14:30-20:00",
     "09:00 19:00",
-    "09:00-13:00 19:30-06:00"
+    "09:00-13:00 19:30-06:00",
   ],
-  no = [0, 4, 5, 5.5, 5.5, 9.5, 11, 10.5, 10,10,14.5];
+  no = [0, 4, 5, 5.5, 5.5, 9, 11, 10.5, 10, 10, 14.5];
 b.innerHTML += `
         <div class="c">
           <div class="s1">
