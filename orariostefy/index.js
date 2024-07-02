@@ -64,30 +64,32 @@ function c1() {
   }
   (function setEv() {
     let type = [
-        "RIPOSO",
-        "VETRINE MATTINA",
-        "VETRINE POMERIGGIO",
-        "VETRINE MATTINA domenica",
-        "VETRINE POMERIGGIO domenica",
-        "VETRINE intero",
-        "VETRINE intero domenica",
-        "BARRIERE tutto il giorno",
-        "BARRIERE",
-        "BARRIERE intero domenica",
-      ],
-      o = [
-        "",
-        "8:30-13:00",
-        "14:30-19:30",
-        "8:30-14:00",
-        "14:00-19:30",
-        "8:30-13:00 14:30-19:30",
-        "8:30-19:30",
-        "8:30-19:00",
-        "8:30-13:00 14:30-20:00",
-        "09:00 19:00",
-      ],
-      no = [0, 4.5, 5, 5.5, 5.5, 9.5, 11, 10.5, 10, 10];
+      "RIPOSO",
+      "VETRINE MATTINA",
+      "VETRINE POMERIGGIO",
+      "VETRINE MATTINA domenica",
+      "VETRINE POMERIGGIO domenica",
+      "VETRINE intero",
+      "VETRINE intero domenica",
+      "BARRIERE tutto il giorno",
+      "BARRIERE",
+      "BARRIERE intero domenica",
+      "MATTINA + notturno"
+    ],
+    o = [
+      "",
+      "9:00-13:00",
+      "14:30-19:30",
+      "8:30-14:00",
+      "14:00-19:30",
+      "8:30-13:00 14:30-19:30",
+      "8:30-19:30",
+      "8:30-19:00",
+      "8:30-13:00 14:30-20:00",
+      "09:00 19:00",
+      "09:00-13:00 19:30-06:00"
+    ],
+    no = [0, 4, 5, 5.5, 5.5, 9.5, 11, 10.5, 10,10,14.5];
     [...gmc()].forEach((e, i) => {
       let a = [e, type[v[i]], o[v[i]], no[v[i]]];
       ev.push(a);
