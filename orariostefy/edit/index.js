@@ -1,6 +1,6 @@
 let i = +localStorage.getItem("md").split(",")[0],
   t = +localStorage.getItem("md").split(",")[1];
-  let type = [
+let type = [
     "RIPOSO",
     "VETRINE MATTINA",
     "VETRINE POMERIGGIO",
@@ -19,14 +19,14 @@ let i = +localStorage.getItem("md").split(",")[0],
     "14:30-19:30",
     "8:30-14:00",
     "14:00-19:30",
-    "9:00-13:00 14:30-19:30",
+    "8:00-13:00 14:00-19:30",
     "8:30-19:30",
     "8:30-19:00",
     "8:30-13:00 14:30-20:00",
     "09:00 19:00",
     "09:00-13:00 19:30-06:00",
   ],
-  no = [0, 4, 5, 5.5, 5.5, 9, 11, 10.5, 10, 10, 14.5];
+  no = [0, 4, 5, 5.5, 5.5, 10.5, 11, 10.5, 10, 10, 14.5];
 b.innerHTML += `
         <div class="c">
           <div class="s1">
@@ -72,13 +72,13 @@ b.innerHTML += `
         `;
 document.addEventListener("click", (e) => {
   if (e.target.classList[0] == "as") {
-    if (t == 0) t = type.length-1;
+    if (t == 0) t = type.length - 1;
     else t--;
     reset();
   }
 
   if (e.target.classList[0] == "ad") {
-    if (t == type.length-1) t = 0;
+    if (t == type.length - 1) t = 0;
     else t++;
     reset();
   }
@@ -94,8 +94,8 @@ document.addEventListener("click", (e) => {
       : "";
   }
 
-  if(e.target.id=='conferma'){
-  localStorage.setItem('change',JSON.stringify([i,t]))
-  window.location.href='../'
-}
+  if (e.target.id == "conferma") {
+    localStorage.setItem("change", JSON.stringify([i, t]));
+    window.location.href = "../";
+  }
 });
