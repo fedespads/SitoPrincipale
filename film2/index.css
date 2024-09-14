@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'SF';
+  src: url(https://fedespada.com/font/SF-Pro-Display-Bold.ttf);
+}
+@font-face {
+  font-family: 'Bebas';
+  src: url(https://fedespada.com/font/Bebas.ttf);
+}
+*{
+  
+  overflow-x: hidden;
+}
+body{
+  margin: 0;
+  display: flex;
+  border: none;
+  margin: none;
+  padding: none;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  align-items: top ;
+}
+input{
+height: 40px;
+border-radius: 10px;
+border: none;
+font-size: 20px;
+text-align: center;
+margin: 20px;
+}
+#box{
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 25px;
+  justify-content: center;
+  color: white; 
+  font-family: 'SF';
+}
+.el{
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  max-width: 170px;
+}
+h{
+ pointer-events: none;
+}
+img{
+  pointer-events: none;
+  border-radius: 10px;
+}
+#caricamento{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}

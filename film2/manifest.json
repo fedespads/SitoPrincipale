@@ -1,0 +1,9 @@
+{
+  "name": "Film",
+  "short_name": "Film",
+  "start_url": ".",
+  "display": "fullscreen",
+  "background_color": "#000",
+  "theme_color": "#000"
+}
+
