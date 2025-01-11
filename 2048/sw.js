@@ -1,10 +1,11 @@
 const CACHE_NAME = 'game-2048-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/index.css',
-  '/index.js',
-  '/manifest.json',
+  '/2048/',
+  '/2048/index.html',
+  '/2048/index.css',
+  '/2048/index.js',
+  '/2048/manifest.json',
+  '/2048/icon.png',
   'https://fedespada.com/font/SF-Pro-Display-Bold.ttf',
   'https://fedespada.com/font/Bebas.ttf',
   'https://code.jquery.com/jquery-3.6.0.min.js'
