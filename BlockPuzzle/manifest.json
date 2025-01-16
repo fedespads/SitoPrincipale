@@ -1,24 +1,26 @@
 {
     "name": "Block Puzzle",
     "short_name": "Block Puzzle",
-    "description": "Un puzzle game con blocchi colorati",
-    "start_url": "/",
+    "description": "Un gioco puzzle con blocchi colorati",
+    "start_url": "/BlockPuzzle/",
     "display": "standalone",
     "background_color": "rgb(54, 77, 135)",
     "theme_color": "rgb(54, 77, 135)",
     "orientation": "portrait",
+
     "icons": [
         {
-            "src": "icon-192.png",
+            "src": "/BlockPuzzle/icon-192x192.png",
             "sizes": "192x192",
             "type": "image/png",
             "purpose": "any maskable"
         },
         {
-            "src": "icon-512.png",
+            "src": "/BlockPuzzle/icon-512x512.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "any maskable"
         }
-    ]
+    ],
+    "scope": "/BlockPuzzle/"
 } 
