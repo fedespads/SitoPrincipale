@@ -1,0 +1,9 @@
+{
+  "name": "vuoto",
+  "short_name": "vuoto",
+  "start_url": ".",
+  "display": "fullscreen",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
+}
+

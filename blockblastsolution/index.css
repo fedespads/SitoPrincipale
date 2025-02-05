@@ -1,0 +1,84 @@
+@font-face {
+  font-family: 'SF';
+  src: url(https://fedespada.com/font/SF-Pro-Display-Bold.ttf);
+}
+@font-face {
+  font-family: 'Bebas';
+  src: url(https://fedespada.com/font/Bebas.ttf);
+}
+:root{
+  --text: #101006;
+--background: #fcfdf7;
+--primary: #c8d036;
+--secondary: #e4e982;
+--accent: #e2ea4d;
+
+
+}
+
+
+body{
+    font-family: 'SF';
+    background-color: var(--background);
+}
+#grid{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); 
+    grid-template-rows: repeat(8, 1fr);
+    width: 400px;
+    height: 400px;
+    gap: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    translate: 0 -270px;
+    font-family: 'SF';
+    font-size: 30px;
+    color: var(--text);
+    white-space: nowrap;
+}
+.cell{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+.empty{
+      background-color: var(--secondary);
+      opacity: 0.4;
+}
+.full{
+    background-color: var(--primary);
+}
+.highlight{
+    background-color: var(--accent);
+}
+#buttons{
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    translate: 0 270px;
+    gap: 30px;
+}
+#back, #next{
+    background-color: var(--accent);
+    border: none;
+    border-radius: 18px;
+    padding: 10px 20px;
+    font-family: 'SF';
+    font-size: 16px;
+    width: 150px;
+    height: 45px;
+    color: var(--text);
+    cursor: pointer;
+}
+
+
