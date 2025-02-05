@@ -1,153 +1,153 @@
 let dati = {
-    passaggio: 0,
-    titoli: [
-        "Inserisci il pattern",
-        "Inserisci il primo pezzo",
-        "Inserisci il secondo pezzo",
-        "Inserisci il terzo pezzo",
-        "Piazza il primo pezzo qui",
-        "Piazza il secondo pezzo qui",
-        "Piazza il terzo pezzo qui",
-    ],
-    griglia: [
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0]
-    ],
-    pezzo1:[],
-    pezzo2:[],
-    pezzo3:[],
-    risultato1:[],
-    risultato2:[],
-    risultato3:[],
-    
+passaggio: 0,
+titoli: [
+    "Inserisci il pattern",
+    "Inserisci il primo pezzo",
+    "Inserisci il secondo pezzo",
+    "Inserisci il terzo pezzo",
+    "Piazza il primo pezzo qui",
+    "Piazza il secondo pezzo qui",
+    "Piazza il terzo pezzo qui",
+],
+griglia: [
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0]
+],
+pezzo1:[],
+pezzo2:[],
+pezzo3:[],
+risultato1:[],
+risultato2:[],
+risultato3:[],
+
 };
 
 console.log(Object.values(dati)[3]);
 
 
 (function create(){
-    let g = document.createElement("div");
-    g.id = "grid";
-    
-    let t = document.createElement("div");
-    t.id = "title";
-    
-    let d = document.createElement("div");
-    d.id = "buttons";
-    let b1 = document.createElement("button");
-    b1.id = "back";
-    let b2 = document.createElement("button");
-    b2.id = "next";
-    b1.innerText = "Indietro";
-    b2.innerText = "Avanti";
-    b1.addEventListener("click",()=>{
-        dati.passaggio--;
-        if(dati.passaggio<0){
-            dati.passaggio = 0;
-        }
-        caricaGriglia();
-    });
-    b2.addEventListener("click",()=>{
-        dati.passaggio++;
-        if(dati.passaggio>dati.titoli.length-1){
-            dati.passaggio = dati.titoli.length-1;
-        }
-        caricaGriglia();
-    });
-    d.appendChild(b1);
-    d.appendChild(b2);
-    
-    
-    
-    t.innerText = dati.titoli[dati.passaggio];
-    
-    g.appendChild(t);
-    g.appendChild(d);
-    document.body.appendChild(g);
-    for (let i = 0; i < 8; i++) {
-        for (let j = 0; j < 8; j++) {
-            let b = document.createElement("div");
-            b.id = "cell" + i + j;
-            b.classList.add("cell");
-            b.classList.add("empty");
-            g.appendChild(b);
-        }
+let g = document.createElement("div");
+g.id = "grid";
+
+let t = document.createElement("div");
+t.id = "title";
+
+let d = document.createElement("div");
+d.id = "buttons";
+let b1 = document.createElement("button");
+b1.id = "back";
+let b2 = document.createElement("button");
+b2.id = "next";
+b1.innerText = "Indietro";
+b2.innerText = "Avanti";
+b1.addEventListener("click",()=>{
+    dati.passaggio--;
+    if(dati.passaggio<0){
+        dati.passaggio = 0;
     }
+    caricaGriglia();
+});
+b2.addEventListener("click",()=>{
+    dati.passaggio++;
+    if(dati.passaggio>dati.titoli.length-1){
+        dati.passaggio = dati.titoli.length-1;
+    }
+    caricaGriglia();
+});
+d.appendChild(b1);
+d.appendChild(b2);
+
+
+
+t.innerText = dati.titoli[dati.passaggio];
+
+g.appendChild(t);
+g.appendChild(d);
+document.body.appendChild(g);
+for (let i = 0; i < 8; i++) {
+    for (let j = 0; j < 8; j++) {
+        let b = document.createElement("div");
+        b.id = "cell" + i + j;
+        b.classList.add("cell");
+        b.classList.add("empty");
+        g.appendChild(b);
+    }
+}
 })();
 function caricaGriglia(){
-    if(dati.passaggio>=4){
-        console.log(dati);
-        let soluzione = trovaCombinazioneVincente(dati.griglia,[dati.pezzo1,dati.pezzo2,dati.pezzo3]);
-        console.log(soluzione);
-    }
-    let grid=Object.values(dati)[dati.passaggio+2];
-    console.log(grid);
-    document.querySelector("#title").innerText = dati.titoli[dati.passaggio];
-    document.querySelectorAll(".full").forEach(e=>{
-        e.classList.remove("full");
+if(dati.passaggio>=4){
+    console.log(dati);
+    let soluzione = trovaCombinazioneVincente(dati.griglia,[dati.pezzo1,dati.pezzo2,dati.pezzo3]);
+    console.log(soluzione);
+}
+let grid=Object.values(dati)[dati.passaggio+2];
+console.log(grid);
+document.querySelector("#title").innerText = dati.titoli[dati.passaggio];
+document.querySelectorAll(".full").forEach(e=>{
+    e.classList.remove("full");
+})
+document.querySelectorAll(".highlight").forEach(e=>{
+    e.classList.remove("highlight");
+})
+document.querySelectorAll(".cell").forEach(e=>{
+    e.classList.add("empty");
+})
+grid.forEach((e,i)=>{
+    e.forEach((f,j)=>{
+        if(f==1){
+            document.getElementById(`cell${i}${j}`).classList.remove("empty");
+            document.getElementById(`cell${i}${j}`).classList.add("full");
+        }
+        else if(f==2){
+            document.getElementById(`cell${i}${j}`).classList.remove("empty");
+            document.getElementById(`cell${i}${j}`).classList.add("highlight");
+        }
     })
-    document.querySelectorAll(".highlight").forEach(e=>{
-        e.classList.remove("highlight");
-    })
-    document.querySelectorAll(".cell").forEach(e=>{
-        e.classList.add("empty");
-    })
-    grid.forEach((e,i)=>{
-        e.forEach((f,j)=>{
-            if(f==1){
-                document.getElementById(`cell${i}${j}`).classList.remove("empty");
-                document.getElementById(`cell${i}${j}`).classList.add("full");
-            }
-            else if(f==2){
-                document.getElementById(`cell${i}${j}`).classList.remove("empty");
-                document.getElementById(`cell${i}${j}`).classList.add("highlight");
-            }
-        })
-    })
+})
 }
 
 function scrivigriglia(){
-    let f = [...document.getElementById("grid").querySelectorAll(".cell")];
-    f = f.map(e => e.classList.contains("full") ? 1 : 0);
-    let a = [
-        [], [], [], [], [], [], [], []
-    ];
-    f.map((e,i) => {
-        a[Math.floor(i/8)].push(e);
-    });
-    
-    dati[Object.keys(dati)[dati.passaggio+2]]=a
+let f = [...document.getElementById("grid").querySelectorAll(".cell")];
+f = f.map(e => e.classList.contains("full") ? 1 : 0);
+let a = [
+    [], [], [], [], [], [], [], []
+];
+f.map((e,i) => {
+    a[Math.floor(i/8)].push(e);
+});
+
+dati[Object.keys(dati)[dati.passaggio+2]]=a
 };
 
 
 function change(e) {
-    if (e.target.classList.contains("empty")) {
-        e.target.classList.remove("empty");
-        e.target.classList.add("full");
-    }
-    else if (e.target.classList.contains("full")) {
-        e.target.classList.remove("full");
-        e.target.classList.add("empty");
-    }
-    scrivigriglia();
-    
+if (e.target.classList.contains("empty")) {
+    e.target.classList.remove("empty");
+    e.target.classList.add("full");
+}
+else if (e.target.classList.contains("full")) {
+    e.target.classList.remove("full");
+    e.target.classList.add("empty");
+}
+scrivigriglia();
+
 }
 
 dati[Object.keys(dati)[dati.passaggio+2]]=dati.griglia;
 
 // Funzione per verificare se un pezzo può essere posizionato in una data posizione
 function puoPosizionare(pezzo, riga, colonna, grigliaAttuale) {
-    for (let i = 0; i < pezzo.length; i++) {
-        for (let j = 0; j < pezzo[i].length; j++) {
-            if (pezzo[i][j] === 1) {
-                if (riga + i >= 8 || colonna + j >= 8 || 
-                    grigliaAttuale[riga + i][colonna + j] === 1) {
+for (let i = 0; i < pezzo.length; i++) {
+    for (let j = 0; j < pezzo[i].length; j++) {
+        if (pezzo[i][j] === 1) {
+            if (riga + i >= 8 || colonna + j >= 8 || 
+                grigliaAttuale[riga + i][colonna + j] === 1) {
                     return false;
                 }
             }
@@ -369,13 +369,9 @@ function formattaSoluzione(soluzione, griglia, pezzi) {
     return risultato;
 }
 
-["touchstart","click"].forEach(
-    event=>{
-        document.addEventListener(event,e=>{
-            if(dati.passaggio<4){
-                change(e)
-            }
-        })
-        
+
+document.addEventListener("click",e=>{
+    if(dati.passaggio<4){
+        change(e)
     }
-)
+})
