@@ -7,11 +7,12 @@
   src: url(https://fedespada.com/font/Bebas.ttf);
 }
 :root{
-  --text: #101006;
---background: #fcfdf7;
---primary: #c8d036;
---secondary: #e4e982;
---accent: #e2ea4d;
+    --text: #f0f7f9;
+    --background: #020608;
+    --primary: #2b91c5;
+    --secondary: #12597d;
+    --accent: #0e79af;
+    
 
 
 }
@@ -27,7 +28,7 @@ body{
     grid-template-rows: repeat(8, 1fr);
     width: 400px;
     height: 400px;
-    gap: 3px;
+    gap: 2px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -47,7 +48,7 @@ body{
 .cell{
     width: 100%;
     height: 100%;
-    border-radius: 8px;
+    border-radius: 0px;
 }
 .empty{
       background-color: var(--secondary);
