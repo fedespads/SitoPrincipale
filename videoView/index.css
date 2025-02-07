@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'SF';
+  src: url(https://fedespada.com/font/SF-Pro-Display-Bold.ttf);
+}
+@font-face {
+  font-family: 'Bebas';
+  src: url(https://fedespada.com/font/Bebas.ttf);
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+#video{
+  width: min(95vw, calc(95vh*16/9));
+  height: min(95vw/16*9, 95vh);
+  border-radius: 10px;
+}
+#audio{
+  position: absolute; 
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}

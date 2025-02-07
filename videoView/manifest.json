@@ -1,0 +1,14 @@
+{
+  "name": "vuoto",
+  "short_name": "vuoto",
+  "start_url": ".",
+  "display": "fullscreen",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [{
+    "src": "./icon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}
+
