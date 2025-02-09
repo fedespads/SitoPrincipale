@@ -1,9 +1,22 @@
 {
-  "name": "vuoto",
-  "short_name": "vuoto",
-  "start_url": ".",
-  "display": "fullscreen",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff"
+  "name": "Block Blast Solution",
+  "short_name": "BlockBlast",
+  "start_url": "/blockblastsolution/",
+  "display": "standalone",
+  "background_color": "#020608",
+  "theme_color": "#020608",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
 

@@ -1,13 +1,26 @@
-<html>
+<!DOCTYPE html>
+<html lang="it">
   <head>
-    <link rel="stylesheet" href="index.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#020608">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Block Blast Solution</title>
     <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="index.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <script src="index.js" type="module" >  </script>
     <script src="funzioni.js"   >  </script>         
+    <script>
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(registration => console.log('ServiceWorker registered'))
+                .catch(err => console.log('ServiceWorker registration failed:', err));
+        }
+    </script>
   </body>
 </html>

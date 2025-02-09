@@ -1,85 +1,111 @@
-@font-face {
-  font-family: 'SF';
-  src: url(https://fedespada.com/font/SF-Pro-Display-Bold.ttf);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
 }
+
 @font-face {
-  font-family: 'Bebas';
-  src: url(https://fedespada.com/font/Bebas.ttf);
+    font-family: 'SF';
+    src: url(https://fedespada.com/font/SF-Pro-Display-Bold.ttf);
 }
-:root{
+
+@font-face {
+    font-family: 'Bebas';
+    src: url(https://fedespada.com/font/Bebas.ttf);
+}
+
+:root {
     --text: #f0f7f9;
     --background: #020608;
     --primary: #2b91c5;
     --secondary: #12597d;
     --accent: #0e79af;
-    
-
-
 }
 
-
-body{
-    font-family: 'SF';
-    background-color: var(--background);
-}
-#grid{
-    display: grid;
-    grid-template-columns: repeat(8, 1fr); 
-    grid-template-rows: repeat(8, 1fr);
-    width: 400px;
-    height: 400px;
-    gap: 2px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-#title{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    translate: 0 -270px;
-    font-family: 'SF';
-    font-size: 30px;
-    color: var(--text);
-    white-space: nowrap;
-}
-.cell{
+html, body {
+    position: fixed;
     width: 100%;
     height: 100%;
-    border-radius: 0px;
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
 }
-.empty{
-      background-color: var(--secondary);
-      opacity: 0.4;
+
+body {
+    font-family: 'SF';
+    background-color: var(--background);
+    height: 100vh;
 }
-.full{
-    background-color: var(--primary);
+
+#container {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 2fr auto 1fr auto 1fr auto 2fr;
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+    padding: 20px;
 }
-.highlight{
-    background-color: var(--accent);
+
+#title {
+    font-size: clamp(20px, 5vw, 30px);
+    color: var(--text);
+    white-space: nowrap;
+    text-align: center;
+    grid-row: 2;
 }
-#buttons{
-    position: absolute;
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    width: min(90vw, 90vh);
+    height: min(90vw, 90vh);
+    max-width: 400px;
+    max-height: 400px;
+    gap: 2px;
+    grid-row: 4;
+}
+
+#buttons {
     display: flex;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    translate: 0 270px;
-    gap: 30px;
+    justify-content: center;
+    gap: clamp(10px, 3vw, 30px);
+    grid-row: 6;
 }
-#back, #next{
+
+#back, #next {
+    width: clamp(100px, 30vw, 150px);
+    height: clamp(35px, 10vw, 45px);
+    font-size: clamp(14px, 4vw, 16px);
     background-color: var(--accent);
     border: none;
     border-radius: 18px;
-    padding: 10px 20px;
-    font-family: 'SF';
-    font-size: 16px;
-    width: 150px;
-    height: 45px;
     color: var(--text);
     cursor: pointer;
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    touch-action: none;
+}
+
+.empty {
+    background-color: var(--secondary);
+    opacity: 0.4;
+}
+
+.full {
+    background-color: var(--primary);
+}
+
+.highlight {
+    background-color: var(--accent);
 }
 
 

@@ -30,55 +30,63 @@ risultato3:[],
 
 console.log(Object.values(dati)[3]);
 
+let lastToggledCell = null;
 
 (function create(){
-let g = document.createElement("div");
-g.id = "grid";
+    // Creiamo il container principale
+    let container = document.createElement("div");
+    container.id = "container";
+    document.body.appendChild(container);
 
-let t = document.createElement("div");
-t.id = "title";
+    // Creiamo il titolo
+    let t = document.createElement("div");
+    t.id = "title";
+    container.appendChild(t);
 
-let d = document.createElement("div");
-d.id = "buttons";
-let b1 = document.createElement("button");
-b1.id = "back";
-let b2 = document.createElement("button");
-b2.id = "next";
-b1.innerText = "Indietro";
-b2.innerText = "Avanti";
-b1.addEventListener("click",()=>{
-    dati.passaggio--;
-    if(dati.passaggio<0){
-        dati.passaggio = 0;
+    // Creiamo la griglia
+    let g = document.createElement("div");
+    g.id = "grid";
+    container.appendChild(g);
+
+    // Creiamo i pulsanti
+    let d = document.createElement("div");
+    d.id = "buttons";
+    let b1 = document.createElement("button");
+    b1.id = "back";
+    let b2 = document.createElement("button");
+    b2.id = "next";
+    b1.innerText = "Indietro";
+    b2.innerText = "Avanti";
+    b1.addEventListener("click",()=>{
+        dati.passaggio--;
+        if(dati.passaggio<0){
+            dati.passaggio = 0;
+        }
+        caricaGriglia();
+    });
+    b2.addEventListener("click",()=>{
+        dati.passaggio++;
+        if(dati.passaggio>dati.titoli.length-1){
+            dati.passaggio = dati.titoli.length-1;
+        }
+        caricaGriglia();
+    });
+    d.appendChild(b1);
+    d.appendChild(b2);
+    container.appendChild(d);
+
+    t.innerText = dati.titoli[dati.passaggio];
+
+    // Creiamo le celle della griglia
+    for (let i = 0; i < 8; i++) {
+        for (let j = 0; j < 8; j++) {
+            let b = document.createElement("div");
+            b.id = "cell" + i + j;
+            b.classList.add("cell");
+            b.classList.add("empty");
+            g.appendChild(b);
+        }
     }
-    caricaGriglia();
-});
-b2.addEventListener("click",()=>{
-    dati.passaggio++;
-    if(dati.passaggio>dati.titoli.length-1){
-        dati.passaggio = dati.titoli.length-1;
-    }
-    caricaGriglia();
-});
-d.appendChild(b1);
-d.appendChild(b2);
-
-
-
-t.innerText = dati.titoli[dati.passaggio];
-
-g.appendChild(t);
-g.appendChild(d);
-document.body.appendChild(g);
-for (let i = 0; i < 8; i++) {
-    for (let j = 0; j < 8; j++) {
-        let b = document.createElement("div");
-        b.id = "cell" + i + j;
-        b.classList.add("cell");
-        b.classList.add("empty");
-        g.appendChild(b);
-    }
-}
 })();
 function caricaGriglia(){
 if(dati.passaggio>=4){
@@ -127,16 +135,19 @@ dati[Object.keys(dati)[dati.passaggio+2]]=a
 
 
 function change(e) {
-if (e.target.classList.contains("empty")) {
-    e.target.classList.remove("empty");
-    e.target.classList.add("full");
-}
-else if (e.target.classList.contains("full")) {
-    e.target.classList.remove("full");
-    e.target.classList.add("empty");
-}
-scrivigriglia();
-
+    const cell = e.target;
+    if (cell === lastToggledCell) return; // Previene toggle multipli sulla stessa cella
+    
+    if (cell.classList.contains("empty")) {
+        cell.classList.remove("empty");
+        cell.classList.add("full");
+    }
+    else if (cell.classList.contains("full")) {
+        cell.classList.remove("full");
+        cell.classList.add("empty");
+    }
+    lastToggledCell = cell;
+    scrivigriglia();
 }
 
 dati[Object.keys(dati)[dati.passaggio+2]]=dati.griglia;
@@ -370,8 +381,33 @@ function formattaSoluzione(soluzione, griglia, pezzi) {
 }
 
 
-document.addEventListener("click",e=>{
-    if(dati.passaggio<4){
-        change(e)
+document.addEventListener("click", e => {
+    if (dati.passaggio < 4) {
+        change(e);
     }
-})
+});
+
+// Aggiungi i nuovi event listener per il touch
+document.addEventListener("touchstart", e => {
+    if (dati.passaggio < 4 && e.target.classList.contains("cell")) {
+        e.preventDefault(); // Previene lo zoom e altri comportamenti di default
+        change(e);
+    }
+}, { passive: false });
+
+document.addEventListener("touchmove", e => {
+    if (dati.passaggio < 4) {
+        e.preventDefault();
+        // Trova l'elemento sotto il dito
+        const touch = e.touches[0];
+        const element = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (element && element.classList.contains("cell")) {
+            change({ target: element });
+        }
+    }
+}, { passive: false });
+
+// Reset lastToggledCell quando il touch finisce
+document.addEventListener("touchend", () => {
+    lastToggledCell = null;
+});
