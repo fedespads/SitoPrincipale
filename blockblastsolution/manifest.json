@@ -1,6 +1,6 @@
 {
   "name": "Block Blast Solution",
-  "short_name": "BlockBlast",
+  "short_name": "Block Blast Solution",
   "start_url": "/blockblastsolution/",
   "display": "standalone",
   "background_color": "#020608",
@@ -8,12 +8,7 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icon-512.png",
+      "src": "icon.png",
       "sizes": "512x512",
       "type": "image/png"
     }

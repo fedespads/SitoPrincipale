@@ -51,12 +51,21 @@ let lastToggledCell = null;
     // Creiamo i pulsanti
     let d = document.createElement("div");
     d.id = "buttons";
+
+    // Creiamo un container per i bottoni di navigazione
+    let navButtons = document.createElement("div");
+
     let b1 = document.createElement("button");
     b1.id = "back";
     let b2 = document.createElement("button");
     b2.id = "next";
+    let reset = document.createElement("button");
+    reset.id = "reset";
+    
     b1.innerText = "Indietro";
     b2.innerText = "Avanti";
+    reset.innerText = "Reset";
+    
     b1.addEventListener("click",()=>{
         dati.passaggio--;
         if(dati.passaggio<0){
@@ -71,8 +80,14 @@ let lastToggledCell = null;
         }
         caricaGriglia();
     });
-    d.appendChild(b1);
-    d.appendChild(b2);
+    reset.addEventListener("click", () => {
+        location.reload();
+    });
+
+    navButtons.appendChild(b1);
+    navButtons.appendChild(b2);
+    d.appendChild(navButtons);
+    d.appendChild(reset);
     container.appendChild(d);
 
     t.innerText = dati.titoli[dati.passaggio];
