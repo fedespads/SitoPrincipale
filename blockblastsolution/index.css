@@ -9,12 +9,12 @@
 
 @font-face {
     font-family: 'SF';
-    src: url(https://fedespada.com/font/SF-Pro-Display-Bold.ttf);
+    src: url(https://fedespads.github.io/SitoPrincipale/font/SF-Pro-Display-Bold.ttf);
 }
 
 @font-face {
     font-family: 'Bebas';
-    src: url(https://fedespada.com/font/Bebas.ttf);
+    src: url(https://fedespads.github.io/SitoPrincipale/font/Bebas.ttf);
 }
 
 :root {
@@ -120,5 +120,6 @@ body {
 .highlight {
     background-color: var(--accent);
 }
+
 
 
