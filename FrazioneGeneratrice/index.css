@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'SF';
-  src: url(https://fedespada.com/font/SF-Pro-Display-Bold.ttf);
+  src: url(https://fedespads.github.io/SitoPrincipale/font/SF-Pro-Display-Bold.ttf);
 }#inp1 {
   text-align: end;
   padding: 10px 0 10px 10px;
@@ -57,4 +57,5 @@
 }
 #t{
   align-self: self-start;
+
 }
