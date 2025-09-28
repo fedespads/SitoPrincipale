@@ -1,9 +1,0 @@
-document.addEventListener('keypress',e=>{
-  if(e.target==document.querySelector('input')&&
-     document.querySelector('input').value!=''&&
-     e.key=='Enter'
-    ){
-    localStorage.setItem('cli',document.querySelector('input').value)
-    window.location.href='../'
-  }
-})
