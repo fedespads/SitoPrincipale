@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'SF';
-  src: url(https://fedespada.com/font/SF-Pro-Display-Bold.ttf);
+  src: url(https://fedespads.github.io/SitoPrincipale/font/SF-Pro-Display-Bold.ttf);
 }
 
 :root {
@@ -120,4 +120,5 @@ svg.p2 {
 
 #arrow.on {
   opacity: 1;
+
 }
